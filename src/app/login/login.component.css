@@ -1,9 +1,17 @@
 .login-card {
-  width: 250px;
+ place-content: center;
+  display: grid;
+  height: 90vh;
 }
 
-.login {
-  position: relative;
-  left: 40%;
-  top: 30%;
+.login-card-content{
+  height: 20rem;
+  width: 20rem;
+}
+.mat-form-field{
+  display: block;
+}
+
+.mat-raised-button{
+  display: block;
 }
