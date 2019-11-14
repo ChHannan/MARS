@@ -18,7 +18,7 @@ appRoutes = [{path: '', component: LandingPageComponent}, {
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
