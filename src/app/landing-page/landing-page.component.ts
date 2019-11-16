@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-landing-page',
@@ -6,5 +6,7 @@ import { Component} from '@angular/core';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent {
-  title = 'MARS';
+  constructor() {
+    window.location.href = '/login';
+  }
 }
