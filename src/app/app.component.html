@@ -3,7 +3,7 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span class="fill-space"></span>
-  <h2>{{title}}</h2>
+  <h2 routerLink="">{{title}}</h2>
   <span class="fill-space"></span>
   <a mat-button routerLink="login">Login</a>
 </mat-toolbar>
@@ -12,7 +12,7 @@
   <mat-sidenav #snav mode="side">
     <mat-grid-list cols="1" rowHeight="40px" class="side-nav">
       <mat-grid-tile>
-        <a mat-button routerLink="patient">Patient</a>
+        <a mat-button [routerLink]="[{outlets: {primary: ['patient']}}]">Patient</a>
       </mat-grid-tile>
       <mat-grid-tile>
         <a mat-button>Faculty</a>

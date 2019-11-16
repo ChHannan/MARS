@@ -7,11 +7,12 @@ import {
   MatToolbarModule,
   MatIconModule,
   MatSidenavModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatGridListModule
 } from '@angular/material';
 
 const materialComponents = [MatButtonModule, MatToolbarModule, MatCardModule, MatFormFieldModule, MatInputModule,
-  MatIconModule, MatSidenavModule , MatExpansionModule];
+  MatIconModule, MatSidenavModule , MatExpansionModule, MatGridListModule];
 
 @NgModule({
   imports: [
