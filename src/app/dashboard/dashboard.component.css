@@ -1,0 +1,15 @@
+.fill-space {
+  flex: 1 1 auto
+}
+
+.side-nav {
+  width: 200px;
+}
+
+.side-nav mat-grid-tile a {
+  width: 200px;
+}
+
+.dash-board-container {
+  height: 90%;
+}

@@ -10,10 +10,11 @@ import {appRoutes} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
 import {LandingPageComponent} from './landing-page/landing-page.component';
-
-import { PatientComponent } from './patient/patient.component';
-import { SearchPatientComponent } from './patient/search-patient/search-patient.component';
-import { AddPatientComponent } from './patient/add-patient/add-patient.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {PatientComponent} from './patient/patient.component';
+import {NurseComponent} from './nurse/nurse.component';
+import {AdminComponent} from './admin/admin.component';
+import {PharmacyComponent} from './pharmacy/pharmacy.component';
 
 
 @NgModule({
@@ -21,9 +22,12 @@ import { AddPatientComponent } from './patient/add-patient/add-patient.component
     AppComponent,
     LoginComponent,
     LandingPageComponent,
+    DashboardComponent,
     PatientComponent,
-    SearchPatientComponent,
-    AddPatientComponent
+    NurseComponent,
+    AdminComponent,
+    PharmacyComponent,
+
   ],
   imports: [
     BrowserModule,
