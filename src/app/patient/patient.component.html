@@ -1,1 +1,6 @@
-<p>patient works!</p>
+<mat-toolbar>
+  <a mat-button [routerLink]="[{outlets: {patient: ['/search']}}]">Search Patients</a>
+  <a mat-button [routerLink]="[{outlets: {patient: ['/add']}}]">Add Patient</a>
+</mat-toolbar>
+
+<router-outlet name="patient"></router-outlet>

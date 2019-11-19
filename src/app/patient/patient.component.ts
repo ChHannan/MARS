@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-patient',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientComponent implements OnInit {
 
-  constructor() {
+  constructor(private router: Router, private route: ActivatedRoute) {
+    this.router.navigate([{outlets: {patient: ['search']}}], {relativeTo: this.route}).then();
   }
 
   ngOnInit() {

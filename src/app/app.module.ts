@@ -15,6 +15,8 @@ import {PatientComponent} from './patient/patient.component';
 import {NurseComponent} from './nurse/nurse.component';
 import {AdminComponent} from './admin/admin.component';
 import {PharmacyComponent} from './pharmacy/pharmacy.component';
+import { SearchPatientComponent } from './patient/search-patient/search-patient.component';
+import { AddPatientComponent } from './patient/add-patient/add-patient.component';
 
 
 @NgModule({
@@ -27,6 +29,8 @@ import {PharmacyComponent} from './pharmacy/pharmacy.component';
     NurseComponent,
     AdminComponent,
     PharmacyComponent,
+    SearchPatientComponent,
+    AddPatientComponent,
 
   ],
   imports: [
