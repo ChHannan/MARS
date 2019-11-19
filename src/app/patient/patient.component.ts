@@ -8,8 +8,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class PatientComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute) {
-    this.router.navigate([{outlets: {patient: ['search']}}], {relativeTo: this.route}).then();
+  constructor() {
   }
 
   ngOnInit() {
