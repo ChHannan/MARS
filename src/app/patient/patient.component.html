@@ -1,7 +1,11 @@
-<mat-toolbar>
-  <a mat-button routerLink="search">Search Patients</a>
-  <a mat-button routerLink="add">Add Patient</a>
-</mat-toolbar>
-<section class="container">
-  <router-outlet></router-outlet>
-</section>
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
+     *ngFor="let link of routeLinks"
+     [routerLink]="link.route"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">
+    {{link.label}}
+  </a>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-patient',
@@ -7,6 +6,10 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./patient.component.css']
 })
 export class PatientComponent implements OnInit {
+
+  routeLinks = [{label: 'Search Patients', route: 'search'}, {
+    label: 'Add Patients', route: 'add'
+  }];
 
   constructor() {
   }
