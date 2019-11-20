@@ -22,11 +22,12 @@
   margin-top: 1em;
 }
 
-.add-patient-button {
-  color: white;
-  background-color: cornflowerblue;
+.search-fields {
+  flex-wrap: wrap;
+  justify-content: start;
 }
 
-.data-table {
+.search-field {
+  width: 120px;
 }
 
