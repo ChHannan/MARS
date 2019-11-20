@@ -13,7 +13,6 @@ import {PharmacyComponent} from './pharmacy/pharmacy.component';
 
 import {AddPatientComponent} from './patient/add-patient/add-patient.component';
 import {SearchPatientComponent} from './patient/search-patient/search-patient.component';
-import {PatientListComponent} from './patient/patient-list/patient-list.component';
 
 
 export const appRoutes: Routes = [
@@ -22,8 +21,7 @@ export const appRoutes: Routes = [
   {path: 'dashboard', component: DashboardComponent, children: [
       {path: '', redirectTo: 'patient', pathMatch: 'full'},
       {path: 'patient', component: PatientComponent, children: [
-          {path: '', redirectTo: 'patient-list', pathMatch: 'full'},
-          {path: 'patient-list', component: PatientListComponent},
+          {path: '', redirectTo: 'search', pathMatch: 'full'},
           {path: 'search', component: SearchPatientComponent},
           {path: 'add', component: AddPatientComponent}
         ]

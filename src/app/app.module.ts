@@ -17,7 +17,6 @@ import {AdminComponent} from './admin/admin.component';
 import {PharmacyComponent} from './pharmacy/pharmacy.component';
 import { SearchPatientComponent } from './patient/search-patient/search-patient.component';
 import { AddPatientComponent } from './patient/add-patient/add-patient.component';
-import {PatientListComponent} from './patient/patient-list/patient-list.component';
 
 
 @NgModule({
@@ -32,8 +31,6 @@ import {PatientListComponent} from './patient/patient-list/patient-list.componen
     PharmacyComponent,
     SearchPatientComponent,
     AddPatientComponent,
-    PatientListComponent,
-
   ],
   imports: [
     BrowserModule,

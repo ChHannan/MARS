@@ -1,1 +1,37 @@
-<p>search-patient works!</p>
+<div class="margin-1">
+  <div>
+    <span><h2>Search Patients</h2></span>
+  </div>
+  <hr>
+  <a mat-raised-button class="add-patient-button">Add New Patient</a>
+
+  <div class="mat-elevation-z5 margin-top-1 data-table">
+    <table mat-table [dataSource]="dataSource" class="width-100">
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="cnic">
+        <th mat-header-cell *matHeaderCellDef>CNIC</th>
+        <td mat-cell *matCellDef="let element"> {{element.cnic}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef>Phone No.</th>
+        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dob">
+        <th mat-header-cell *matHeaderCellDef>Date of Birth</th>
+        <td mat-cell *matCellDef="let element"> {{element.dob}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[10, 50, 100]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>
