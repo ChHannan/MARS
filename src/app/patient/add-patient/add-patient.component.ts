@@ -6,6 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-patient.component.css']
 })
 export class AddPatientComponent implements OnInit {
+  step = 0;
+  nextStep() {
+    this.step++;
+  }
+  prevStep() {
+    this.step--;
+  }
+  setStep(step) {
+    this.step = step;
+  }
 
   constructor() {
   }

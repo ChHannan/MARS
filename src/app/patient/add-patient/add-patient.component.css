@@ -1,0 +1,37 @@
+.margin-1 {
+  margin: 1em;
+}
+
+.margin-top-1 {
+  margin-top: 1em;
+}
+
+.margin-left-1 {
+  margin-left: 1em;
+}
+
+.margin-left-3 {
+  margin-left: 3em;
+}
+
+.flex {
+  display: flex;
+}
+
+.expansion-description {
+  justify-content: space-between;
+}
+
+.fields {
+  flex-direction: column;
+}
+
+.container-fields {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.label-fields {
+  margin-bottom: 1em;
+  font-weight: bold;
+}
