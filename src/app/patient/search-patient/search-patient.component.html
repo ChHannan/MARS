@@ -3,33 +3,31 @@
     <span><h2>Search Patients</h2></span>
   </div>
   <hr>
-  <div class="flex search-fields">
-    <mat-form-field *ngFor="let index of indices" class="search-field col-3">
-      <input matInput (keyup)="applyFilter(displayedColumns[index] + '|' + $event.target.value)"
-             [placeholder]="'Search by ' + displayColumnName[index]">
-    </mat-form-field>
-  </div>
+
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
 
   <div class="mat-elevation-z2 margin-top-1">
-    <table mat-table [dataSource]="dataSource" class="width-100">
+    <table mat-table [dataSource]="dataSource" class="width-100" matSort>
 
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
         <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
       </ng-container>
 
       <ng-container matColumnDef="cnic">
-        <th mat-header-cell *matHeaderCellDef>CNIC</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>CNIC</th>
         <td mat-cell *matCellDef="let element"> {{ element.cnic }} </td>
       </ng-container>
 
-      <ng-container matColumnDef="phone">
+      <ng-container matColumnDef="phone number">
         <th mat-header-cell *matHeaderCellDef>Phone No.</th>
         <td mat-cell *matCellDef="let element"> {{ element.phone }} </td>
       </ng-container>
 
-      <ng-container matColumnDef="dob">
-        <th mat-header-cell *matHeaderCellDef>Date of Birth</th>
+      <ng-container matColumnDef="date of birth">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Date of Birth</th>
         <td mat-cell *matCellDef="let element"> {{ element.dob }} </td>
       </ng-container>
 

@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import {MatSort} from '@angular/material';
 
 @Component({
   selector: 'app-search-patient',
@@ -9,13 +10,11 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class SearchPatientComponent implements OnInit {
 
-  indices: number[];
-  displayedColumns = ['name', 'cnic', 'phone', 'dob'];
-  displayColumnName = ['name', 'cnic', 'phone number', 'date of birth'];
+  displayedColumns = ['name', 'cnic', 'phone number', 'date of birth'];
   data = [
     {name: 'Ali Asad', cnic: 'xxxx-xxxxx-xxx', phone: '0302-212314', dob: '10-06-2000'},
     {name: 'Ali Asad', cnic: 'xxxx-xxxxx-xxx', phone: '0302-212314', dob: '10-06-2000'},
-    {name: 'Ali Asad', cnic: 'xxxx-xxxxx-xxx', phone: '0302-212314', dob: '10-06-2000'},
+    {name: 'Ali Asad', cnic: '2345-78643-897', phone: '0302-212314', dob: '10-06-2000'},
     {name: 'Ali Asad', cnic: 'xxxx-xxxxx-xxx', phone: '0302-212314', dob: '10-06-2000'},
     {name: 'Ali Asad', cnic: 'xxxx-xxxxx-xxx', phone: '0302-212314', dob: '10-06-2000'},
     {name: 'Ali Asad', cnic: 'xxxx-xxxxx-xxx', phone: '0302-212314', dob: '10-06-2000'},
@@ -41,21 +40,17 @@ export class SearchPatientComponent implements OnInit {
   ];
   dataSource = new MatTableDataSource(this.data);
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
   constructor() {
   }
 
   ngOnInit() {
-    this.indices = Array(4).fill(0).map((x, i) => i);
 
     this.dataSource.paginator = this.paginator;
-    this.dataSource.filterPredicate = ((data, filter) => {
-      const filterData = filter.split('|');
-      filterData[1] = filterData[1].trim().toLowerCase();
-      const re = new RegExp(filterData[1], 'g');
-      return data[filterData[0]].trim().toLowerCase().match(re);
-    });
+    this.dataSource.sort = this.sort;
   }
-  applyFilter(filter: string) {
-    this.dataSource.filter = filter;
+
+  applyFilter(filterValue: any) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }

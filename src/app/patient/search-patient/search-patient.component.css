@@ -1,15 +1,3 @@
-.flex {
-  display: flex;
-}
-
-.block {
-  display: block;
-}
-
-.inline-block {
-  display: inline-block;
-}
-
 .width-100 {
   width: 100%;
 }
@@ -18,16 +6,4 @@
   margin: 1em;
 }
 
-.margin-top-1 {
-  margin-top: 1em;
-}
-
-.search-fields {
-  flex-wrap: wrap;
-  justify-content: start;
-}
-
-.search-field {
-  width: 120px;
-}
 

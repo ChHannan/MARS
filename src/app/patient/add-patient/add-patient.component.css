@@ -1,37 +1,32 @@
+.patient-registration {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.patient-name {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  grid-gap: 2%;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  padding-top: 23px;
+}
+
+.patient-field {
+  display: flex;
+  align-items: center;
+}
+
+.patient-row {
+  display: grid;
+  grid-template-columns: 20% 22.5%;
+  grid-gap: 2%;
+}
+
 .margin-1 {
   margin: 1em;
-}
-
-.margin-top-1 {
-  margin-top: 1em;
-}
-
-.margin-left-1 {
-  margin-left: 1em;
-}
-
-.margin-left-3 {
-  margin-left: 3em;
-}
-
-.flex {
-  display: flex;
-}
-
-.expansion-description {
-  justify-content: space-between;
-}
-
-.fields {
-  flex-direction: column;
-}
-
-.container-fields {
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.label-fields {
-  margin-bottom: 1em;
-  font-weight: bold;
 }
