@@ -26,6 +26,7 @@ export class SearchPatientComponent implements OnInit {
   ];
   dataSource = new MatTableDataSource(this.data);
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+
   constructor(patientsService: PatientsService, router: Router, route: ActivatedRoute) {
     this.patientsService = patientsService;
     this.route = route;
@@ -34,7 +35,7 @@ export class SearchPatientComponent implements OnInit {
 
   ngOnInit() {
     this.indices = Array(4).fill(0).map((x, i) => i);
-
+    this.dataSource.paginator = this.paginator;
     this.dataSource.paginator = this.paginator;
     this.dataSource.filterPredicate = ((data, filter) => {
       const filterData = filter.split('|');
@@ -43,9 +44,11 @@ export class SearchPatientComponent implements OnInit {
       return data[filterData[0]].trim().toLowerCase().match(re);
     });
   }
+
   applyFilter(filter: string) {
     this.dataSource.filter = filter;
   }
+
   openPatient(row) {
     const indexExists = this.patientsService.patients.findIndex(element => element.name === row.name);
     if (indexExists === -1) {
