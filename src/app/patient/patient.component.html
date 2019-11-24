@@ -1,11 +1,22 @@
 <nav mat-tab-nav-bar>
-  <a mat-tab-link
+  <span class="margin-left-1"></span>
+  <a mat-tab-link class="patient-option-nav"
      *ngFor="let link of routeLinks"
      [routerLink]="link.route"
-     routerLinkActive #rla="routerLinkActive"
-     [active]="rla.isActive">
-    {{link.label}}
+     routerLinkActive #rla_patient_option="routerLinkActive"
+     [active]="rla_patient_option.isActive">
+    <mat-icon>{{link.icon}}</mat-icon>
   </a>
+
+  <div class="patient-nav" *ngFor="let patient of patientsService.patients">
+    <a mat-tab-link
+       [routerLink]="patient.name"
+       routerLinkActive #rla_patient="routerLinkActive"
+       [active]="rla_patient.isActive">
+      {{patient.name}}
+    </a>
+    <mat-icon class="patient-nav-icon" (click)="close_patient($event, patient);$event.preventDefault()">close</mat-icon>
+  </div>
 </nav>
 
 <router-outlet></router-outlet>

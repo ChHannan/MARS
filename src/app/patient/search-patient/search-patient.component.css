@@ -31,3 +31,6 @@
   width: 120px;
 }
 
+.patient-data-row:hover {
+  background-color: lavender;
+}

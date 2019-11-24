@@ -13,6 +13,7 @@ import {PharmacyComponent} from './pharmacy/pharmacy.component';
 
 import {AddPatientComponent} from './patient/add-patient/add-patient.component';
 import {SearchPatientComponent} from './patient/search-patient/search-patient.component';
+import {ViewPatientComponent} from "./patient/view-patient/view-patient.component";
 
 
 export const appRoutes: Routes = [
@@ -23,7 +24,8 @@ export const appRoutes: Routes = [
       {path: 'patient', component: PatientComponent, children: [
           {path: '', redirectTo: 'search', pathMatch: 'full'},
           {path: 'search', component: SearchPatientComponent},
-          {path: 'add', component: AddPatientComponent}
+          {path: 'add', component: AddPatientComponent},
+          {path: ':patient_id', component: ViewPatientComponent}
         ]
       },
       {path: 'nurse', component: NurseComponent},
