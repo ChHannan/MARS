@@ -9,8 +9,8 @@
         <mat-panel-title>
           Patient Profile
         </mat-panel-title>
-        <mat-panel-description class="flex expansion-description">
-          Enter patient's information
+        <mat-panel-description style="display: flex; justify-content: space-between">
+          <p style="flex-grow: 1">Enter patient's information</p>
           <mat-icon>account_circle</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
@@ -18,24 +18,35 @@
         <button mat-button color="primary" (click)="nextStep()">Next</button>
       </mat-action-row>
 
-      <div class="flex fields">
-        <div class="container-fields flex">
-          <span class="label-fields">Name: </span>
-          <div class="margin-left-3">
-            <mat-form-field appearance="outline" class="margin-left-1">
-              <mat-label>First Name</mat-label>
-              <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="margin-left-1">
-              <mat-label>Middle Name</mat-label>
-              <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="margin-left-1">
-              <mat-label>Last Name</mat-label>
-              <input matInput>
-            </mat-form-field>
-          </div>
-        </div>
+      <div class="grid-maker">
+        <h6 id="name">Name</h6>
+        <mat-form-field appearance="outline" id="firstName">
+          <mat-label>First Name</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline" id="middleName">
+          <mat-label>Middle Name</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline" id="lastName">
+          <mat-label>Last Name</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <h6 id="email">Email</h6>
+        <mat-form-field appearance="outline" id="emailField">
+          <mat-label>Email</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <h6 id="weight">Weight</h6>
+        <mat-form-field appearance="outline" id="weightField">
+          <mat-label>Weight</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <h6 id="height">Height</h6>
+        <mat-form-field appearance="outline" id="heightField">
+          <mat-label>Height</mat-label>
+          <input matInput>
+        </mat-form-field>
       </div>
     </mat-expansion-panel>
 
