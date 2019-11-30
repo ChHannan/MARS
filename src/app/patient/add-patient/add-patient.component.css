@@ -24,24 +24,28 @@
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
   grid-template-rows: repeat(3, 60px);
+  grid-template-areas: ". name firstName middleName lastName ."
+                       ". email emailField cinc cincField ."
+                        ". weight weightField height heightField .";
 }
 
 #name {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-area: name;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
 }
+#cinc {
+ grid-area: cinc;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
 
 #email {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
+ grid-area: email;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,10 +53,7 @@
 }
 
 #weight {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 4;
+  grid-area: weight;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,10 +61,7 @@
 }
 
 #height {
-  grid-column-start: 4;
-  grid-column-end: 5;
-  grid-row-start: 3;
-  grid-row-end: 4;
+  grid-area: height;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -71,45 +69,30 @@
 }
 
 #firstName {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 2;
+ grid-area: firstName;
 }
 
 #middleName {
-  grid-column-start: 4;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-area: middleName;
 }
 
 #lastName {
-  grid-column-start: 5;
-  grid-column-end: 6;
-  grid-row-start: 1;
-  grid-row-end: 2;
+ grid-area: lastName;
+}
+#cincField {
+ grid-area: cincField;
 }
 
 #weightField {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 3;
-  grid-row-end: 4;
+ grid-area: weightField;
 }
 
 #emailField {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 3;
+grid-area: emailField;
 }
 
 #heightField {
-  grid-column-start: 5;
-  grid-column-end: 6;
-  grid-row-start: 3;
-  grid-row-end: 4;
+ grid-area: heightField;
 }
 
 .mat-form-field {
@@ -120,84 +103,28 @@
   .grid-maker {
     display: grid;
     grid-template-columns: 5%;
-    grid-template-rows: repeat(10, 60px);
+    grid-template-rows: repeat(12, 60px);
+    grid-template-areas: "name" "firstName" "middleName" "lastName"
+    "email" "emailField" "cinc" "cincField"
+    "weight" "weightField" "height" "heightField";
   }
 
-  #name {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    margin: 0;
-  }
 
-  #email {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 5;
-    grid-row-end: 6;
-    margin: 0;
-  }
-
-  #weight {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 7;
-    grid-row-end: 8;
-    margin: 0;
-  }
-
-  #height {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 9;
-    grid-row-end: 10;
+  #cinc {
+   grid-area: cinc;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
   }
 
-  #firstName {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
 
-  #middleName {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 3;
-    grid-row-end: 4;
-  }
-
-  #lastName {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 4;
-    grid-row-end: 5;
-  }
-
-  #weightField {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 8;
-    grid-row-end: 9;
-  }
-
-  #emailField {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 6;
-    grid-row-end: 7;
-  }
-
-  #heightField {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 10;
-    grid-row-end: 11;
+  #height {
+    grid-area: height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
   }
 
 }
