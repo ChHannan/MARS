@@ -20,13 +20,22 @@
   margin-right: 16px
 }
 
-.grid-maker {
+.bio-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
   grid-template-rows: repeat(3, 60px);
   grid-template-areas: ". name firstName middleName lastName ."
-                       ". email emailField cinc cincField ."
+                       ". cnic cnicField dob dobField ."
                         ". weight weightField height heightField .";
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 5% repeat(4, 20%) 2%;
+  grid-template-rows: repeat(3, 60px);
+  grid-template-areas: ". mobile mobileField emergencyContact emergencyContactField ."
+                       ". email emailField address addressField ."
+                       ". city cityField country countryField .";
 }
 
 #name {
@@ -36,20 +45,24 @@
   align-items: center;
   margin: 0;
 }
-#cinc {
- grid-area: cinc;
+#cnic {
+ grid-area: cnic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+#dob {
+  grid-area: dob;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
 
-#email {
- grid-area: email;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
+#dobField {
+  grid-area: dobField;
 }
 
 #weight {
@@ -79,17 +92,17 @@
 #lastName {
  grid-area: lastName;
 }
-#cincField {
- grid-area: cincField;
+#cnicField {
+ grid-area: cnicField;
 }
 
 #weightField {
  grid-area: weightField;
 }
 
-#emailField {
-grid-area: emailField;
-}
+/*#emailField {*/
+/*grid-area: emailField;*/
+/*}*/
 
 #heightField {
  grid-area: heightField;
@@ -99,19 +112,84 @@ grid-area: emailField;
   width: 220px;
 }
 
+#mobile{
+  grid-area: mobile;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+#mobileField {
+  grid-area: mobileField;
+}
+
+#emergencyContact {
+  grid-area: emergencyContact;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#emergencyContactField {
+  grid-area: emergencyContactField;
+
+}
+
+#email {
+  grid-area: email;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+#emailField {
+  grid-area: emailField;
+}
+#address {
+  grid-area: address;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#addressField {
+  grid-area: addressField;
+  /*width: 700px;*/
+}
+#city {
+  grid-area: city;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+#cityField {
+  grid-area: cityField;
+}
+#country {
+  grid-area: country;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#countryField {
+  grid-area: countryField;
+}
+
+
+
 @media screen and (max-width: 600px) {
-  .grid-maker {
+  .bio-grid {
     display: grid;
     grid-template-columns: 5%;
     grid-template-rows: repeat(12, 60px);
-    grid-template-areas: "name" "firstName" "middleName" "lastName"
-    "email" "emailField" "cinc" "cincField"
-    "weight" "weightField" "height" "heightField";
+    grid-template-areas: "name" "firstName" "middleName" "lastName" "cnic" "cnicField" "dob" "dobField" "weight" "weightField" "height" "heightField";
   }
 
 
-  #cinc {
-   grid-area: cinc;
+  #cnic {
+    grid-area: cnic;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,6 +204,34 @@ grid-area: emailField;
     align-items: center;
     margin: 0;
   }
+  #dob {
+    grid-area: dob;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
 
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 5%;
+    grid-template-rows: repeat(12, 60px);
+    grid-template-areas: "mobile" "mobileField" "emergencyContact" "emergencyContactField" "email" "emailField" "address" "addressField" "city" "cityField" "country" "countryField";
+  }
+
+  #mobile {
+    grid-area: mobile;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+  }
+  #email {
+    grid-area: email;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+  }
 }
 
