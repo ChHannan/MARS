@@ -1,1 +1,14 @@
-<p>{{patient.name}}</p>
+<div class="margin-1">
+  <div>
+    <div class="patient-view-header">
+      <h2>{{patient.name}}</h2>
+      <h6 class="margin-left-1">(#{{patient.name}})</h6>
+    </div>
+  </div>
+  <hr>
+  <div class="card">
+    <div *ngFor="let allergy of allergies">
+      <div>{{allergy}}</div>
+    </div>
+  </div>
+</div>

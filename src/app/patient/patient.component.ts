@@ -36,7 +36,7 @@ export class PatientComponent implements OnInit {
         this.router.navigate([this.patientsService.patients[indexEle - 1].name],
           {relativeTo: this.route}).then();
       } else {
-        this.router.navigate(['search'], {relativeTo: this.route});
+        this.router.navigate(['search'], {relativeTo: this.route}).then();
       }
     }
     this.patientsService.patients.splice(indexEle, 1);

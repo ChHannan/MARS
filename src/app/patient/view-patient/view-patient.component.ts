@@ -10,6 +10,7 @@ import {PatientsService} from '../services/patients.service';
 export class ViewPatientComponent implements OnInit {
 
   patient = {};
+  allergies = ['Acne', 'Food Allergy', 'Insect Sting'];
   constructor(private patientsService: PatientsService, private router: Router, private route: ActivatedRoute) {
     const currentPatientId = this.route.snapshot.params.patient_id;
     this.patient = this.patientsService.patients.find(element => element.name === currentPatientId);

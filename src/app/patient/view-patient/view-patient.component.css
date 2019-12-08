@@ -1,0 +1,17 @@
+.margin-1 {
+  margin: 1em;
+}
+
+.margin-left-1 {
+  margin-left: 1em;
+}
+
+.patient-view-header {
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  width: 500px;
+  height: 500px;
+}
