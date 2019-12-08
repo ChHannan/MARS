@@ -20,7 +20,6 @@ export const appRoutes: Routes = [
   {path: '', component: LandingPageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent, children: [
-      {path: '', redirectTo: 'patient', pathMatch: 'full'},
       {path: 'patient', component: PatientComponent, children: [
           {path: '', redirectTo: 'search', pathMatch: 'full'},
           {path: 'search', component: SearchPatientComponent},

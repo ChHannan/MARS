@@ -15,9 +15,10 @@ import {PatientComponent} from './patient/patient.component';
 import {NurseComponent} from './nurse/nurse.component';
 import {AdminComponent} from './admin/admin.component';
 import {PharmacyComponent} from './pharmacy/pharmacy.component';
-import { SearchPatientComponent } from './patient/search-patient/search-patient.component';
-import { AddPatientComponent } from './patient/add-patient/add-patient.component';
-import { ViewPatientComponent } from './patient/view-patient/view-patient.component';
+import {SearchPatientComponent} from './patient/search-patient/search-patient.component';
+import {AddPatientComponent} from './patient/add-patient/add-patient.component';
+import {ViewPatientComponent} from './patient/view-patient/view-patient.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -39,8 +40,10 @@ import { ViewPatientComponent } from './patient/view-patient/view-patient.compon
     BrowserAnimationsModule,
     MaterialModule,
     RouterModule.forRoot(appRoutes),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

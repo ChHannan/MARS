@@ -12,17 +12,8 @@
 <mat-sidenav-container class="dash-board-container">
   <mat-sidenav #snav mode="side">
     <mat-grid-list cols="1" rowHeight="50px" class="side-nav">
-      <mat-grid-tile>
-        <a mat-button routerLink="patient">Patient</a>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <a mat-button routerLink="nurse">Nurse</a>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <a mat-button routerLink="admin">Admin</a>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <a mat-button routerLink="pharmacy">Pharmacy</a>
+      <mat-grid-tile *ngFor="let link of this.userService.currentDashBoardUserLink.links">
+        <a mat-button [routerLink]="link.link">{{link.name}}</a>
       </mat-grid-tile>
     </mat-grid-list>
   </mat-sidenav>
