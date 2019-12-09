@@ -37,9 +37,10 @@
           <input matInput>
         </mat-form-field>
         <h6 id="dob">Date of Birth</h6>
-        <mat-form-field appearance="outline" id="dobField">
-          <mat-label>DOB</mat-label>
-          <input matInput>
+        <mat-form-field id="dobField" appearance="outline">
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
         </mat-form-field>
         <h6 id="weight">Weight</h6>
         <mat-form-field appearance="outline" id="weightField">
@@ -95,6 +96,45 @@
           <mat-label>Country</mat-label>
           <input matInput>
         </mat-form-field>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Guardian
+        </mat-panel-title>
+        <mat-panel-description>
+          <p>Enter patient's guardian information</p>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-action-row>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+
+      <div class="guardian-grid">
+        <h6 id="guardianName">Name</h6>
+        <mat-form-field appearance="outline" id="guardianNameField">
+          <mat-label>Guardian Name</mat-label>
+          <input matInput>
+        </mat-form-field>
+
+        <h6 id="guardianMobile">Mobile</h6>
+        <mat-form-field appearance="outline" id="guardianMobileField">
+          <mat-label>Mobile</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <h6 id="guardianAddress">Address</h6>
+        <mat-form-field appearance="outline" id="guardianAddressField">
+          <mat-label>Address</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <h6 id="relation">Relationship with patient</h6>
+        <mat-form-field appearance="outline" id="relationField">
+          <mat-label>Relationship</mat-label>
+          <input matInput>
+        </mat-form-field>
+
       </div>
     </mat-expansion-panel>
 
