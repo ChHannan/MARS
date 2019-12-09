@@ -177,6 +177,63 @@
   grid-area: countryField;
 }
 
+.guardian-grid {
+  display: grid;
+  grid-template-columns: 5% repeat(4, 20%) 2%;
+  grid-template-rows: repeat(2, 60px);
+  grid-template-areas: ". guardianName guardianNameField guardianMobile guardianMobileField ."
+  ". relation relationField guardianAddress guardianAddressField .";
+}
+
+#guardianName {
+  grid-area: guardianName;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#guardianNameField {
+  grid-area: guardianNameField;
+}
+
+#guardianMobile {
+  grid-area: guardianMobile;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#guardianMobileField {
+  grid-area: guardianMobileField;
+}
+
+#relation {
+  grid-area: relation;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#relationField {
+  grid-area: relationField;
+}
+
+#guardianAddress {
+  grid-area: guardianAddress;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#guardianAddressField {
+  grid-area: guardianAddressField;
+}
+
+
 
 
 @media screen and (max-width: 600px) {
@@ -232,6 +289,15 @@
     justify-content: flex-start;
     align-items: center;
     margin: 0;
+  }
+
+  .guardian-grid {
+    display: grid;
+    grid-template-columns: 5%;
+    grid-template-rows: repeat(8, 60px);
+    grid-template-areas: "guardianName" "guardianNameField" "guardianMobile" "guardianMobileField"
+    "relation" "relationField" "guardianAddress" "guardianAddressField"
+  ;
   }
 }
 
