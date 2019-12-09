@@ -11,15 +11,20 @@ export class ViewPatientComponent implements OnInit {
 
   patient = {};
   allergies = ['Acne', 'Food Allergy', 'Insect Sting'];
-  constructor(private patientsService: PatientsService, private router: Router, private route: ActivatedRoute) {
-    const currentPatientId = this.route.snapshot.params.patient_id;
-    this.patient = this.patientsService.patients.find(element => element.name === currentPatientId);
-    if (this.patient === undefined) {
-      this.router.navigate(['..', 'search'], {relativeTo: this.route}).then();
-    }
+  route: ActivatedRoute;
+  constructor(private patientsService: PatientsService, private router: Router, route: ActivatedRoute) {
+    this.route = route;
   }
 
   ngOnInit() {
+    this.route.params.subscribe((params) => {
+      this.patient = this.patientsService.patients.find(element => element.name === params.patient_id);
+      if (this.patient === undefined) {
+        this.router.navigate([
+          'dashboard', 'patient', 'search'
+        ]).then();
+      }
+    });
   }
 
 }
