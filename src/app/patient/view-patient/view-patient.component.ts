@@ -11,9 +11,7 @@ export class ViewPatientComponent implements OnInit {
 
   patient = {};
   allergies = ['Acne', 'Food Allergy', 'Insect Sting'];
-  route: ActivatedRoute;
-  constructor(private patientsService: PatientsService, private router: Router, route: ActivatedRoute) {
-    this.route = route;
+  constructor(private patientsService: PatientsService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -26,5 +24,4 @@ export class ViewPatientComponent implements OnInit {
       }
     });
   }
-
 }
