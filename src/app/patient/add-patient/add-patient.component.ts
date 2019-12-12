@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-patient.component.css']
 })
 export class AddPatientComponent implements OnInit {
+  startDate = new Date(1990, 0, 1);
   step = 0;
   nextStep() {
     this.step++;

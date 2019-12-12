@@ -9,6 +9,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class PatientComponent implements OnInit {
 
+
   patientsService: PatientsService;
   router: Router;
   route: ActivatedRoute;
