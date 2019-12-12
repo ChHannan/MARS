@@ -11,7 +11,12 @@
   align-items: center;
 }
 
-.card {
-  width: 500px;
-  height: 500px;
+mat-card {
+  margin: 1% 20% 1% 5%;
+  max-width: 65%;
 }
+
+table {
+  width: 100%;
+}
+
