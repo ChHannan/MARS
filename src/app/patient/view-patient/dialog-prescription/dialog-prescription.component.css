@@ -1,0 +1,23 @@
+.container {
+  display: block;
+  width: 400px;
+}
+
+#medicineField {
+  width: 400px;
+}
+#doseField {
+  width: 400px;
+}
+#frequencyField {
+  width: 400px;
+}
+#cancelButton  {
+  width: 48%;
+  margin-right: 2%;
+}
+#addButton {
+  width: 48%;
+  margin-left: 2%;
+}
+

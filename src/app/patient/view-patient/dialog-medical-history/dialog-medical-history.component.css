@@ -1,0 +1,23 @@
+.container {
+  display: block;
+  width: 400px;
+}
+
+#typeField {
+  width: 400px;
+}
+#descriptionField {
+  width: 400px;
+}
+#timeField {
+  width: 400px;
+}
+
+#cancelButton  {
+  width: 48%;
+  margin-right: 2%;
+}
+#addButton {
+  width: 48%;
+  margin-left: 2%;
+}

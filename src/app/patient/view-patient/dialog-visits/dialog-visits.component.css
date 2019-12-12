@@ -1,0 +1,15 @@
+.container {
+  display: block;
+  width: 400px;
+}
+#visitsField {
+  width: 400px;
+}
+#cancelButton  {
+  width: 48%;
+  margin-right: 2%;
+}
+#addButton {
+  width: 48%;
+  margin-left: 2%;
+}

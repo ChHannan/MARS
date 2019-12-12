@@ -1,0 +1,19 @@
+.container {
+  display: block;
+  width: 400px;
+}
+#allergyNameField {
+  width: 400px;
+}
+#allergyDescriptionField {
+  width: 400px;
+
+}
+#cancelButton  {
+  width: 48%;
+  margin-right: 2%;
+}
+#addButton {
+  width: 48%;
+  margin-left: 2%;
+}

@@ -20,6 +20,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { PrescriptionComponent } from './prescription/prescription.component';
 import { MedicalHistoryComponent } from './medical-history/medical-history.component';
+import { DialogMedicalHistoryComponent } from './patient/view-patient/dialog-medical-history/dialog-medical-history.component';
+import { DialogPrescriptionComponent } from './patient/view-patient/dialog-prescription/dialog-prescription.component';
+import { DialogAllergyComponent } from './patient/view-patient/dialog-allergy/dialog-allergy.component';
+import { DialogVisitsComponent } from './patient/view-patient/dialog-visits/dialog-visits.component';
 
 
 @NgModule({
@@ -36,6 +40,16 @@ import { MedicalHistoryComponent } from './medical-history/medical-history.compo
     EmployeeComponent,
     PrescriptionComponent,
     MedicalHistoryComponent,
+    DialogMedicalHistoryComponent,
+    DialogPrescriptionComponent,
+    DialogAllergyComponent,
+    DialogVisitsComponent,
+  ],
+  entryComponents: [
+    DialogMedicalHistoryComponent,
+    DialogPrescriptionComponent,
+    DialogAllergyComponent,
+    DialogVisitsComponent
   ],
   imports: [
     BrowserModule,
