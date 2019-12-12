@@ -20,6 +20,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { PrescriptionComponent } from './prescription/prescription.component';
 import { MedicalHistoryComponent } from './medical-history/medical-history.component';
+import {MatStepperModule} from "@angular/material/stepper";
 
 
 @NgModule({
@@ -37,13 +38,14 @@ import { MedicalHistoryComponent } from './medical-history/medical-history.compo
     PrescriptionComponent,
     MedicalHistoryComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    RouterModule.forRoot(appRoutes),
-    FormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        RouterModule.forRoot(appRoutes),
+        FormsModule,
+        MatStepperModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

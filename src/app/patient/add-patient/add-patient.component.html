@@ -3,20 +3,8 @@
     <span><h2>Add Patients</h2></span>
   </div>
   <hr>
-  <mat-accordion multi="false" [hideToggle]="true">
-    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Patient Profile
-        </mat-panel-title>
-        <mat-panel-description style="display: flex; justify-content: space-between">
-          <p style="flex-grow: 1">Enter patient's information</p>
-          <mat-icon>account_circle</mat-icon>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <mat-action-row>
-        <button mat-button color="primary" (click)="nextStep()">Next</button>
-      </mat-action-row>
+  <mat-vertical-stepper>
+    <mat-step label="Patient Profile">
       <div class="bio-grid">
         <h6 id="name">Name</h6>
         <mat-form-field appearance="outline" id="firstName">
@@ -53,18 +41,8 @@
           <input matInput>
         </mat-form-field>
       </div>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Contact
-        </mat-panel-title>
-        <mat-panel-description>
-          <p>Enter patient's contact information</p>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-
+    </mat-step>
+    <mat-step label="Contact Information">
       <div class="contact-grid">
         <h6 id="mobile">Mobile No.</h6>
         <mat-form-field appearance="outline" id="mobileField">
@@ -97,21 +75,9 @@
           <input matInput>
         </mat-form-field>
       </div>
-    </mat-expansion-panel>
 
-    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Guardian
-        </mat-panel-title>
-        <mat-panel-description>
-          <p>Enter patient's guardian information</p>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <mat-action-row>
-        <button mat-button color="primary" (click)="nextStep()">Next</button>
-      </mat-action-row>
-
+    </mat-step>
+    <mat-step label="Guardian Information">
       <div class="guardian-grid">
         <h6 id="guardianName">Name</h6>
         <mat-form-field appearance="outline" id="guardianNameField">
@@ -134,9 +100,10 @@
           <mat-label>Relationship</mat-label>
           <input matInput>
         </mat-form-field>
-
+        <div class="add-btn">
+          <button mat-raised-button color="primary">Add</button>
+        </div>
       </div>
-    </mat-expansion-panel>
-
-  </mat-accordion>
+    </mat-step>
+  </mat-vertical-stepper>
 </div>

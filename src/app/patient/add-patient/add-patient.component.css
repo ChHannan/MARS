@@ -23,7 +23,7 @@
 .bio-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(3, 60px);
+  grid-template-rows: repeat(3, 70px);
   grid-template-areas: ". name firstName middleName lastName ."
                        ". cnic cnicField dob dobField ."
                         ". weight weightField height heightField .";
@@ -32,7 +32,7 @@
 .contact-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(3, 60px);
+  grid-template-rows: repeat(3, 70px);
   grid-template-areas: ". mobile mobileField emergencyContact emergencyContactField ."
                        ". email emailField address addressField ."
                        ". city cityField country countryField .";
@@ -180,7 +180,7 @@
 .guardian-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(2, 60px);
+  grid-template-rows: repeat(3, 70px);
   grid-template-areas: ". guardianName guardianNameField guardianMobile guardianMobileField ."
   ". relation relationField guardianAddress guardianAddressField .";
 }
@@ -301,3 +301,10 @@
   }
 }
 
+.add-btn {
+  display: grid;
+  grid-column-start: 5;
+  grid-row-start: 3;
+  justify-self: flex-end;
+  align-self: center;
+}
