@@ -24,6 +24,7 @@ import { DialogMedicalHistoryComponent } from './patient/view-patient/dialog-med
 import { DialogPrescriptionComponent } from './patient/view-patient/dialog-prescription/dialog-prescription.component';
 import { DialogAllergyComponent } from './patient/view-patient/dialog-allergy/dialog-allergy.component';
 import { DialogVisitsComponent } from './patient/view-patient/dialog-visits/dialog-visits.component';
+import {MatStepperModule} from '@angular/material';
 
 
 @NgModule({
@@ -51,13 +52,14 @@ import { DialogVisitsComponent } from './patient/view-patient/dialog-visits/dial
     DialogAllergyComponent,
     DialogVisitsComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    RouterModule.forRoot(appRoutes),
-    FormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        RouterModule.forRoot(appRoutes),
+        FormsModule,
+        MatStepperModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
