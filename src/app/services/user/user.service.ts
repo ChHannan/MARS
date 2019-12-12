@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
-
 
 export interface DashboardLink {
   name: string;
@@ -35,7 +33,7 @@ export class UserService {
     {
       userType: 'nurse',
       links: [
-        {name: 'Patient', link: 'nurse'},
+        {name: 'Patient', link: 'patient'},
         {name: 'Profile', link: 'profile'}
       ]
     },
@@ -54,8 +52,6 @@ export class UserService {
     this.updateUser();
   }
   updateUser() {
-    console.log(this.userType);
     this.currentDashBoardUserLink = this.dashBoardUserLinks.find(ele => ele.userType === this.userType);
-    console.log(this.currentDashBoardUserLink);
   }
 }

@@ -7,13 +7,14 @@ import {LoginComponent} from './login/login.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 
 import {PatientComponent} from './patient/patient.component';
-import {NurseComponent} from './nurse/nurse.component';
-import {AdminComponent} from './admin/admin.component';
-import {PharmacyComponent} from './pharmacy/pharmacy.component';
 
 import {AddPatientComponent} from './patient/add-patient/add-patient.component';
 import {SearchPatientComponent} from './patient/search-patient/search-patient.component';
-import {ViewPatientComponent} from "./patient/view-patient/view-patient.component";
+import {ViewPatientComponent} from './patient/view-patient/view-patient.component';
+import {ProfileComponent} from './profile/profile.component';
+import {EmployeeComponent} from './employee/employee.component';
+import {PrescriptionComponent} from './prescription/prescription.component';
+import {MedicalHistoryComponent} from './medical-history/medical-history.component';
 
 
 export const appRoutes: Routes = [
@@ -27,9 +28,10 @@ export const appRoutes: Routes = [
           {path: ':patient_id', component: ViewPatientComponent}
         ]
       },
-      {path: 'nurse', component: NurseComponent},
-      {path: 'admin', component: AdminComponent},
-      {path: 'pharmacy', component: PharmacyComponent}
+      {path: 'profile', component: ProfileComponent},
+      {path: 'employee', component: EmployeeComponent},
+      {path: 'prescription', component: PrescriptionComponent},
+      {path: 'medical-history', component: MedicalHistoryComponent},
     ]
   }
 ];
