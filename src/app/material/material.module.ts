@@ -13,12 +13,12 @@ import {
   MatTableModule,
   MatPaginatorModule, MatSortModule, MatTabsModule,
   MatDatepickerModule, MatNativeDateModule,
-  MatDialogModule
+  MatDialogModule, MatTreeModule
 } from '@angular/material';
 
 const materialComponents = [MatButtonModule, MatToolbarModule, MatCardModule, MatFormFieldModule, MatInputModule,
   MatIconModule, MatSidenavModule , MatExpansionModule, MatGridListModule, MatSelectModule, MatTableModule,
-  MatPaginatorModule, MatSortModule, MatTabsModule, MatDatepickerModule, MatNativeDateModule,MatDialogModule];
+  MatPaginatorModule, MatSortModule, MatTabsModule, MatDatepickerModule, MatNativeDateModule, MatDialogModule, MatTreeModule];
 
 @NgModule({
   imports: [

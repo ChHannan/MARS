@@ -13,3 +13,13 @@
   width: 48%;
   margin-left: 2%;
 }
+@media screen and (max-width: 600px) {
+  .container {
+    display: block;
+    width: 250px;
+  }
+
+  #visitsField {
+    width: 250px;
+  }
+}

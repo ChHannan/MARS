@@ -17,3 +17,17 @@
   width: 48%;
   margin-left: 2%;
 }
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: block;
+    width: 250px;
+  }
+  #allergyNameField {
+    width: 250px;
+  }
+  #allergyDescriptionField {
+    width: 250px;
+
+  }
+}

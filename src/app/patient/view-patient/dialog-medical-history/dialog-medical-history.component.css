@@ -21,3 +21,21 @@
   width: 48%;
   margin-left: 2%;
 }
+@media screen and (max-width: 600px) {
+  .container {
+    display: block;
+    width: 250px;
+  }
+
+  #typeField {
+    width: 250px;
+  }
+
+  #descriptionField {
+    width: 250px;
+  }
+
+  #timeField {
+    width: 4250px;
+  }
+}

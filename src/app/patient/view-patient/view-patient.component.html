@@ -16,11 +16,12 @@
           <mat-card-header>
             <mat-card-title>Medical History</mat-card-title>
             <div id="addMedicalHistory">
-              <button mat-button (click)="openMedicalHistoryDialog()">
+              <a (click)="openMedicalHistoryDialog()">
               <mat-icon class="material-icons-outlined">add_box</mat-icon>
-              </button>
+              </a>
             </div>
           </mat-card-header>
+
           <hr>
           <table mat-table [dataSource]="medicalHistoryDataSource" class="mat-elevation-z1">
             <ng-container matColumnDef="type">
@@ -49,9 +50,9 @@
           <mat-card-header>
             <mat-card-title>Prescriptions</mat-card-title>
             <div id="addPrescription">
-              <button mat-button (click)="openPrescriptionDialog()">
+              <a (click)="openPrescriptionDialog()">
                 <mat-icon class="material-icons-outlined">add_box</mat-icon>
-              </button>
+              </a>
             </div>
           </mat-card-header>
           <hr>
@@ -89,9 +90,9 @@
           <mat-card-header>
             <mat-card-title>Allergies</mat-card-title>
             <div id="addAllergy">
-              <button mat-button (click)="openAllergyDialog()">
+              <a (click)="openAllergyDialog()">
                 <mat-icon class="material-icons-outlined">add_box</mat-icon>
-              </button>
+              </a>
             </div>
           </mat-card-header>
           <hr>
@@ -125,9 +126,9 @@
     <mat-card-header>
       <mat-card-title>Visits</mat-card-title>
       <div id="addVisits">
-        <button mat-button (click)="openVisitDialog()">
+        <a (click)="openVisitDialog()">
           <mat-icon class="material-icons-outlined">add_box</mat-icon>
-        </button>
+        </a>
       </div>
     </mat-card-header>
     <hr>
