@@ -26,6 +26,8 @@ import { DialogAllergyComponent } from './patient/view-patient/dialog-allergy/di
 import { DialogVisitsComponent } from './patient/view-patient/dialog-visits/dialog-visits.component';
 import {MatStepperModule} from '@angular/material';
 import {MatListModule} from "@angular/material/list";
+import { AllergyComponent } from './allergy/allergy.component';
+import { VisitsComponent } from './visits/visits.component';
 
 
 @NgModule({
@@ -46,6 +48,8 @@ import {MatListModule} from "@angular/material/list";
     DialogPrescriptionComponent,
     DialogAllergyComponent,
     DialogVisitsComponent,
+    AllergyComponent,
+    VisitsComponent,
   ],
   entryComponents: [
     DialogMedicalHistoryComponent,

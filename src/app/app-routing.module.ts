@@ -15,6 +15,8 @@ import {ProfileComponent} from './profile/profile.component';
 import {EmployeeComponent} from './employee/employee.component';
 import {PrescriptionComponent} from './prescription/prescription.component';
 import {MedicalHistoryComponent} from './medical-history/medical-history.component';
+import {AllergyComponent} from './allergy/allergy.component';
+import {VisitsComponent} from './visits/visits.component';
 
 
 export const appRoutes: Routes = [
@@ -32,6 +34,8 @@ export const appRoutes: Routes = [
       {path: 'employee', component: EmployeeComponent},
       {path: 'prescription', component: PrescriptionComponent},
       {path: 'medical-history', component: MedicalHistoryComponent},
+      {path: 'allergy', component: AllergyComponent},
+      {path: 'visits', component: VisitsComponent},
     ]
   }
 ];

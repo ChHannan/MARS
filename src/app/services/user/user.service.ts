@@ -42,6 +42,8 @@ export class UserService {
       links: [
         {name: 'Prescription', link: 'prescription'},
         {name: 'Medical History', link: 'medical-history'},
+        {name: 'Allergy', link: 'allergy'},
+        {name: 'Visits', link: 'visits'},
         {name: 'Profile', link: 'profile'}
       ]
     }
