@@ -1,1 +1,57 @@
-<p>profile works!</p>
+<mat-card>
+  <div class="profile-grid">
+    <img id="img" height="300px"  mat-card-image style="margin: 2px" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <h6 id="name">Watson Cratos</h6>
+    <p id="occ">Senior Cardiologist</p>
+    <div id="join">
+      <p>Last edited: 12-05-2010</p>
+    </div>
+    <mat-icon id="icon">email</mat-icon>
+    <p id="mail">bestdoctor@gmail.com</p>
+    <mat-icon id="icon2">phone</mat-icon>
+    <p id="phone">1-7298-7929-26</p>
+  </div>
+</mat-card>
+<hr>
+<mat-tab-group backgroundColor="primary">
+  <mat-tab label="PROFILE">
+    <div class="profile-grid2">
+      <div id="group">
+        <h5 class="big-heading" >PERSONAL INFORMATION</h5>
+        <hr style="margin-left: 20px">
+        <h6 class="heading">CNIC No.</h6>
+        <h5 class="info" >42101-41313-9</h5>
+        <h6 class="heading">Date of Birth</h6>
+        <h5 class="info" >01-04-2045</h5>
+      </div>
+      <div id="group2">
+        <h5 class="big-heading" >MEASUREMENTS</h5>
+        <hr style="margin-left: 20px">
+        <h6 class="heading">Height</h6>
+        <h5 class="info" >1.82 m</h5>
+        <h6 class="heading">Weight</h6>
+        <h5 class="info">79 kg</h5>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="CONTACT">
+    <h5 style="margin: 20px; font-family: 'Arial Black'" >PERSONAL INFORMATION</h5>
+    <hr style="margin-left: 20px">
+    <h6 style="margin: 20px; color: dimgrey; font-size: 13px; font-family: 'Arial Black'">Mobile No.</h6>
+    <h5 style="margin-left: 20px; padding-bottom: 5px; font-size: 16px; font-weight: bold;" >0331-3100-884</h5>
+    <h6 style="margin: 20px; color: dimgrey; font-size: 13px; font-family: 'Arial Black'">Emergency Contact</h6>
+    <h5 style="margin-left: 20px; padding-bottom: 5px; font-size: 16px; font-weight: bold;" >0334-4242-532</h5>
+    <h6 style="margin: 20px; color: dimgrey; font-size: 13px; font-family: 'Arial Black'">Home Phone</h6>
+    <h5 style="margin-left: 20px; padding-bottom: 5px; font-size: 16px; font-weight: bold;" >051-42422-1311</h5>
+    <h5 style="margin: 20px; font-family: 'Arial Black'" >ADDRESS</h5>
+    <hr style="margin-left: 20px">
+    <h6 style="margin: 20px; color: dimgrey; font-size: 13px; font-family: 'Arial Black'">Street/Area</h6>
+    <h5 style="margin-left: 20px; padding-bottom: 5px; font-size: 16px; font-weight: bold;" >1183 Camp Nou</h5>
+    <h6 style="margin: 20px; color: dimgrey; font-size: 13px; font-family: 'Arial Black'">City</h6>
+    <h5 style="margin-left: 20px; padding-bottom: 5px; font-size: 16px; font-weight: bold;" >Barcelona</h5>
+    <h6 style="margin: 20px; color: dimgrey; font-size: 13px; font-family: 'Arial Black'">Country</h6>
+    <h5 style="margin-left: 20px; padding-bottom: 5px; font-size: 16px; font-weight: bold;" >Spain</h5>
+  </mat-tab>
+  <mat-tab label="EMPLOYMENT">EMPLOYMENT</mat-tab>
+  <mat-tab label="GUARDIAN">GUARDIAN</mat-tab>
+</mat-tab-group>

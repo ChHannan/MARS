@@ -25,6 +25,7 @@ import { DialogPrescriptionComponent } from './patient/view-patient/dialog-presc
 import { DialogAllergyComponent } from './patient/view-patient/dialog-allergy/dialog-allergy.component';
 import { DialogVisitsComponent } from './patient/view-patient/dialog-visits/dialog-visits.component';
 import {MatStepperModule} from '@angular/material';
+import {MatListModule} from "@angular/material/list";
 
 
 @NgModule({
@@ -59,7 +60,9 @@ import {MatStepperModule} from '@angular/material';
         RouterModule.forRoot(appRoutes),
         FormsModule,
         MatStepperModule,
-    ],
+  MatListModule,
+
+],
   providers: [],
   bootstrap: [AppComponent]
 })

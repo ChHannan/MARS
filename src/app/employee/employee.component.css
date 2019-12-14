@@ -1,0 +1,303 @@
+.margin-1 {
+  margin: 1em;
+}
+
+.margin-top-1 {
+  margin-top: 1em;
+}
+
+.margin-left-1 {
+  margin-left: 1em;
+}
+
+.margin-left-3 {
+  margin-left: 3em;
+}
+
+.mat-expansion-panel-header-title {
+  display: flex;
+  flex-grow: 1.62;
+  margin-right: 16px
+}
+
+.bio-grid {
+  display: grid;
+  grid-template-columns: 5% repeat(4, 20%) 2%;
+  grid-template-rows: repeat(3, 60px);
+  grid-template-areas: ". name firstName middleName lastName ."
+  ". cnic cnicField dob dobField ."
+  ". weight weightField height heightField .";
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 5% repeat(4, 20%) 2%;
+  grid-template-rows: repeat(3, 60px);
+  grid-template-areas: ". mobile mobileField emergencyContact emergencyContactField ."
+  ". email emailField address addressField ."
+  ". city cityField country countryField .";
+}
+
+#name {
+  grid-area: name;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+#cnic {
+  grid-area: cnic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+#dob {
+  grid-area: dob;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#dobField {
+  grid-area: dobField;
+}
+
+#weight {
+  grid-area: weight;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+#height {
+  grid-area: height;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#firstName {
+  grid-area: firstName;
+}
+
+#middleName {
+  grid-area: middleName;
+}
+
+#lastName {
+  grid-area: lastName;
+}
+#cnicField {
+  grid-area: cnicField;
+}
+
+#weightField {
+  grid-area: weightField;
+}
+
+/*#emailField {*/
+/*grid-area: emailField;*/
+/*}*/
+
+#heightField {
+  grid-area: heightField;
+}
+
+.mat-form-field {
+  width: 220px;
+}
+
+#mobile{
+  grid-area: mobile;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+#mobileField {
+  grid-area: mobileField;
+}
+
+#emergencyContact {
+  grid-area: emergencyContact;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#emergencyContactField {
+  grid-area: emergencyContactField;
+
+}
+
+#email {
+  grid-area: email;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+#emailField {
+  grid-area: emailField;
+}
+#address {
+  grid-area: address;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#addressField {
+  grid-area: addressField;
+  /*width: 700px;*/
+}
+#city {
+  grid-area: city;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+#cityField {
+  grid-area: cityField;
+}
+#country {
+  grid-area: country;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#countryField {
+  grid-area: countryField;
+}
+
+.guardian-grid {
+  display: grid;
+  grid-template-columns: 5% repeat(4, 20%) 2%;
+  grid-template-rows: repeat(2, 60px);
+  grid-template-areas: ". guardianName guardianNameField guardianMobile guardianMobileField ."
+  ". relation relationField guardianAddress guardianAddressField .";
+}
+
+#guardianName {
+  grid-area: guardianName;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#guardianNameField {
+  grid-area: guardianNameField;
+}
+
+#guardianMobile {
+  grid-area: guardianMobile;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#guardianMobileField {
+  grid-area: guardianMobileField;
+}
+
+#relation {
+  grid-area: relation;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#relationField {
+  grid-area: relationField;
+}
+
+#guardianAddress {
+  grid-area: guardianAddress;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#guardianAddressField {
+  grid-area: guardianAddressField;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+  .bio-grid {
+    display: grid;
+    grid-template-columns: 5%;
+    grid-template-rows: repeat(12, 60px);
+    grid-template-areas: "name" "firstName" "middleName" "lastName" "cnic" "cnicField" "dob" "dobField" "weight" "weightField" "height" "heightField";
+  }
+
+
+  #cnic {
+    grid-area: cnic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+
+  #height {
+    grid-area: height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  #dob {
+    grid-area: dob;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 5%;
+    grid-template-rows: repeat(12, 60px);
+    grid-template-areas: "mobile" "mobileField" "emergencyContact" "emergencyContactField" "email" "emailField" "address" "addressField" "city" "cityField" "country" "countryField";
+  }
+
+  #mobile {
+    grid-area: mobile;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+  }
+  #email {
+    grid-area: email;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+  }
+
+  .guardian-grid {
+    display: grid;
+    grid-template-columns: 5%;
+    grid-template-rows: repeat(8, 60px);
+    grid-template-areas: "guardianName" "guardianNameField" "guardianMobile" "guardianMobileField"
+    "relation" "relationField" "guardianAddress" "guardianAddressField"
+  ;
+  }
+}
+

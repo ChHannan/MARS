@@ -1,0 +1,142 @@
+.profile-grid {
+  display: grid;
+  grid-template-columns: 23% 4% 3% 20% auto 15%;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "img . name name . ."
+  "img . occ occ . ."
+  "img . . . . ."
+  "img . . . . ."
+  "img . icon1 email . ."
+  "img . icon2 phone . ."
+  "img . . . . join"
+;
+}
+
+#img {
+  grid-area: img;
+  display: flex;
+}
+
+/*#tabs {*/
+/*  */
+/*}*/
+
+/*.profile-info-grid{*/
+/*  display: grid;*/
+/*  grid-template-columns: 100%;*/
+/*  grid-template-rows: repeat(5, 20%);*/
+/*}*/
+
+#name {
+  grid-area: name;
+  align-items: center;
+  color: black;
+  font-width: bold;
+  font-size: 40px;
+}
+
+/*.profile-info-split-grid{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(2, 50%);
+}*/
+
+#occ {
+  grid-area: occ;
+  color: dimgray;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.profile-info-split-again-grid{
+  display: grid;
+  grid-template-columns: 10% 90%;
+  grid-template-rows: 100%;
+}
+
+#mail {
+  grid-area: email;
+  justify-content: center;
+  color: black;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 15px;
+}
+
+#phone {
+  display: flex;
+  grid-area: phone;
+  color: black;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 15px;
+}
+
+#icon {
+  grid-area: icon1;
+  color: gray;
+
+}
+
+#icon2 {
+  grid-area: icon2;
+  color: gray;
+
+}
+
+/*#color {*/
+/*  grid-area: color;*/
+/*  background-color: mediumblue;*/
+/*}*/
+
+#edit {
+  grid-area: edit;
+  color: gray;
+  align-content: flex-start;
+  justify-self: flex-end;
+  font-style: italic;
+  font-size: 12px;
+}
+
+#join {
+  grid-area: join;
+  color: gray;
+  justify-self: center;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.profile-grid2 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  grid-template-areas01: "group1 group2";
+}
+
+#group {
+  grid-area: group1;
+}
+
+#group2 {
+  grid-area: group2;
+}
+
+h6.heading {
+  margin-left: 20px;
+  color: dimgrey;
+  font-size: 12px;
+  font-family: 'Arial Black'
+}
+
+h5.big-heading {
+  margin: 20px;
+  font-family: 'Arial Black'
+}
+
+h5.info {
+  margin-left: 20px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
