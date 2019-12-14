@@ -21,3 +21,22 @@
   margin-left: 2%;
 }
 
+@media screen and (max-width: 600px) {
+  .container {
+    display: block;
+    width: 250px;
+  }
+
+  #medicineField {
+    width: 250px;
+  }
+
+  #doseField {
+    width: 250px;
+  }
+
+  #frequencyField {
+    width: 250px;
+  }
+}
+

@@ -20,27 +20,20 @@ table {
   width: 100%;
 }
 
-#addMedicalHistory {
-  font-size: 25px;
-  margin-left: 490px;
-  display: block;
+mat-card-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
-#addPrescription {
+#addMedicalHistory, #addPrescription, #addAllergy, #addVisits {
   font-size: 25px;
-  margin-left: 480px;
-  display: block;
 }
-#addAllergy {
-  font-size: 25px;
-  margin-left: 520px;
-  display: block;
+mat-icon {
+  cursor: pointer;
 }
-#addVisits {
-  font-size: 25px;
-  display: block;
-  margin-left: 170px;
-}
+
+
 
 
 
