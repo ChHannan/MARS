@@ -22,8 +22,9 @@ export class ViewPatientComponent implements OnInit {
     {type: 'Disease', description: 'Heart', time: '1 year ago'},
     {type: 'Surgery', description: 'Heart Surgery', time: '6 months ago'},
     {type: 'Disease', description: 'Liver Disease', time: '1 year ago'},
-
   ];
+  medicalHistoryDataSource = new MatTableDataSource((this.medicalHistory));
+  displayedColumnsMedicalHistory: string[] = ['type', 'description', 'time'];
   prescription = [
     {serialNo: 1, medicine: 'Panadol', dose: '100mg', frequency: 'Every Morning'},
     {serialNo: 2, medicine: 'Rozerem', dose: '100mg', frequency: 'At bed'},
@@ -31,18 +32,15 @@ export class ViewPatientComponent implements OnInit {
     {serialNo: 4, medicine: 'Halcion', dose: '100mg', frequency: '3x a day'},
     {serialNo: 5, medicine: 'Sonata', dose: '100mg', frequency: 'Every Morning'},
   ];
+  displayedColumnsPrescriptions: string[] = ['serialNo', 'medicine', 'dose', 'frequency'];
+  presciptionDataSource = new MatTableDataSource(this.prescription);
   allergies = [
     {serialNo: 1, name: 'Acne', description: 'Allergic to medicines containing benzoyl peroxide or salicylic acid'},
     {serialNo: 2, name: 'Food Allergy', description: 'Allergic to medicines containing benzoyl peroxide or salicylic acid'},
     {serialNo: 3, name: 'Insect Sting', description: 'Allergic to medicines containing benzoyl peroxide or salicylic acid'}
   ];
-
-  displayedColumnsPrescriptions: string[] = ['serialNo', 'medicine', 'dose', 'frequency'];
-  presciptionDataSource = new MatTableDataSource(this.prescription);
   allergiesDataSource = new MatTableDataSource(this.allergies);
   displayedColumnsAllergy: string[] = ['serialNo', 'name', 'description'];
-  medicalHistoryDataSource = new MatTableDataSource((this.medicalHistory));
-  displayedColumnsMedicalHistory: string[] = ['type', 'description', 'time'];
 
   patient = {};
   openMedicalHistoryDialog() {
