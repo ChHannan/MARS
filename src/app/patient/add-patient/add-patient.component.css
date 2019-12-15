@@ -29,6 +29,10 @@
                         ". weight weightField height heightField .";
 }
 
+.bio-grid mat-form-field {
+  width: 90%;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
@@ -36,6 +40,10 @@
   grid-template-areas: ". mobile mobileField emergencyContact emergencyContactField ."
                        ". email emailField address addressField ."
                        ". city cityField country countryField .";
+}
+
+.contact-grid mat-form-field {
+  width: 90%;
 }
 
 #name {
@@ -183,6 +191,10 @@
   grid-template-rows: repeat(3, 70px);
   grid-template-areas: ". guardianName guardianNameField guardianMobile guardianMobileField ."
   ". relation relationField guardianAddress guardianAddressField .";
+}
+
+.guardian-grid mat-form-field {
+  width: 90%;
 }
 
 #guardianName {
