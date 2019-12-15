@@ -23,10 +23,9 @@
 .bio-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(3, 60px);
+  grid-template-rows: repeat(2, 60px);
   grid-template-areas: ". name firstName middleName lastName ."
-  ". cnic cnicField dob dobField ."
-  ". weight weightField height heightField .";
+  ". cnic cnicField dob dobField .";
 }
 
 .contact-grid {
@@ -65,21 +64,6 @@
   grid-area: dobField;
 }
 
-#weight {
-  grid-area: weight;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-}
-
-#height {
-  grid-area: height;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 0;
-}
 
 #firstName {
   grid-area: firstName;
@@ -94,18 +78,6 @@
 }
 #cnicField {
   grid-area: cnicField;
-}
-
-#weightField {
-  grid-area: weightField;
-}
-
-/*#emailField {*/
-/*grid-area: emailField;*/
-/*}*/
-
-#heightField {
-  grid-area: heightField;
 }
 
 .mat-form-field {
@@ -177,61 +149,50 @@
   grid-area: countryField;
 }
 
-.guardian-grid {
+.service-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
   grid-template-rows: repeat(2, 60px);
-  grid-template-areas: ". guardianName guardianNameField guardianMobile guardianMobileField ."
-  ". relation relationField guardianAddress guardianAddressField .";
+  grid-template-areas: ". occupation occupationField joiningDate joiningDateField ."
+  ". assignedNurse assignedNurseField . . .";
 }
 
-#guardianName {
-  grid-area: guardianName;
+#occupation {
+  grid-area: occupation;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
 
-#guardianNameField {
-  grid-area: guardianNameField;
+#occupationField {
+  grid-area: occupationField;
 }
 
-#guardianMobile {
-  grid-area: guardianMobile;
+#joiningDate {
+  grid-area: joiningDate;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
 
-#guardianMobileField {
-  grid-area: guardianMobileField;
+#joiningDateField {
+  grid-area: joiningDateField;
 }
 
-#relation {
-  grid-area: relation;
+#assignedNurse {
+  grid-area: assignedNurse;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
 
-#relationField {
-  grid-area: relationField;
+#assignedNurseField {
+  grid-area: assignedNurseField;
 }
 
-#guardianAddress {
-  grid-area: guardianAddress;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 0;
-}
-
-#guardianAddressField {
-  grid-area: guardianAddressField;
-}
 
 
 
@@ -240,8 +201,8 @@
   .bio-grid {
     display: grid;
     grid-template-columns: 5%;
-    grid-template-rows: repeat(12, 60px);
-    grid-template-areas: "name" "firstName" "middleName" "lastName" "cnic" "cnicField" "dob" "dobField" "weight" "weightField" "height" "heightField";
+    grid-template-rows: repeat(8, 60px);
+    grid-template-areas: "name" "firstName" "middleName" "lastName" "cnic" "cnicField" "dob" "dobField" ;
   }
 
 
@@ -291,12 +252,12 @@
     margin: 0;
   }
 
-  .guardian-grid {
+  .service-grid {
     display: grid;
     grid-template-columns: 5%;
-    grid-template-rows: repeat(8, 60px);
-    grid-template-areas: "guardianName" "guardianNameField" "guardianMobile" "guardianMobileField"
-    "relation" "relationField" "guardianAddress" "guardianAddressField"
+    grid-template-rows: repeat(6, 60px);
+    grid-template-areas: "occupation" "occupationField" "joiningDate" "joiningDateField"
+    "assignedNurse" "assignedNurseField"
   ;
   }
 }
