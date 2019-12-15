@@ -1,7 +1,7 @@
 <mat-card>
   <div class="profile-grid">
-    <img id="img" height="300px"  mat-card-image style="margin: 2px" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <h6 id="name">Watson Cratos</h6>
+    <img id="img" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <h6 id="name">Watson Cratos, MD</h6>
     <p id="occ">Senior Cardiologist</p>
     <div id="join">
       <p>Last edited: 12-05-2010</p>
@@ -12,21 +12,25 @@
     <p id="phone">1-7298-7929-26</p>
   </div>
 </mat-card>
-<hr>
-<mat-tab-group backgroundColor="primary">
+<hr style="margin: 20px">
+<mat-tab-group>
   <mat-tab label="PROFILE">
     <div class="profile-grid2">
-      <div id="group">
+      <div id="group1">
         <h5 class="big-heading" >PERSONAL INFORMATION</h5>
-        <hr style="margin-left: 20px">
+        <hr style="margin: 20px">
         <h6 class="heading">CNIC No.</h6>
         <h5 class="info" >42101-41313-9</h5>
         <h6 class="heading">Date of Birth</h6>
         <h5 class="info" >01-04-2045</h5>
+        <h6 class="heading">Age</h6>
+        <h5 class="info">37 y/o</h5>
+        <h6 class="heading">Gender</h6>
+        <h5 class="info">Male</h5>
       </div>
       <div id="group2">
         <h5 class="big-heading" >MEASUREMENTS</h5>
-        <hr style="margin-left: 20px">
+        <hr style="margin: 20px">
         <h6 class="heading">Height</h6>
         <h5 class="info" >1.82 m</h5>
         <h6 class="heading">Weight</h6>
@@ -35,23 +39,67 @@
     </div>
   </mat-tab>
   <mat-tab label="CONTACT">
-    <h5 style="margin: 20px; font-family: 'Arial Black'" >PERSONAL INFORMATION</h5>
-    <hr style="margin-left: 20px">
-    <h6 style="margin: 20px; color: dimgrey; font-size: 13px; font-family: 'Arial Black'">Mobile No.</h6>
-    <h5 style="margin-left: 20px; padding-bottom: 5px; font-size: 16px; font-weight: bold;" >0331-3100-884</h5>
-    <h6 style="margin: 20px; color: dimgrey; font-size: 13px; font-family: 'Arial Black'">Emergency Contact</h6>
-    <h5 style="margin-left: 20px; padding-bottom: 5px; font-size: 16px; font-weight: bold;" >0334-4242-532</h5>
-    <h6 style="margin: 20px; color: dimgrey; font-size: 13px; font-family: 'Arial Black'">Home Phone</h6>
-    <h5 style="margin-left: 20px; padding-bottom: 5px; font-size: 16px; font-weight: bold;" >051-42422-1311</h5>
-    <h5 style="margin: 20px; font-family: 'Arial Black'" >ADDRESS</h5>
-    <hr style="margin-left: 20px">
-    <h6 style="margin: 20px; color: dimgrey; font-size: 13px; font-family: 'Arial Black'">Street/Area</h6>
-    <h5 style="margin-left: 20px; padding-bottom: 5px; font-size: 16px; font-weight: bold;" >1183 Camp Nou</h5>
-    <h6 style="margin: 20px; color: dimgrey; font-size: 13px; font-family: 'Arial Black'">City</h6>
-    <h5 style="margin-left: 20px; padding-bottom: 5px; font-size: 16px; font-weight: bold;" >Barcelona</h5>
-    <h6 style="margin: 20px; color: dimgrey; font-size: 13px; font-family: 'Arial Black'">Country</h6>
-    <h5 style="margin-left: 20px; padding-bottom: 5px; font-size: 16px; font-weight: bold;" >Spain</h5>
+    <div class="profile-grid2">
+      <div id="group1">
+        <h5 class="big-heading" >CONTACT INFORMATION</h5>
+        <hr style="margin: 20px">
+        <h6 class="heading">Mobile No.</h6>
+        <h5 class="info" >0331-3100-884</h5>
+        <h6 class="heading">Emergency Contact</h6>
+        <h5 class="info">0334-4242-532</h5>
+        <h6 class="heading">Home Phone</h6>
+        <h5 class="info">051-42422-1311</h5>
+      </div>
+      <div id="group2">
+        <h5 class="big-heading" >ADDRESS</h5>
+        <hr style="margin: 20px">
+        <h6 class="heading">Street/Area</h6>
+        <h5 class="info">1183 Camp Nou</h5>
+        <h6 class="heading">City</h6>
+        <h5 class="info">Barcelona</h5>
+        <h6 class="heading">Country</h6>
+        <h5 class="info">Spain</h5>
+      </div>
+    </div>
   </mat-tab>
-  <mat-tab label="EMPLOYMENT">EMPLOYMENT</mat-tab>
-  <mat-tab label="GUARDIAN">GUARDIAN</mat-tab>
+  <mat-tab label="EMPLOYMENT">
+    <div class="profile-grid2">
+      <div id="group1">
+        <h5 class="big-heading" >DEPARTMENT INFORMATION</h5>
+        <hr style="margin: 20px">
+        <h6 class="heading">Department</h6>
+        <h5 class="info" >Cardiology</h5>
+        <h6 class="heading">Date Joined</h6>
+        <h5 class="info" >01-04-2033</h5>
+      </div>
+      <div id="group2">
+        <h5 class="big-heading" >ADDITIONAL INFORMATION</h5>
+        <hr style="margin: 20px">
+        <h6 class="heading">Nurse Assigned</h6>
+        <h5 class="info" >Anita Ruiz</h5>
+        <h6 class="heading">Years of Experience</h6>
+        <h5 class="info">11 years</h5>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="GUARDIAN">
+    <div class="profile-grid2">
+      <div id="group1">
+        <h5 class="big-heading" >GUARDIAN INFORMATION</h5>
+        <hr style="margin: 20px">
+        <h6 class="heading">Name</h6>
+        <h5 class="info" >Ronald </h5>
+        <h6 class="heading">Date Joined</h6>
+        <h5 class="info" >01-04-2033</h5>
+      </div>
+      <div id="group2">
+        <h5 class="big-heading" >GUARDIAN CONTACT</h5>
+        <hr style="margin: 20px">
+        <h6 class="heading">Contact No.</h6>
+        <h5 class="info" >0341-1442-867</h5>
+        <h6 class="heading">Address</h6>
+        <h5 class="info">3456 Santiago Bernaleo, Madrid, Spain</h5>
+      </div>
+    </div>
+  </mat-tab>
 </mat-tab-group>

@@ -1,21 +1,24 @@
 .profile-grid {
   display: grid;
-  grid-template-columns: 23% 4% 3% 20% auto 15%;
+  grid-template-columns: 15% 4% 3% 20% auto 15%;
   grid-template-rows: auto;
   grid-template-areas:
   "img . name name . ."
   "img . occ occ . ."
   "img . . . . ."
   "img . . . . ."
+  "img . . . . ."
   "img . icon1 email . ."
-  "img . icon2 phone . ."
-  "img . . . . join"
+  "img . icon2 phone . join"
 ;
 }
 
 #img {
   grid-area: img;
   display: flex;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
 /*#tabs {*/
@@ -109,12 +112,12 @@
 
 .profile-grid2 {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 33% 33% 33% 1%;
   grid-template-rows: auto;
-  grid-template-areas01: "group1 group2";
+  grid-template-areas: "group1 group2 . .";
 }
 
-#group {
+#group1 {
   grid-area: group1;
 }
 
@@ -140,3 +143,42 @@ h5.info {
   font-size: 16px;
   font-weight: bold;
 }
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 600px){
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 4% 8% 76% 12%;
+    grid-template-rows: auto;
+    grid-template-areas:
+      ". . img . "
+      ". . img . "
+      ". name name ."
+      ". occ occ ."
+      ". . . . "
+      ". . . . "
+      ". icon1 email ."
+      ". icon2 phone ."
+      ". . join ."
+  }
+
+
+  #img {
+    grid-area: img;
+    display: flex;
+    align-self: center;
+  }
+
+  .profile-grid2 {
+    display: grid;
+    grid-template-columns: 2% 96% 2%;
+    grid-template-rows: auto;
+    grid-template-areas:
+      ". group1 ."
+      ". group2 .";
+  }
+}
+
+
+
