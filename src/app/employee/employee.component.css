@@ -27,27 +27,22 @@
   grid-template-areas: ". name firstName middleName lastName ."
   ". cnic cnicField dob dobField .";
 }
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(3, 60px);
-  grid-template-areas: ". mobile mobileField emergencyContact emergencyContactField ."
-  ". email emailField address addressField ."
-  ". city cityField country countryField .";
+.bio-grid mat-form-field {
+  width: 90%;
 }
+
 
 #name {
   grid-area: name;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
 #cnic {
   grid-area: cnic;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
@@ -80,14 +75,23 @@
   grid-area: cnicField;
 }
 
-.mat-form-field {
-  width: 220px;
+.contact-grid {
+  display: grid;
+  grid-template-columns: 5% repeat(4, 20%) 2%;
+  grid-template-rows: repeat(3, 60px);
+  grid-template-areas: ". mobile mobileField emergencyContact emergencyContactField ."
+  ". email emailField address addressField ."
+  ". city cityField country countryField .";
+}
+.contact-grid .mat-form-field {
+  width: 90%;
+
 }
 
 #mobile{
   grid-area: mobile;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
@@ -110,7 +114,7 @@
 #email {
   grid-area: email;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
@@ -131,7 +135,7 @@
 #city {
   grid-area: city;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
@@ -149,24 +153,51 @@
   grid-area: countryField;
 }
 
-.service-grid {
+.doctor-employment-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(2, 60px);
-  grid-template-areas: ". occupation occupationField joiningDate joiningDateField ."
-  ". assignedNurse assignedNurseField . . .";
+  grid-template-rows: repeat(3, 60px);
+  grid-template-areas: ". speciality specialityField doctorQualification doctorQualificationField ."
+  ". medicalCollege medicalCollegeField joiningDate joiningDateField ."
+  ". assignedNurse assignedNurseField doctorShifts doctorShiftsField .";
+}
+.doctor-employment-grid mat-form-field {
+  width: 90%;
 }
 
-#occupation {
-  grid-area: occupation;
+#speciality {
+  grid-area: speciality;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
 
-#occupationField {
-  grid-area: occupationField;
+#specialityField {
+  grid-area: specialityField;
+}
+
+#doctorQualification {
+  grid-area: doctorQualification;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#doctorQualificationField {
+  grid-area: doctorQualificationField;
+}
+
+#medicalCollege {
+  grid-area: medicalCollege;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#medicalCollegeField {
+  grid-area: medicalCollegeField;
 }
 
 #joiningDate {
@@ -193,72 +224,120 @@
   grid-area: assignedNurseField;
 }
 
+#doctorShifts {
+  grid-area: doctorShifts;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#doctorShiftsField {
+  grid-area: doctorShiftsField;
+}
 
 
+.nurse-employment-grid {
+  display: grid;
+  grid-template-columns: 5% repeat(4, 20%) 2%;
+  grid-template-rows: repeat(2, 60px);
+  grid-template-areas: ". nurseEducation nurseEducationField institution institutionField ."
+  ". nurseShifts nurseShiftsField nurseJoiningDate nurseJoiningDateField .";
+}
+.nurse-employment-grid mat-form-field {
+  width: 90%;
+}
+#nurseEducation {
+  grid-area: nurseEducation;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
 
+#nurseEducationField {
+  grid-area: nurseEducationField;
+}
+
+#institution {
+  grid-area: institution;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#institutionField {
+  grid-area: institutionField;
+}
+
+#nurseShifts {
+  grid-area: nurseShifts;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#nurseShiftsField {
+  grid-area: nurseShiftsField;
+}
+
+#nurseJoiningDate {
+  grid-area: nurseJoiningDate;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#nurseJoiningDateField {
+  grid-area: nurseJoiningDateField;
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-btn {
+  width: 30px;
+  margin-right: 30px;
+}
 
 @media screen and (max-width: 600px) {
   .bio-grid {
     display: grid;
-    grid-template-columns: 5%;
     grid-template-rows: repeat(8, 60px);
     grid-template-areas: "name" "firstName" "middleName" "lastName" "cnic" "cnicField" "dob" "dobField" ;
   }
 
-
-  #cnic {
-    grid-area: cnic;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+  .bio-grid mat-form-field, .contact-grid mat-form-field,
+  .doctor-employment-grid mat-form-field,.nurse-employment-grid mat-form-field {
+    max-width: 220px;
+    min-width: 180px;
   }
 
-
-  #height {
-    grid-area: height;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-  }
-  #dob {
-    grid-area: dob;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-  }
 
   .contact-grid {
     display: grid;
-    grid-template-columns: 5%;
     grid-template-rows: repeat(12, 60px);
-    grid-template-areas: "mobile" "mobileField" "emergencyContact" "emergencyContactField" "email" "emailField" "address" "addressField" "city" "cityField" "country" "countryField";
+    grid-template-areas: "mobile" "mobileField" "emergencyContact" "emergencyContactField"
+                          "email" "emailField" "address" "addressField" "city" "cityField" "country" "countryField";
   }
 
-  #mobile {
-    grid-area: mobile;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0;
-  }
-  #email {
-    grid-area: email;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0;
-  }
-
-  .service-grid {
+  .doctor-employment-grid {
     display: grid;
-    grid-template-columns: 5%;
-    grid-template-rows: repeat(6, 60px);
-    grid-template-areas: "occupation" "occupationField" "joiningDate" "joiningDateField"
-    "assignedNurse" "assignedNurseField"
-  ;
+    grid-template-rows: repeat(12, 60px);
+    grid-template-areas: "speciality" "specialityField" "doctorQualification" "doctorQualificationField"
+    "medicalCollege" "medicalCollegeField" "joiningDate" "joiningDateField"
+    "assignedNurse" "assignedNurseField" "doctorShifts" "doctorShiftsField";
   }
+  .nurse-employment-grid {
+    display: grid;
+    grid-template-rows: repeat(8, 60px);
+    grid-template-areas: "nurseEducation" "nurseEducationField" "institution" "institutionField"
+    "nurseShifts" "nurseShiftsField" "nurseJoiningDate" "nurseJoiningDateField";
+  }
+  
 }
 

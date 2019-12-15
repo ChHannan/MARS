@@ -73,11 +73,21 @@
     </mat-step>
 
 
-    <mat-step label="Service  Info">
-      <div class="service-grid">
-        <h6 id="occupation">Occupation</h6>
-        <mat-form-field appearance="outline" id="occupationField">
-          <mat-label>Occupation</mat-label>
+    <mat-step label="Employment">
+      <div class="doctor-employment-grid">
+        <h6 id="speciality">Speciality</h6>
+        <mat-form-field appearance="outline" id="specialityField">
+          <mat-label>Speciality</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <h6 id="doctorQualification">Qualification</h6>
+        <mat-form-field appearance="outline" id="doctorQualificationField">
+          <mat-label>Qualification</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <h6 id="medicalCollege">Medical College</h6>
+        <mat-form-field appearance="outline" id="medicalCollegeField">
+          <mat-label>Medical College</mat-label>
           <input matInput>
         </mat-form-field>
         <h6 id="joiningDate">Date Joined</h6>
@@ -91,8 +101,53 @@
           <mat-label>Nurse's Name</mat-label>
           <input matInput>
         </mat-form-field>
+        <h6 id="doctorShifts">Shift Timings</h6>
+        <mat-form-field appearance="outline" id="doctorShiftsField">
+          <mat-label>Shift Timings</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <br>
+      <div class="btn-container">
+        <div class="add-btn">
+          <button mat-raised-button color="primary">Add</button>
+        </div>
       </div>
     </mat-step>
+
+
+  <mat-step label="Employment">
+    <div class="nurse-employment-grid">
+      <h6 id="nurseEducation">Education</h6>
+      <mat-form-field appearance="outline" id="nurseEducationField">
+        <mat-label>Education</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <h6 id="institution">Institution</h6>
+      <mat-form-field appearance="outline" id="institutionField">
+        <mat-label>Institution</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <h6 id="nurseJoiningDate">Date Joined</h6>
+      <mat-form-field appearance="outline" id="nurseJoiningDateField">
+        <input matInput [matDatepicker]="joiningDatePicker1" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="joiningDatePicker1"></mat-datepicker-toggle>
+        <mat-datepicker #joiningDatePicker1></mat-datepicker>
+      </mat-form-field>
+      <h6 id="nurseShifts">Shift Timings</h6>
+      <mat-form-field appearance="outline" id="nurseShiftsField">
+        <mat-label>Shift Timings</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+    <br>
+    <div class="btn-container">
+      <div class="add-btn">
+        <button mat-raised-button color="primary">Add</button>
+      </div>
+    </div>
+  </mat-step>
   </mat-vertical-stepper>
+
 
 </div>
