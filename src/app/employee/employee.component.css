@@ -23,32 +23,26 @@
 .bio-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(3, 60px);
+  grid-template-rows: repeat(2, 60px);
   grid-template-areas: ". name firstName middleName lastName ."
-  ". cnic cnicField dob dobField ."
-  ". weight weightField height heightField .";
+  ". cnic cnicField dob dobField .";
+}
+.bio-grid mat-form-field {
+  width: 90%;
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(3, 60px);
-  grid-template-areas: ". mobile mobileField emergencyContact emergencyContactField ."
-  ". email emailField address addressField ."
-  ". city cityField country countryField .";
-}
 
 #name {
   grid-area: name;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
 #cnic {
   grid-area: cnic;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
@@ -65,21 +59,6 @@
   grid-area: dobField;
 }
 
-#weight {
-  grid-area: weight;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-}
-
-#height {
-  grid-area: height;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 0;
-}
 
 #firstName {
   grid-area: firstName;
@@ -96,26 +75,23 @@
   grid-area: cnicField;
 }
 
-#weightField {
-  grid-area: weightField;
+.contact-grid {
+  display: grid;
+  grid-template-columns: 5% repeat(4, 20%) 2%;
+  grid-template-rows: repeat(3, 60px);
+  grid-template-areas: ". mobile mobileField emergencyContact emergencyContactField ."
+  ". email emailField address addressField ."
+  ". city cityField country countryField .";
 }
+.contact-grid .mat-form-field {
+  width: 90%;
 
-/*#emailField {*/
-/*grid-area: emailField;*/
-/*}*/
-
-#heightField {
-  grid-area: heightField;
-}
-
-.mat-form-field {
-  width: 220px;
 }
 
 #mobile{
   grid-area: mobile;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
@@ -138,7 +114,7 @@
 #email {
   grid-area: email;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
@@ -159,7 +135,7 @@
 #city {
   grid-area: city;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
@@ -177,127 +153,191 @@
   grid-area: countryField;
 }
 
-.guardian-grid {
+.doctor-employment-grid {
+  display: grid;
+  grid-template-columns: 5% repeat(4, 20%) 2%;
+  grid-template-rows: repeat(3, 60px);
+  grid-template-areas: ". speciality specialityField doctorQualification doctorQualificationField ."
+  ". medicalCollege medicalCollegeField joiningDate joiningDateField ."
+  ". assignedNurse assignedNurseField doctorShifts doctorShiftsField .";
+}
+.doctor-employment-grid mat-form-field {
+  width: 90%;
+}
+
+#speciality {
+  grid-area: speciality;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#specialityField {
+  grid-area: specialityField;
+}
+
+#doctorQualification {
+  grid-area: doctorQualification;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#doctorQualificationField {
+  grid-area: doctorQualificationField;
+}
+
+#medicalCollege {
+  grid-area: medicalCollege;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#medicalCollegeField {
+  grid-area: medicalCollegeField;
+}
+
+#joiningDate {
+  grid-area: joiningDate;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#joiningDateField {
+  grid-area: joiningDateField;
+}
+
+#assignedNurse {
+  grid-area: assignedNurse;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#assignedNurseField {
+  grid-area: assignedNurseField;
+}
+
+#doctorShifts {
+  grid-area: doctorShifts;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#doctorShiftsField {
+  grid-area: doctorShiftsField;
+}
+
+
+.nurse-employment-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
   grid-template-rows: repeat(2, 60px);
-  grid-template-areas: ". guardianName guardianNameField guardianMobile guardianMobileField ."
-  ". relation relationField guardianAddress guardianAddressField .";
+  grid-template-areas: ". nurseEducation nurseEducationField institution institutionField ."
+  ". nurseShifts nurseShiftsField nurseJoiningDate nurseJoiningDateField .";
 }
-
-#guardianName {
-  grid-area: guardianName;
+.nurse-employment-grid mat-form-field {
+  width: 90%;
+}
+#nurseEducation {
+  grid-area: nurseEducation;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
 
-#guardianNameField {
-  grid-area: guardianNameField;
+#nurseEducationField {
+  grid-area: nurseEducationField;
 }
 
-#guardianMobile {
-  grid-area: guardianMobile;
+#institution {
+  grid-area: institution;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
 
-#guardianMobileField {
-  grid-area: guardianMobileField;
+#institutionField {
+  grid-area: institutionField;
 }
 
-#relation {
-  grid-area: relation;
+#nurseShifts {
+  grid-area: nurseShifts;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#nurseShiftsField {
+  grid-area: nurseShiftsField;
+}
+
+#nurseJoiningDate {
+  grid-area: nurseJoiningDate;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
 
-#relationField {
-  grid-area: relationField;
+#nurseJoiningDateField {
+  grid-area: nurseJoiningDateField;
 }
 
-#guardianAddress {
-  grid-area: guardianAddress;
+.btn-container {
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 0;
+  justify-content: flex-end;
 }
 
-#guardianAddressField {
-  grid-area: guardianAddressField;
+.add-btn {
+  width: 30px;
+  margin-right: 30px;
 }
-
-
-
 
 @media screen and (max-width: 600px) {
   .bio-grid {
     display: grid;
-    grid-template-columns: 5%;
-    grid-template-rows: repeat(12, 60px);
-    grid-template-areas: "name" "firstName" "middleName" "lastName" "cnic" "cnicField" "dob" "dobField" "weight" "weightField" "height" "heightField";
+    grid-template-rows: repeat(8, 60px);
+    grid-template-areas: "name" "firstName" "middleName" "lastName" "cnic" "cnicField" "dob" "dobField" ;
   }
 
-
-  #cnic {
-    grid-area: cnic;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+  .bio-grid mat-form-field, .contact-grid mat-form-field,
+  .doctor-employment-grid mat-form-field,.nurse-employment-grid mat-form-field {
+    max-width: 220px;
+    min-width: 180px;
   }
 
-
-  #height {
-    grid-area: height;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-  }
-  #dob {
-    grid-area: dob;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-  }
 
   .contact-grid {
     display: grid;
-    grid-template-columns: 5%;
     grid-template-rows: repeat(12, 60px);
-    grid-template-areas: "mobile" "mobileField" "emergencyContact" "emergencyContactField" "email" "emailField" "address" "addressField" "city" "cityField" "country" "countryField";
+    grid-template-areas: "mobile" "mobileField" "emergencyContact" "emergencyContactField"
+                          "email" "emailField" "address" "addressField" "city" "cityField" "country" "countryField";
   }
 
-  #mobile {
-    grid-area: mobile;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0;
-  }
-  #email {
-    grid-area: email;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0;
-  }
-
-  .guardian-grid {
+  .doctor-employment-grid {
     display: grid;
-    grid-template-columns: 5%;
-    grid-template-rows: repeat(8, 60px);
-    grid-template-areas: "guardianName" "guardianNameField" "guardianMobile" "guardianMobileField"
-    "relation" "relationField" "guardianAddress" "guardianAddressField"
-  ;
+    grid-template-rows: repeat(12, 60px);
+    grid-template-areas: "speciality" "specialityField" "doctorQualification" "doctorQualificationField"
+    "medicalCollege" "medicalCollegeField" "joiningDate" "joiningDateField"
+    "assignedNurse" "assignedNurseField" "doctorShifts" "doctorShiftsField";
   }
+  .nurse-employment-grid {
+    display: grid;
+    grid-template-rows: repeat(8, 60px);
+    grid-template-areas: "nurseEducation" "nurseEducationField" "institution" "institutionField"
+    "nurseShifts" "nurseShiftsField" "nurseJoiningDate" "nurseJoiningDateField";
+  }
+  
 }
 

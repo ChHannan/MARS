@@ -1,1 +1,28 @@
-<p>medical-history works!</p>
+<div class="viewCard">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Medical History</mat-card-title>
+    </mat-card-header>
+
+    <hr>
+    <table mat-table [dataSource]="medicalHistoryDataSource" class="mat-elevation-z1">
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef> Type </th>
+        <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef> Time </th>
+        <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsMedicalHistory"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsMedicalHistory;"></tr>
+    </table>
+  </mat-card>
+</div>
