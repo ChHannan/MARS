@@ -24,7 +24,7 @@ import { DialogMedicalHistoryComponent } from './patient/view-patient/dialog-med
 import { DialogPrescriptionComponent } from './patient/view-patient/dialog-prescription/dialog-prescription.component';
 import { DialogAllergyComponent } from './patient/view-patient/dialog-allergy/dialog-allergy.component';
 import { DialogVisitsComponent } from './patient/view-patient/dialog-visits/dialog-visits.component';
-import {MatStepperModule} from '@angular/material';
+import {MatRadioModule, MatStepperModule} from '@angular/material';
 import {MatListModule} from "@angular/material/list";
 import { AllergyComponent } from './allergy/allergy.component';
 import { VisitsComponent } from './visits/visits.component';
@@ -64,9 +64,10 @@ import { VisitsComponent } from './visits/visits.component';
         RouterModule.forRoot(appRoutes),
         FormsModule,
         MatStepperModule,
-  MatListModule,
+        MatListModule,
+        MatRadioModule,
 
-],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

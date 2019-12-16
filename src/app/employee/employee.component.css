@@ -14,6 +14,12 @@
   margin-left: 3em;
 }
 
+.header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .mat-expansion-panel-header-title {
   display: flex;
   flex-grow: 1.62;
@@ -23,9 +29,10 @@
 .bio-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(2, 60px);
+  grid-template-rows: repeat(3, 60px);
   grid-template-areas: ". name firstName middleName lastName ."
-  ". cnic cnicField dob dobField .";
+  ". cnic cnicField dob dobField ."
+  ". gender male female . .";
 }
 .bio-grid mat-form-field {
   width: 90%;
@@ -73,6 +80,21 @@
 }
 #cnicField {
   grid-area: cnicField;
+}
+#gender {
+  grid-area: gender;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#maleRadio {
+  grid-area: male;
+  align-self: center;
+}
+#femaleRadio {
+  grid-area: female;
+  align-self: center;
 }
 
 .contact-grid {
@@ -305,16 +327,27 @@
 }
 
 @media screen and (max-width: 600px) {
+
+  .header1 {
+    display: block;
+    margin: auto;
+  }
+  .header1 mat-form-field, .header1 h2 {
+    margin-left: 20%;
+    margin-right: auto;
+
+  }
+
   .bio-grid {
     display: grid;
-    grid-template-rows: repeat(8, 60px);
-    grid-template-areas: "name" "firstName" "middleName" "lastName" "cnic" "cnicField" "dob" "dobField" ;
+    grid-template-rows: repeat(11, 60px);
+    grid-template-areas: "name" "firstName" "middleName" "lastName" "cnic" "cnicField" "dob" "dobField"
+    "gender" "male" "female";
   }
 
   .bio-grid mat-form-field, .contact-grid mat-form-field,
   .doctor-employment-grid mat-form-field,.nurse-employment-grid mat-form-field {
-    max-width: 220px;
-    min-width: 180px;
+    width: 220px;
   }
 
 
@@ -338,6 +371,6 @@
     grid-template-areas: "nurseEducation" "nurseEducationField" "institution" "institutionField"
     "nurseShifts" "nurseShiftsField" "nurseJoiningDate" "nurseJoiningDateField";
   }
-  
+
 }
 

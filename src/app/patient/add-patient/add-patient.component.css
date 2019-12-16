@@ -23,28 +23,17 @@
 .bio-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(3, 70px);
+  grid-template-rows: repeat(4, 70px);
   grid-template-areas: ". name firstName middleName lastName ."
                        ". cnic cnicField dob dobField ."
-                        ". weight weightField height heightField .";
+                        ". weight weightField height heightField ."
+                       ". gender male female . .";
 }
 
 .bio-grid mat-form-field {
   width: 90%;
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(3, 70px);
-  grid-template-areas: ". mobile mobileField emergencyContact emergencyContactField ."
-                       ". email emailField address addressField ."
-                       ". city cityField country countryField .";
-}
-
-.contact-grid mat-form-field {
-  width: 90%;
-}
 
 #name {
   grid-area: name;
@@ -111,9 +100,36 @@
 #heightField {
  grid-area: heightField;
 }
+#gender {
+  grid-area: gender;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#maleRadio {
+  grid-area: male;
+  align-self: center;
+}
+#femaleRadio {
+  grid-area: female;
+  align-self: center;
+}
 
 .mat-form-field {
   width: 220px;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 5% repeat(4, 20%) 2%;
+  grid-template-rows: repeat(3, 70px);
+  grid-template-areas: ". mobile mobileField emergencyContact emergencyContactField ."
+  ". email emailField address addressField ."
+  ". city cityField country countryField .";
+}
+
+.contact-grid mat-form-field {
+  width: 90%;
 }
 
 #mobile{
@@ -255,14 +271,17 @@
 @media screen and (max-width: 600px) {
 
   .bio-grid mat-form-field, .contact-grid mat-form-field, .guardian-grid mat-form-field{
-    width: 180px;
+    width: 220px;
   }
 
   .bio-grid {
     display: grid;
     grid-template-columns: 5%;
-    grid-template-rows: repeat(12, 60px);
-    grid-template-areas: "name" "firstName" "middleName" "lastName" "cnic" "cnicField" "dob" "dobField" "weight" "weightField" "height" "heightField";
+    grid-template-rows: repeat(15, 60px);
+    grid-template-areas: "name" "firstName" "middleName" "lastName"
+    "cnic" "cnicField" "dob" "dobField"
+    "weight" "weightField" "height" "heightField"
+    "gender" "male" "female";
   }
 
 

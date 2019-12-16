@@ -1,6 +1,16 @@
 <div class="margin-1">
-  <div>
-    <span><h2>Add Doctor</h2></span>
+  <div >
+    <span class="header1">
+      <h2>Add Employee</h2>
+      <mat-form-field style="height: 60px" appearance="outline" >
+          <mat-label style="font-size: 15px">Employee type</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let employee of employees" [value]="employee.value">
+              {{employee.viewValue}}
+            </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </span>
   </div>
   <hr>
 
@@ -32,6 +42,9 @@
           <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
           <mat-datepicker #dobPicker startView="year" [startAt]="startDate"></mat-datepicker>
         </mat-form-field>
+        <h6 style="align-self: center" id="gender">Gender</h6>
+          <mat-radio-button id="maleRadio" color="primary" value="1">Male</mat-radio-button>
+          <mat-radio-button id="femaleRadio" color="primary" value="2">Female</mat-radio-button>
 
       </div>
     </mat-step>

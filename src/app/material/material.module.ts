@@ -18,7 +18,8 @@ import {
 
 const materialComponents = [MatButtonModule, MatToolbarModule, MatCardModule, MatFormFieldModule, MatInputModule,
   MatIconModule, MatSidenavModule , MatExpansionModule, MatGridListModule, MatSelectModule, MatTableModule,
-  MatPaginatorModule, MatSortModule, MatTabsModule, MatDatepickerModule, MatNativeDateModule, MatDialogModule, MatTreeModule];
+  MatPaginatorModule, MatSortModule, MatTabsModule, MatDatepickerModule, MatNativeDateModule, MatDialogModule,
+  MatTreeModule, MatSelectModule];
 
 @NgModule({
   imports: [
