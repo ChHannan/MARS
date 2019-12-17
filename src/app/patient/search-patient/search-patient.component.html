@@ -1,14 +1,24 @@
 <div class="margin-1">
   <div>
-    <span><h2>Search Patients</h2></span>
+    <span class="searchHeader">
+      <h2>Search Patients</h2>
+      <mat-icon *ngIf="!searchMany" (click)="search()">zoom_in</mat-icon>
+      <mat-icon *ngIf="searchMany" (click)="search()">zoom_out</mat-icon>
+    </span>
   </div>
   <hr>
 
-  <div class="flex search-fields">
-    <mat-form-field *ngFor="let index of indices" class="search-field col-3">
-      <input matInput (keyup)="applyFilter(displayedColumns[index] + '|' + $event.target.value)"
-             [placeholder]="'Search by ' + displayColumnName[index]">
+  <div *ngIf="!searchMany" class="flex search-field searchSingle">
+    <mat-form-field appearance="outline">
+      <mat-label>Search</mat-label>
+      <input matInput>
     </mat-form-field>
+  </div>
+  <div *ngIf="searchMany" class="flex search-fields">
+      <mat-form-field *ngFor="let index of indices" class="search-field col-3">
+        <input matInput (keyup)="applyFilter(displayedColumns[index] + '|' + $event.target.value)"
+               [placeholder]="'Search by ' + displayColumnName[index]">
+      </mat-form-field>
   </div>
 
   <div class="mat-elevation-z2 margin-top-1">

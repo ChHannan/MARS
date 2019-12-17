@@ -29,15 +29,15 @@
 .bio-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(3, 60px);
+  grid-template-rows: repeat(3, 70px);
   grid-template-areas: ". name firstName middleName lastName ."
   ". cnic cnicField dob dobField ."
   ". gender male female . .";
 }
+
 .bio-grid mat-form-field {
   width: 90%;
 }
-
 
 #name {
   grid-area: name;
@@ -100,7 +100,7 @@
 .contact-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(3, 60px);
+  grid-template-rows: repeat(3, 70px);
   grid-template-areas: ". mobile mobileField emergencyContact emergencyContactField ."
   ". email emailField address addressField ."
   ". city cityField country countryField .";
@@ -152,7 +152,6 @@
 }
 #addressField {
   grid-area: addressField;
-  /*width: 700px;*/
 }
 #city {
   grid-area: city;
@@ -178,7 +177,7 @@
 .doctor-employment-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(3, 60px);
+  grid-template-rows: repeat(3, 70px);
   grid-template-areas: ". speciality specialityField doctorQualification doctorQualificationField ."
   ". medicalCollege medicalCollegeField joiningDate joiningDateField ."
   ". assignedNurse assignedNurseField doctorShifts doctorShiftsField .";
@@ -261,7 +260,7 @@
 .nurse-employment-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(2, 60px);
+  grid-template-rows: repeat(2, 70px);
   grid-template-areas: ". nurseEducation nurseEducationField institution institutionField ."
   ". nurseShifts nurseShiftsField nurseJoiningDate nurseJoiningDateField .";
 }
@@ -328,6 +327,10 @@
 
 @media screen and (max-width: 600px) {
 
+  h6 {
+    white-space: nowrap;
+  }
+
   .header1 {
     display: block;
     margin: auto;
@@ -338,36 +341,36 @@
 
   }
 
-  .bio-grid {
-    display: grid;
-    grid-template-rows: repeat(11, 60px);
-    grid-template-areas: "name" "firstName" "middleName" "lastName" "cnic" "cnicField" "dob" "dobField"
-    "gender" "male" "female";
-  }
-
-  .bio-grid mat-form-field, .contact-grid mat-form-field,
+  .bio-grid mat-form-field, .contact-grid .mat-form-field,
   .doctor-employment-grid mat-form-field,.nurse-employment-grid mat-form-field {
     width: 220px;
+  }
+
+  .bio-grid {
+    display: grid;
+    grid-template-rows: repeat(11, 70px);
+    grid-template-areas: "name" "firstName" "middleName" "lastName" "cnic" "cnicField" "dob" "dobField"
+    "gender" "male" "female";
   }
 
 
   .contact-grid {
     display: grid;
-    grid-template-rows: repeat(12, 60px);
+    grid-template-rows: repeat(12, 70px);
     grid-template-areas: "mobile" "mobileField" "emergencyContact" "emergencyContactField"
                           "email" "emailField" "address" "addressField" "city" "cityField" "country" "countryField";
   }
 
   .doctor-employment-grid {
     display: grid;
-    grid-template-rows: repeat(12, 60px);
+    grid-template-rows: repeat(12, 70px);
     grid-template-areas: "speciality" "specialityField" "doctorQualification" "doctorQualificationField"
     "medicalCollege" "medicalCollegeField" "joiningDate" "joiningDateField"
     "assignedNurse" "assignedNurseField" "doctorShifts" "doctorShiftsField";
   }
   .nurse-employment-grid {
     display: grid;
-    grid-template-rows: repeat(8, 60px);
+    grid-template-rows: repeat(8, 70px);
     grid-template-areas: "nurseEducation" "nurseEducationField" "institution" "institutionField"
     "nurseShifts" "nurseShiftsField" "nurseJoiningDate" "nurseJoiningDateField";
   }

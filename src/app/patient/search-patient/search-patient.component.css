@@ -34,3 +34,16 @@
 .patient-data-row:hover {
   background-color: lavender;
 }
+
+.searchHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+mat-icon {
+  cursor: pointer;
+}
+div.searchSingle mat-form-field{
+
+  height: 65px;
+}
