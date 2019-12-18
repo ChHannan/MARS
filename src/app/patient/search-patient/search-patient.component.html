@@ -15,6 +15,12 @@
         <input matInput>
       </mat-form-field>
     </div>
+
+  <div *ngIf="!searchMany" class="flex search-field searchSingle" @fadein>
+    <mat-form-field>
+      <mat-label>Search</mat-label>
+      <input matInput>
+    </mat-form-field>
   </div>
   <div *ngIf="searchMany" class="flex search-fields" @fadein>
     <mat-form-field *ngFor="let index of indices" class="search-field col-3">
