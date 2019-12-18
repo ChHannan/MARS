@@ -1,10 +1,10 @@
 <div class="margin-1">
-  <div >
+  <div>
     <span class="header1">
       <h2>Add Employee</h2>
-      <mat-form-field style="height: 60px" appearance="outline" >
+      <mat-form-field style="height: 60px" appearance="outline">
           <mat-label style="font-size: 15px">Employee type</mat-label>
-          <mat-select>
+          <mat-select [(value)]="employeeType">
             <mat-option *ngFor="let employee of employees" [value]="employee.value">
               {{employee.viewValue}}
             </mat-option>
@@ -43,9 +43,8 @@
           <mat-datepicker #dobPicker startView="year" [startAt]="startDate"></mat-datepicker>
         </mat-form-field>
         <h6 style="align-self: center" id="gender">Gender</h6>
-          <mat-radio-button id="maleRadio" color="primary" value="1">Male</mat-radio-button>
-          <mat-radio-button id="femaleRadio" color="primary" value="2">Female</mat-radio-button>
-
+        <mat-radio-button id="maleRadio" color="primary" value="1">Male</mat-radio-button>
+        <mat-radio-button id="femaleRadio" color="primary" value="2">Female</mat-radio-button>
       </div>
     </mat-step>
 
@@ -86,7 +85,7 @@
     </mat-step>
 
 
-    <mat-step label="Employment">
+    <mat-step *ngIf="employeeType==='doctor'" label="Employment">
       <div class="doctor-employment-grid">
         <h6 id="speciality">Speciality</h6>
         <mat-form-field appearance="outline" id="specialityField">
@@ -128,38 +127,38 @@
       </div>
     </mat-step>
 
-
-  <mat-step label="Employment">
-    <div class="nurse-employment-grid">
-      <h6 id="nurseEducation">Education</h6>
-      <mat-form-field appearance="outline" id="nurseEducationField">
-        <mat-label>Education</mat-label>
-        <input matInput>
-      </mat-form-field>
-      <h6 id="institution">Institution</h6>
-      <mat-form-field appearance="outline" id="institutionField">
-        <mat-label>Institution</mat-label>
-        <input matInput>
-      </mat-form-field>
-      <h6 id="nurseJoiningDate">Date Joined</h6>
-      <mat-form-field appearance="outline" id="nurseJoiningDateField">
-        <input matInput [matDatepicker]="joiningDatePicker1" placeholder="Choose a date">
-        <mat-datepicker-toggle matSuffix [for]="joiningDatePicker1"></mat-datepicker-toggle>
-        <mat-datepicker #joiningDatePicker1></mat-datepicker>
-      </mat-form-field>
-      <h6 id="nurseShifts">Shift Timings</h6>
-      <mat-form-field appearance="outline" id="nurseShiftsField">
-        <mat-label>Shift Timings</mat-label>
-        <input matInput>
-      </mat-form-field>
-    </div>
-    <br>
-    <div class="btn-container">
-      <div class="add-btn">
-        <button mat-raised-button color="primary">Add</button>
+    <mat-step *ngIf="employeeType==='nurse'" label="Employment">
+      <div class="nurse-employment-grid">
+        <h6 id="nurseEducation">Education</h6>
+        <mat-form-field appearance="outline" id="nurseEducationField">
+          <mat-label>Education</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <h6 id="institution">Institution</h6>
+        <mat-form-field appearance="outline" id="institutionField">
+          <mat-label>Institution</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <h6 id="nurseJoiningDate">Date Joined</h6>
+        <mat-form-field appearance="outline" id="nurseJoiningDateField">
+          <input matInput [matDatepicker]="joiningDatePicker1" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="joiningDatePicker1"></mat-datepicker-toggle>
+          <mat-datepicker #joiningDatePicker1></mat-datepicker>
+        </mat-form-field>
+        <h6 id="nurseShifts">Shift Timings</h6>
+        <mat-form-field appearance="outline" id="nurseShiftsField">
+          <mat-label>Shift Timings</mat-label>
+          <input matInput>
+        </mat-form-field>
       </div>
-    </div>
-  </mat-step>
+      <br>
+      <div class="btn-container">
+        <div class="add-btn">
+          <button mat-raised-button color="primary">Add</button>
+        </div>
+      </div>
+    </mat-step>
+
   </mat-vertical-stepper>
 
 
