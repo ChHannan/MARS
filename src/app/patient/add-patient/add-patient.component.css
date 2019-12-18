@@ -116,9 +116,6 @@
   align-self: center;
 }
 
-.mat-form-field {
-  width: 220px;
-}
 .contact-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
@@ -270,6 +267,9 @@
 
 @media screen and (max-width: 600px) {
 
+  h6 {
+    white-space: nowrap;
+  }
   .bio-grid mat-form-field, .contact-grid mat-form-field, .guardian-grid mat-form-field{
     width: 220px;
   }
@@ -277,7 +277,7 @@
   .bio-grid {
     display: grid;
     grid-template-columns: 5%;
-    grid-template-rows: repeat(15, 60px);
+    grid-template-rows: repeat(15, 70px);
     grid-template-areas: "name" "firstName" "middleName" "lastName"
     "cnic" "cnicField" "dob" "dobField"
     "weight" "weightField" "height" "heightField"
@@ -288,16 +288,18 @@
   .contact-grid {
     display: grid;
     grid-template-columns: 5%;
-    grid-template-rows: repeat(12, 60px);
+    grid-template-rows: repeat(12, 70px);
     grid-template-areas: "mobile" "mobileField" "emergencyContact" "emergencyContactField" "email" "emailField" "address" "addressField" "city" "cityField" "country" "countryField";
   }
 
   .guardian-grid {
     display: grid;
     grid-template-columns: 5%;
-    grid-template-rows: repeat(8, 60px);
+    grid-template-rows: repeat(8, 70px);
     grid-template-areas: "guardianName" "guardianNameField" "guardianMobile" "guardianMobileField"
     "relation" "relationField" "guardianAddress" "guardianAddressField";
   }
+
+
 }
 

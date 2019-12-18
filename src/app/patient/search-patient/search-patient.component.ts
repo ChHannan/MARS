@@ -10,7 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./search-patient.component.css'],
 })
 export class SearchPatientComponent implements OnInit {
-
+  searchMany = false;
   patientsService: PatientsService;
   router: Router;
   route: ActivatedRoute;
@@ -24,9 +24,11 @@ export class SearchPatientComponent implements OnInit {
     {name: 'Ramish Amir', cnic: 'xxxx-xxxxx-xxx', phone: '0302-212314', dob: '10-06-2000'},
     {name: 'Ammar Junaid', cnic: 'xxxx-xxxxx-xxx', phone: '0302-212314', dob: '10-06-2000'},
   ];
-  dataSource = new MatTableDataSource(this.data);
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-
+  dataSource = new MatTableDataSource(this.data);
+  search() {
+    this.searchMany = !this.searchMany;
+  }
   constructor(patientsService: PatientsService, router: Router, route: ActivatedRoute) {
     this.patientsService = patientsService;
     this.route = route;
