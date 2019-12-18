@@ -3,11 +3,20 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {PatientsService} from '../services/patients.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {transition, trigger, style, animate} from '@angular/animations';
 
 @Component({
   selector: 'app-search-patient',
   templateUrl: './search-patient.component.html',
   styleUrls: ['./search-patient.component.css'],
+  animations: [
+    trigger('fadein', [
+      transition('void => *', [
+        style({ opacity: 0 }),
+        animate(500, style({opacity: 1}))
+      ])
+    ])
+  ]
 })
 export class SearchPatientComponent implements OnInit {
   searchMany = false;
