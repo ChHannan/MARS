@@ -39,5 +39,6 @@ export class DashboardComponent implements OnInit {
         ).link]).then();
       }
     });
+    console.log(this.userService.currentDashBoardUserLink);
   }
 }
