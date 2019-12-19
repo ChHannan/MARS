@@ -23,9 +23,9 @@ export class EmployeeComponent implements OnInit {
 
   employeeType = 'admin';
   employees: Employee[] = [
+    {value: 'admin', viewValue: 'Admin'},
     {value: 'doctor', viewValue: 'Doctor'},
-    {value: 'nurse', viewValue: 'Nurse'},
-    {value: 'admin', viewValue: 'Admin'}
+    {value: 'nurse', viewValue: 'Nurse'}
   ];
   startDate = new Date(1990, 0, 1);
   currentDate = new Date();
