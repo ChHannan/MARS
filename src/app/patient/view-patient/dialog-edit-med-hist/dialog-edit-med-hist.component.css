@@ -3,15 +3,16 @@
   width: 400px;
 }
 
-#medicineField {
+#typeField {
   width: 400px;
 }
-#doseField {
+#descriptionField {
   width: 400px;
 }
-#frequencyField {
+#timeField {
   width: 400px;
 }
+
 #addButton {
   width: 50%;
 }
@@ -19,23 +20,21 @@ mat-dialog-actions {
   display: flex;
   justify-content: center;
 }
-
 @media screen and (max-width: 600px) {
   .container {
     display: block;
     width: 250px;
   }
 
-  #medicineField {
+  #typeField {
     width: 250px;
   }
 
-  #doseField {
+  #descriptionField {
     width: 250px;
   }
 
-  #frequencyField {
-    width: 250px;
+  #timeField {
+    width: 4250px;
   }
 }
-

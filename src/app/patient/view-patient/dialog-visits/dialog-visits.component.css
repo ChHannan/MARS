@@ -5,13 +5,12 @@
 #visitsField {
   width: 400px;
 }
-#cancelButton  {
-  width: 48%;
-  margin-right: 2%;
-}
 #addButton {
-  width: 48%;
-  margin-left: 2%;
+  width: 50%;
+}
+mat-dialog-actions {
+  display: flex;
+  justify-content: center;
 }
 @media screen and (max-width: 600px) {
   .container {

@@ -30,6 +30,11 @@ import {MatRadioModule, MatStepperModule} from '@angular/material';
 import {MatListModule} from '@angular/material/list';
 import {AllergyComponent} from './allergy/allergy.component';
 import {VisitsComponent} from './visits/visits.component';
+import { DialogEditAllergyComponent } from './patient/view-patient/dialog-edit-allergy/dialog-edit-allergy.component';
+import { DialogEditMedHistComponent } from './patient/view-patient/dialog-edit-med-hist/dialog-edit-med-hist.component';
+import { DialogEditAllergiesComponent } from './patient/view-patient/dialog-edit-allergies/dialog-edit-allergies.component';
+import { DialogEditVisitsComponent } from './patient/view-patient/dialog-edit-visits/dialog-edit-visits.component';
+import { DialogEditPresComponent } from './patient/view-patient/dialog-edit-pres/dialog-edit-pres.component';
 
 
 @NgModule({
@@ -52,12 +57,20 @@ import {VisitsComponent} from './visits/visits.component';
     DialogVisitsComponent,
     AllergyComponent,
     VisitsComponent,
+    DialogEditMedHistComponent,
+    DialogEditAllergiesComponent,
+    DialogEditVisitsComponent,
+    DialogEditPresComponent,
   ],
   entryComponents: [
     DialogMedicalHistoryComponent,
     DialogPrescriptionComponent,
     DialogAllergyComponent,
-    DialogVisitsComponent
+    DialogVisitsComponent,
+    DialogEditMedHistComponent,
+    DialogEditPresComponent,
+    DialogEditAllergiesComponent,
+    DialogEditVisitsComponent
   ],
   imports: [
     BrowserModule,

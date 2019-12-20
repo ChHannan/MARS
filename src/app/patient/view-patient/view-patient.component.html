@@ -23,7 +23,7 @@
           </mat-card-header>
 
           <hr>
-          <table mat-table [dataSource]="medicalHistoryDataSource" class="mat-elevation-z1">
+          <table mat-table [dataSource]="medicalHistoryDataSource">
             <ng-container matColumnDef="type">
               <th mat-header-cell *matHeaderCellDef> Type </th>
               <td mat-cell *matCellDef="let element"> {{element.type}} </td>
@@ -40,7 +40,8 @@
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumnsMedicalHistory"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumnsMedicalHistory;"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumnsMedicalHistory;"
+                (click)="editMedicalHistory()" class="med-hist-row" ></tr>
           </table>
         </mat-card>
       </div>
@@ -56,7 +57,7 @@
             </div>
           </mat-card-header>
           <hr>
-          <table mat-table [dataSource]="presciptionDataSource" class="mat-elevation-z1">
+          <table mat-table [dataSource]="prescriptionDataSource">
 
             <ng-container matColumnDef="serialNo">
               <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -79,7 +80,8 @@
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumnsPrescriptions"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumnsPrescriptions;"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumnsPrescriptions;"
+                (click)="editPrescription()" class="pres-row" ></tr>
           </table>
         </mat-card>
       </div>
@@ -96,7 +98,7 @@
             </div>
           </mat-card-header>
           <hr>
-          <table mat-table [dataSource]="allergiesDataSource" class="mat-elevation-z1">
+          <table mat-table [dataSource]="allergiesDataSource">
 
             <ng-container matColumnDef="serialNo">
               <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -114,7 +116,8 @@
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumnsAllergy"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumnsAllergy;"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumnsAllergy;"
+                (click)="editAllergies()" class="allergies-row" ></tr>
           </table>
         </mat-card>
       </div>

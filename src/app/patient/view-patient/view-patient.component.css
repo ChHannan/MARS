@@ -16,6 +16,7 @@ mat-card {
   max-width: 100%;
 }
 
+
 table {
   width: 100%;
 }
@@ -31,6 +32,10 @@ mat-card-header {
 }
 mat-icon {
   cursor: pointer;
+}
+
+.med-hist-row:hover, .pres-row:hover, .allergies-row:hover {
+  background-color: lavender;
 }
 
 

@@ -2,15 +2,12 @@
   display: block;
   width: 400px;
 }
+#allergyNameField {
+  width: 400px;
+}
+#allergyDescriptionField {
+  width: 400px;
 
-#medicineField {
-  width: 400px;
-}
-#doseField {
-  width: 400px;
-}
-#frequencyField {
-  width: 400px;
 }
 #addButton {
   width: 50%;
@@ -25,17 +22,11 @@ mat-dialog-actions {
     display: block;
     width: 250px;
   }
-
-  #medicineField {
+  #allergyNameField {
     width: 250px;
   }
-
-  #doseField {
+  #allergyDescriptionField {
     width: 250px;
-  }
 
-  #frequencyField {
-    width: 250px;
   }
 }
-

@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class DialogAllergyComponent implements OnInit {
 
   constructor() { }
+  closeDialog() {
 
+  }
   ngOnInit() {
   }
 

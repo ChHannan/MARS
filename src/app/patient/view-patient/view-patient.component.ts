@@ -7,6 +7,10 @@ import {DialogMedicalHistoryComponent} from './dialog-medical-history/dialog-med
 import {DialogPrescriptionComponent} from './dialog-prescription/dialog-prescription.component';
 import {DialogAllergyComponent} from './dialog-allergy/dialog-allergy.component';
 import {DialogVisitsComponent} from './dialog-visits/dialog-visits.component';
+import {DialogEditMedHistComponent} from './dialog-edit-med-hist/dialog-edit-med-hist.component';
+import {DialogEditPresComponent} from './dialog-edit-pres/dialog-edit-pres.component';
+import {DialogEditAllergiesComponent} from './dialog-edit-allergies/dialog-edit-allergies.component';
+import {DialogEditVisitsComponent} from './dialog-edit-visits/dialog-edit-visits.component';
 
 
 @Component({
@@ -33,7 +37,7 @@ export class ViewPatientComponent implements OnInit {
     {serialNo: 5, medicine: 'Sonata', dose: '100mg', frequency: 'Every Morning'},
   ];
   displayedColumnsPrescriptions: string[] = ['serialNo', 'medicine', 'dose', 'frequency'];
-  presciptionDataSource = new MatTableDataSource(this.prescription);
+  prescriptionDataSource = new MatTableDataSource(this.prescription);
   allergies = [
     {serialNo: 1, name: 'Acne', description: 'Allergic to medicines containing benzoyl peroxide or salicylic acid'},
     {serialNo: 2, name: 'Food Allergy', description: 'Allergic to medicines containing benzoyl peroxide or salicylic acid'},
@@ -46,14 +50,26 @@ export class ViewPatientComponent implements OnInit {
   openMedicalHistoryDialog() {
     this.dialog.open(DialogMedicalHistoryComponent);
   }
+  editMedicalHistory() {
+    this.dialog.open(DialogEditMedHistComponent);
+  }
   openPrescriptionDialog() {
     this.dialog.open(DialogPrescriptionComponent);
+  }
+  editPrescription() {
+    this.dialog.open(DialogEditPresComponent);
   }
   openAllergyDialog() {
     this.dialog.open(DialogAllergyComponent);
   }
+  editAllergies() {
+    this.dialog.open(DialogEditAllergiesComponent);
+  }
   openVisitDialog() {
     this.dialog.open(DialogVisitsComponent);
+  }
+  editVisits() {
+    this.dialog.open(DialogEditVisitsComponent);
   }
   constructor(private patientsService: PatientsService, private router: Router, private route: ActivatedRoute, private dialog: MatDialog) {
   }

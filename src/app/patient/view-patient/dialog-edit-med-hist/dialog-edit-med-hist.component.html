@@ -1,27 +1,26 @@
 
 <div class="container">
 
-  <h2 mat-dialog-title>Add Prescription</h2>
+  <h2 mat-dialog-title>Medical Record</h2>
   <hr>
 
   <div class="row">
-    <mat-form-field appearance="outline" id="medicineField">
-      <mat-label>Medicine</mat-label>
-      <input matInput>
-    </mat-form-field>
-  </div>
-
-
-  <div class="row">
-    <mat-form-field appearance="outline" id="doseField">
-      <mat-label>Dose</mat-label>
+    <mat-form-field appearance="outline" id="typeField">
+      <mat-label>Type</mat-label>
       <input matInput>
     </mat-form-field>
   </div>
 
   <div class="row">
-    <mat-form-field appearance="outline" id="frequencyField">
-      <mat-label>Frequency</mat-label>
+    <mat-form-field appearance="outline" id="descriptionField">
+      <mat-label>Description</mat-label>
+      <input matInput>
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field appearance="outline" id="timeField">
+      <mat-label>Time</mat-label>
       <input matInput>
     </mat-form-field>
   </div>
@@ -30,6 +29,4 @@
     <button mat-raised-button color="primary" id="addButton">Add</button>
   </mat-dialog-actions>
   <br>
-
 </div>
-
