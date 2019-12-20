@@ -8,18 +8,24 @@
   <a mat-button>Log out</a>
 </mat-toolbar>
 
+<mat-sidenav-container>
 
-<mat-sidenav-container class="dash-board-container">
-  <mat-sidenav #snav mode="side">
+  <mat-sidenav #snav mode="{{ mode }}">
     <mat-grid-list cols="1" rowHeight="50px" class="side-nav">
-      <mat-grid-tile *ngFor="let link of this.userService.currentDashBoardUserLink.links">
-        <a mat-button [routerLink]="link.link">{{link.name}}</a>
-      </mat-grid-tile>
+      <mat-nav-list>
+        <a *ngFor="let item of this.userService.currentDashBoardUserLink.links"
+           mat-list-item
+           [routerLink]="item.link"
+           class="list-tile">
+          <mat-icon matListIcon>{{item.icon}}</mat-icon>
+          &nbsp;&nbsp;&nbsp;
+          {{item.name}}
+        </a>
+      </mat-nav-list>
     </mat-grid-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
 

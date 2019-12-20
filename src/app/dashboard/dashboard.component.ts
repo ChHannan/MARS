@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
   route: ActivatedRoute;
   router: Router;
   title = 'MARS';
+  mode = 'side';
 
   constructor(userService: UserService, route: ActivatedRoute, router: Router) {
     this.userService = userService;
@@ -20,6 +21,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.mode = window.innerWidth < 600 ? 'over' : 'side';
     this.route.params.subscribe((params) => {
       if (this.route.snapshot.children.length === 0) {
         if (this.userService.userType === 'admin') {
