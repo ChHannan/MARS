@@ -179,7 +179,7 @@ h2{
 .new-grid{
   display: grid;
   grid-template-columns: 10% 20% 20% 20% 20% 10%;
-  grid-template-rows: 1fr 1fr 2fr 4fr 1fr;
+  grid-template-rows: 0.5fr 1fr 2fr 4fr 2fr;
   grid-template-areas:
     ". . . . . ."
     ". title title title title ."
@@ -509,4 +509,27 @@ h1{
   height: 72%;
   width: 100%;
   background-repeat: no-repeat;
+}
+
+
+@media screen and (max-width: 600px){
+  .new-grid{
+    display: grid;
+    grid-template-columns: 6% 88% 6%;
+    grid-template-rows: 1fr 1fr 2fr 4fr 4fr 4fr 4fr 1fr;
+    grid-template-areas:
+      ". . . . . ."
+      ". title ."
+      ". subtitle ."
+      ". card1 ."
+      ". card2 ."
+      ". card3 ."
+      ". card4 ."
+
+
+  ;
+
+  }
+
+
 }

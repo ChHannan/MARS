@@ -124,21 +124,13 @@ main{
 
 #logo{
   grid-area: logo;
-  margin: 12%;
-  background: transparent url("src/assets/images/mars 2 - Copy.png");
+  margin: 16%;
+  background: transparent url("src/assets/images/wjs - Copy.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   elevation: 0;
   box-shadow: 0;
-}
-#headingbox {
-}
-
-
-#parabox{
-  padding-left: 10%;
-  padding-top: 1%;
 }
 
 #big {
@@ -205,4 +197,53 @@ p{
     padding: 3px;
 }
 
+@media screen and (max-width: 600px){
+  .login-grid{
+    display: grid;
+    margin-top: 20% ;
+    grid-template-columns: 6% 88% 6%;
+    grid-template-rows: auto;
+    grid-template-areas:
+      ". . ."
+      ". login ."
+      ". . .";
+  }
 
+  main{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 40% 74%;
+    grid-template-areas:
+      "logo"
+      "login2"
+  ;
+
+
+  }
+
+  #logo{
+    grid-area: logo;
+    margin: 4%;
+    background: transparent url("src/assets/images/wjs - Copy.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    elevation: 0;
+    box-shadow: 0;
+  }
+
+
+  #login2{
+    grid-area: login2;
+    background-color: #ffffff;
+    opacity: 100%;
+    border: none;
+    border-top-left-radius: 50% 10%;
+    border-bottom-left-radius: 2rem 2rem;
+    border-top-right-radius: 50% 10%;
+    border-bottom-right-radius: 2rem 2rem;
+    padding-bottom: 30px;
+    box-shadow:  0px 0 4px 0px gray;
+  }
+
+}
