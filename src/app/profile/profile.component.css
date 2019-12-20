@@ -1,6 +1,6 @@
 .profile-grid {
   display: grid;
-  grid-template-columns: 15% 4% 3% 20% auto 15%;
+  grid-template-columns: 15% 4% 3% 25% auto 15%;
   grid-template-rows: auto;
   grid-template-areas:
   "img . name name . ."
@@ -18,6 +18,9 @@
   display: flex;
   width: 200px;
   height: 200px;
+  margin-left: 14%;
+  margin-top: 6% ;
+  border: 1px solid mediumblue;
   border-radius: 50%;
 }
 
@@ -145,29 +148,36 @@ h5.info {
 }
 
 /*MEDIA QUERIES*/
-
 @media screen and (max-width: 600px){
   .profile-grid {
     display: grid;
-    grid-template-columns: 4% 8% 76% 12%;
+    grid-template-columns: 12% 76% 12%;
     grid-template-rows: auto;
     grid-template-areas:
-      ". . img . "
-      ". . img . "
-      ". name name ."
-      ". occ occ ."
-      ". . . . "
-      ". . . . "
-      ". icon1 email ."
-      ". icon2 phone ."
-      ". . join ."
+      " . img . "
+      " . img . "
+      " name name ."
+      " occ occ ."
+      " . . . "
+      " . . . "
+      " icon1 email ."
+      " icon2 phone ."
+      " . join ."
   }
-
 
   #img {
     grid-area: img;
     display: flex;
+    justify-self: center;
     align-self: center;
+  }
+
+  #name {
+    grid-area: name;
+    align-items: center;
+    color: black;
+    font-width: bold;
+    font-size: 36px;
   }
 
   .profile-grid2 {
