@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 
 import {MaterialModule} from './material/material.module';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
-import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import {OwlDateTimeModule, OwlNativeDateTimeModule} from 'ng-pick-datetime';
 
 import {appRoutes} from './app-routing.module';
 
@@ -30,11 +30,10 @@ import {MatRadioModule, MatStepperModule} from '@angular/material';
 import {MatListModule} from '@angular/material/list';
 import {AllergyComponent} from './allergy/allergy.component';
 import {VisitsComponent} from './visits/visits.component';
-import { DialogEditAllergyComponent } from './patient/view-patient/dialog-edit-allergy/dialog-edit-allergy.component';
-import { DialogEditMedHistComponent } from './patient/view-patient/dialog-edit-med-hist/dialog-edit-med-hist.component';
-import { DialogEditAllergiesComponent } from './patient/view-patient/dialog-edit-allergies/dialog-edit-allergies.component';
-import { DialogEditVisitsComponent } from './patient/view-patient/dialog-edit-visits/dialog-edit-visits.component';
-import { DialogEditPresComponent } from './patient/view-patient/dialog-edit-pres/dialog-edit-pres.component';
+import {DialogEditMedHistComponent} from './patient/view-patient/dialog-edit-med-hist/dialog-edit-med-hist.component';
+import {DialogEditAllergiesComponent} from './patient/view-patient/dialog-edit-allergies/dialog-edit-allergies.component';
+import {DialogEditVisitsComponent} from './patient/view-patient/dialog-edit-visits/dialog-edit-visits.component';
+import {DialogEditPresComponent} from './patient/view-patient/dialog-edit-pres/dialog-edit-pres.component';
 
 
 @NgModule({
@@ -46,8 +45,8 @@ import { DialogEditPresComponent } from './patient/view-patient/dialog-edit-pres
     PatientComponent,
     SearchPatientComponent,
     AddPatientComponent,
-    ViewPatientComponent,
     ProfileComponent,
+    ViewPatientComponent,
     EmployeeComponent,
     PrescriptionComponent,
     MedicalHistoryComponent,

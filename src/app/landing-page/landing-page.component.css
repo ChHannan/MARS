@@ -165,17 +165,15 @@ h2{
   font-weight: 600;
   font-size: 16px;
   color: #69f0ae;
-  padding: 6pxpx;
+  padding: 6px;
 
 }
 
 .logo{
   display: grid;
   place-content: center;
-  background: url("src/assets/images/mars white - Copy.png");
   background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: url("src/assets/images/mars white - Copy.png") no-repeat center;
   transition: 0.5s;
 }
 .new-grid{
@@ -251,10 +249,8 @@ h1{
 #card1 .face.face2{
   display: grid;
   place-content: center;
-  background: #f8f8f8 url("src/assets/images/try now 2 +9- Copy.png");
   background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: #f8f8f8 url("src/assets/images/try now 2 - Copy.png") no-repeat center;
   transition: 0.5s;
 }
 
@@ -265,10 +261,8 @@ h1{
   top: 40px;
   left: 50%;
   transform: translateX(-50%);
-  background: transparent url("src/assets/images/try now 2 - Copy.png");
   background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: transparent url("src/assets/images/try now 2 - Copy.png") no-repeat center;
   border: 2px solid #00e676;
 }
 
