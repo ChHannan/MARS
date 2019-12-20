@@ -108,14 +108,20 @@
           <mat-datepicker-toggle matSuffix [for]="joiningDatePicker"></mat-datepicker-toggle>
           <mat-datepicker #joiningDatePicker></mat-datepicker>
         </mat-form-field>
+        <h6 id="doctorShiftStart">Shift Timings</h6>
+        <mat-form-field appearance="outline" id="doctorShiftStartField">
+          <mat-label>Shift Start Time</mat-label>
+          <input matInput [ngxTimepicker]="d1Picker">
+          <ngx-material-timepicker #d1Picker></ngx-material-timepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline" id="doctorShiftEndField">
+          <mat-label>Shift End Time</mat-label>
+          <input matInput [ngxTimepicker]="d2Picker">
+          <ngx-material-timepicker #d2Picker></ngx-material-timepicker>
+        </mat-form-field>
         <h6 id="assignedNurse">Nurse Assigned</h6>
         <mat-form-field appearance="outline" id="assignedNurseField">
           <mat-label>Nurse's Name</mat-label>
-          <input matInput>
-        </mat-form-field>
-        <h6 id="doctorShifts">Shift Timings</h6>
-        <mat-form-field appearance="outline" id="doctorShiftsField">
-          <mat-label>Shift Timings</mat-label>
           <input matInput>
         </mat-form-field>
       </div>
@@ -129,9 +135,9 @@
 
     <mat-step *ngIf="employeeType==='nurse'" label="Employment">
       <div class="nurse-employment-grid">
-        <h6 id="nurseEducation">Education</h6>
-        <mat-form-field appearance="outline" id="nurseEducationField">
-          <mat-label>Education</mat-label>
+        <h6 id="nurseQualification">Qualification</h6>
+        <mat-form-field appearance="outline" id="nurseQualificationField">
+          <mat-label>Qualification</mat-label>
           <input matInput>
         </mat-form-field>
         <h6 id="institution">Institution</h6>
@@ -139,17 +145,24 @@
           <mat-label>Institution</mat-label>
           <input matInput>
         </mat-form-field>
+        <h6 id="nurseShiftStart">Shift Timings</h6>
+        <mat-form-field appearance="outline" id="nurseShiftStartField">
+          <mat-label>Shift Start Time</mat-label>
+          <input matInput [ngxTimepicker]="n1Picker">
+          <ngx-material-timepicker #n1Picker></ngx-material-timepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline" id="nurseShiftEndField">
+          <mat-label>Shift End Time</mat-label>
+          <input matInput [ngxTimepicker]="n2Picker">
+          <ngx-material-timepicker #n2Picker></ngx-material-timepicker>
+        </mat-form-field>
         <h6 id="nurseJoiningDate">Date Joined</h6>
         <mat-form-field appearance="outline" id="nurseJoiningDateField">
           <input matInput [matDatepicker]="joiningDatePicker1" placeholder="Choose a date">
           <mat-datepicker-toggle matSuffix [for]="joiningDatePicker1"></mat-datepicker-toggle>
           <mat-datepicker #joiningDatePicker1></mat-datepicker>
         </mat-form-field>
-        <h6 id="nurseShifts">Shift Timings</h6>
-        <mat-form-field appearance="outline" id="nurseShiftsField">
-          <mat-label>Shift Timings</mat-label>
-          <input matInput>
-        </mat-form-field>
+
       </div>
       <br>
       <div class="btn-container">
@@ -158,6 +171,38 @@
         </div>
       </div>
     </mat-step>
+
+
+    <mat-step *ngIf="employeeType==='admin'" label="Employment">
+      <div class="admin-employment-grid">
+        <h6 id="adminJoiningDate">Date Joined</h6>
+        <mat-form-field appearance="outline" id="adminJoiningDateField">
+          <input matInput [matDatepicker]="joiningDatePicker2" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="joiningDatePicker2"></mat-datepicker-toggle>
+          <mat-datepicker #joiningDatePicker2></mat-datepicker>
+        </mat-form-field>
+        <h6 id="adminShiftStart">Shift Timings</h6>
+        <mat-form-field appearance="outline" id="adminShiftStartField">
+          <mat-label>Shift Start Time</mat-label>
+          <input matInput [ngxTimepicker]="a1Picker">
+          <ngx-material-timepicker #a1Picker></ngx-material-timepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline" id="adminShiftEndField">
+          <mat-label>Shift End Time</mat-label>
+          <input matInput [ngxTimepicker]="a2Picker">
+          <ngx-material-timepicker #a2Picker></ngx-material-timepicker>
+        </mat-form-field>
+
+
+      </div>
+      <br>
+      <div class="btn-container">
+        <div class="add-btn">
+          <button mat-raised-button color="primary">Add</button>
+        </div>
+      </div>
+    </mat-step>
+
 
   </mat-vertical-stepper>
 

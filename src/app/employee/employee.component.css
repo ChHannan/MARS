@@ -26,6 +26,12 @@
   margin-right: 16px
 }
 
+.bio-grid mat-form-field, .contact-grid .mat-form-field, .admin-employment-grid mat-form-field,
+.doctor-employment-grid mat-form-field, .nurse-employment-grid mat-form-field {
+  width: 90%;
+}
+
+
 .bio-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
@@ -33,10 +39,6 @@
   grid-template-areas: ". name firstName middleName lastName ."
   ". cnic cnicField dob dobField ."
   ". gender male female . .";
-}
-
-.bio-grid mat-form-field {
-  width: 90%;
 }
 
 #name {
@@ -105,10 +107,6 @@
   ". email emailField address addressField ."
   ". city cityField country countryField .";
 }
-.contact-grid .mat-form-field {
-  width: 90%;
-
-}
 
 #mobile{
   grid-area: mobile;
@@ -174,16 +172,46 @@
   grid-area: countryField;
 }
 
+
+.admin-employment-grid {
+  display: grid;
+  grid-template-columns: 5% repeat(4, 20%) 2%;
+  grid-template-rows: repeat(2, 70px);
+  grid-template-areas: ". adminJoiningDate adminJoiningDateField . . ."
+  ". adminShiftStart adminShiftStartField adminShiftEndField . .";
+}
+#adminJoiningDate {
+  grid-area: adminJoiningDate;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#adminJoiningDateField {
+  grid-area: adminJoiningDateField;
+}
+#adminShiftStart {
+  grid-area: adminShiftStart;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#adminShiftStartField {
+  grid-area: adminShiftStartField;
+}
+#adminShiftEndField {
+  grid-area: adminShiftEndField;
+}
+
 .doctor-employment-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(3, 70px);
+  grid-template-rows: repeat(4, 70px);
   grid-template-areas: ". speciality specialityField doctorQualification doctorQualificationField ."
   ". medicalCollege medicalCollegeField joiningDate joiningDateField ."
-  ". assignedNurse assignedNurseField doctorShifts doctorShiftsField .";
-}
-.doctor-employment-grid mat-form-field {
-  width: 90%;
+  ".  doctorShiftStart doctorShiftStartField doctorShiftEndField . ."
+  ". assignedNurse assignedNurseField . . .";
 }
 
 #speciality {
@@ -233,6 +261,23 @@
   grid-area: joiningDateField;
 }
 
+#doctorShiftStart {
+  grid-area: doctorShiftStart;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+
+
+#doctorShiftStartField {
+  grid-area: doctorShiftStartField;
+}
+
+#doctorShiftEndField {
+  grid-area: doctorShiftEndField;
+}
 #assignedNurse {
   grid-area: assignedNurse;
   display: flex;
@@ -240,43 +285,29 @@
   align-items: center;
   margin: 0;
 }
-
 #assignedNurseField {
   grid-area: assignedNurseField;
-}
-
-#doctorShifts {
-  grid-area: doctorShifts;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 0;
-}
-#doctorShiftsField {
-  grid-area: doctorShiftsField;
 }
 
 
 .nurse-employment-grid {
   display: grid;
   grid-template-columns: 5% repeat(4, 20%) 2%;
-  grid-template-rows: repeat(2, 70px);
-  grid-template-areas: ". nurseEducation nurseEducationField institution institutionField ."
-  ". nurseShifts nurseShiftsField nurseJoiningDate nurseJoiningDateField .";
+  grid-template-rows: repeat(3, 70px);
+  grid-template-areas: ". nurseQualification nurseQualificationField institution institutionField ."
+  ". nurseShiftStart nurseShiftStartField nurseShiftEndField . ."
+  ". nurseJoiningDate nurseJoiningDateField . . .";
 }
-.nurse-employment-grid mat-form-field {
-  width: 90%;
-}
-#nurseEducation {
-  grid-area: nurseEducation;
+#nurseQualification {
+  grid-area: nurseQualification;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
 
-#nurseEducationField {
-  grid-area: nurseEducationField;
+#nurseQualificationField {
+  grid-area: nurseQualificationField;
 }
 
 #institution {
@@ -291,17 +322,26 @@
   grid-area: institutionField;
 }
 
-#nurseShifts {
-  grid-area: nurseShifts;
+#nurseShiftStart {
+  grid-area: nurseShiftStart;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
-#nurseShiftsField {
-  grid-area: nurseShiftsField;
+#nurseShiftStartField {
+  grid-area: nurseShiftStartField;
 }
-
+#nurseShiftEnd {
+  grid-area: nurseShiftEnd;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+#nurseShiftEndField {
+  grid-area: nurseShiftEndField;
+}
 #nurseJoiningDate {
   grid-area: nurseJoiningDate;
   display: flex;
@@ -342,13 +382,14 @@
   }
 
   .bio-grid mat-form-field, .contact-grid .mat-form-field,
-  .doctor-employment-grid mat-form-field,.nurse-employment-grid mat-form-field {
+  .doctor-employment-grid mat-form-field,.nurse-employment-grid mat-form-field,
+  .admin-employment-grid .mat-form-field{
     width: 220px;
   }
 
   .bio-grid {
     display: grid;
-    grid-template-rows: repeat(11, 70px);
+    grid-template-rows: repeat(11, 65px);
     grid-template-areas: "name" "firstName" "middleName" "lastName" "cnic" "cnicField" "dob" "dobField"
     "gender" "male" "female";
   }
@@ -356,23 +397,29 @@
 
   .contact-grid {
     display: grid;
-    grid-template-rows: repeat(12, 70px);
+    grid-template-rows: repeat(12, 65px);
     grid-template-areas: "mobile" "mobileField" "emergencyContact" "emergencyContactField"
                           "email" "emailField" "address" "addressField" "city" "cityField" "country" "countryField";
+  }
+  .admin-employment-grid {
+    display: grid;
+    grid-template-rows: repeat(5, 65px);
+    grid-template-areas: "adminJoiningDate" "adminJoiningDateField"
+    "adminShiftStart" "adminShiftStartField" "adminShiftEndField ";
   }
 
   .doctor-employment-grid {
     display: grid;
-    grid-template-rows: repeat(12, 70px);
+    grid-template-rows: repeat(13, 65px);
     grid-template-areas: "speciality" "specialityField" "doctorQualification" "doctorQualificationField"
     "medicalCollege" "medicalCollegeField" "joiningDate" "joiningDateField"
-    "assignedNurse" "assignedNurseField" "doctorShifts" "doctorShiftsField";
+    "doctorShiftStart" "doctorShiftStartField" "doctorShiftEndField" "assignedNurse" "assignedNurseField";
   }
   .nurse-employment-grid {
     display: grid;
-    grid-template-rows: repeat(8, 70px);
-    grid-template-areas: "nurseEducation" "nurseEducationField" "institution" "institutionField"
-    "nurseShifts" "nurseShiftsField" "nurseJoiningDate" "nurseJoiningDateField";
+    grid-template-rows: repeat(9, 65px);
+    grid-template-areas: "nurseQualification" "nurseQualificationField" "institution" "institutionField"
+    "nurseShiftStart" "nurseShiftStartField" "nurseShiftEndField" "nurseJoiningDate" "nurseJoiningDateField";
   }
 
 }

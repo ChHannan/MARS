@@ -5,6 +5,8 @@ import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 
 import {MaterialModule} from './material/material.module';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 import {appRoutes} from './app-routing.module';
 
@@ -16,18 +18,18 @@ import {PatientComponent} from './patient/patient.component';
 import {SearchPatientComponent} from './patient/search-patient/search-patient.component';
 import {AddPatientComponent} from './patient/add-patient/add-patient.component';
 import {ViewPatientComponent} from './patient/view-patient/view-patient.component';
-import { ProfileComponent } from './profile/profile.component';
-import { EmployeeComponent } from './employee/employee.component';
-import { PrescriptionComponent } from './prescription/prescription.component';
-import { MedicalHistoryComponent } from './medical-history/medical-history.component';
-import { DialogMedicalHistoryComponent } from './patient/view-patient/dialog-medical-history/dialog-medical-history.component';
-import { DialogPrescriptionComponent } from './patient/view-patient/dialog-prescription/dialog-prescription.component';
-import { DialogAllergyComponent } from './patient/view-patient/dialog-allergy/dialog-allergy.component';
-import { DialogVisitsComponent } from './patient/view-patient/dialog-visits/dialog-visits.component';
+import {ProfileComponent} from './profile/profile.component';
+import {EmployeeComponent} from './employee/employee.component';
+import {PrescriptionComponent} from './prescription/prescription.component';
+import {MedicalHistoryComponent} from './medical-history/medical-history.component';
+import {DialogMedicalHistoryComponent} from './patient/view-patient/dialog-medical-history/dialog-medical-history.component';
+import {DialogPrescriptionComponent} from './patient/view-patient/dialog-prescription/dialog-prescription.component';
+import {DialogAllergyComponent} from './patient/view-patient/dialog-allergy/dialog-allergy.component';
+import {DialogVisitsComponent} from './patient/view-patient/dialog-visits/dialog-visits.component';
 import {MatRadioModule, MatStepperModule} from '@angular/material';
-import {MatListModule} from "@angular/material/list";
-import { AllergyComponent } from './allergy/allergy.component';
-import { VisitsComponent } from './visits/visits.component';
+import {MatListModule} from '@angular/material/list';
+import {AllergyComponent} from './allergy/allergy.component';
+import {VisitsComponent} from './visits/visits.component';
 
 
 @NgModule({
@@ -57,17 +59,19 @@ import { VisitsComponent } from './visits/visits.component';
     DialogAllergyComponent,
     DialogVisitsComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MaterialModule,
-        RouterModule.forRoot(appRoutes),
-        FormsModule,
-        MatStepperModule,
-        MatListModule,
-        MatRadioModule,
-
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    MatStepperModule,
+    MatListModule,
+    MatRadioModule,
+    NgxMaterialTimepickerModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
