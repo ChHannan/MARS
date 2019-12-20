@@ -114,7 +114,8 @@ section{
 #overlay{
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.85);
+  background: #2b3137;
+  opacity: 95%;
   background-size: cover;
 }
 
@@ -160,13 +161,13 @@ h2{
 
 #btn1{
   display: grid;
-  border-radius: 2rem;
-  background: #f8f8f8;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 16px;
-  color: #69f0ae;
-  padding: 6px;
-
+  border: 2px solid #f8f8f8;
+  border-radius: 2rem;
+  color: #f8f8f8;
+  padding: 2px;
+  width: 6%;
 }
 
 .logo{
@@ -212,7 +213,7 @@ h1{
   height: 96%;
   width: 96%;
   border-radius: 0.5rem;
-  background-color: #f8f8f8;
+  background-color: #2b3137;
   transition: 0.5s;
 }
 
@@ -239,7 +240,7 @@ h1{
   padding: 20px;
   text-align: center;
   background: #f8f8f8;
-  color: #000000;
+  color: #24292e;
 }
 
 #card1 .face.face1 h2{
@@ -249,10 +250,13 @@ h1{
 #card1 .face.face2{
   display: grid;
   place-content: center;
+  background: #2b3137 url("src/assets/images/Untitled-2try now - Copy.png");
   background-size: 60%;
-  background: #f8f8f8 url("src/assets/images/try now 2 - Copy.png") no-repeat center;
+  background-repeat: no-repeat;
+  background-position: center;
   transition: 0.5s;
 }
+
 
 #card1:hover .face.face2{
   height: 80px;
@@ -261,9 +265,11 @@ h1{
   top: 40px;
   left: 50%;
   transform: translateX(-50%);
+  background: #24292e url("src/assets/images/Untitled-2try now - Copy.png");
   background-size: 60%;
-  background: transparent url("src/assets/images/try now 2 - Copy.png") no-repeat center;
-  border: 2px solid #00e676;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #24292e;
 }
 
 #card1 .face.face2 h2{
@@ -284,7 +290,6 @@ h1{
   position: relative;
   height: 96%;
   width: 96%;
-  border-radius: 0.5rem;
   background-color: #f8f8f8;
   transition: 0.5s;
 }
@@ -306,11 +311,12 @@ h1{
 }
 
 #card2 .face.face1{
+
   box-sizing: border-box;
   padding: 20px;
   text-align: center;
   background: #f8f8f8;
-  color: #000000;
+  color: #24292e;
 }
 
 #card2 .face.face1 h2{
@@ -320,7 +326,7 @@ h1{
 #card2 .face.face2{
   display: grid;
   place-content: center;
-  background: #00e676 url("src/assets/images/Untitled-2try now - Copy.png");
+  background: #2b3137 url("src/assets/images/Untitled-2try now - Copy.png");
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
@@ -334,11 +340,11 @@ h1{
   top: 40px;
   left: 50%;
   transform: translateX(-50%);
-  background: transparent url("src/assets/images/try now 2 - Copy.png");
+  background: #24292e url("src/assets/images/Untitled-2try now - Copy.png");
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
-  border: 2px solid #00e676;
+  border: 2px solid #24292e;
 }
 
 #card2 .face.face2 h2{
@@ -385,7 +391,7 @@ h1{
   padding: 20px;
   text-align: center;
   background: #f8f8f8;
-  color: #000000;
+  color: #24292e;
 }
 
 #card3 .face.face1 h2{
@@ -395,7 +401,7 @@ h1{
 #card3 .face.face2{
   display: grid;
   place-content: center;
-  background: #00e676 url("src/assets/images/Untitled-2try now - Copy.png");
+  background: #2b3137 url("src/assets/images/Untitled-2try now - Copy.png");
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
@@ -409,11 +415,11 @@ h1{
   top: 40px;
   left: 50%;
   transform: translateX(-50%);
-  background: transparent url("src/assets/images/try now 2 - Copy.png");
+  background: #24292e url("src/assets/images/Untitled-2try now - Copy.png");
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
-  border: 2px solid #00e676;
+  border: 2px solid #24292e;
 }
 
 #card3 .face.face2 h2{
@@ -459,7 +465,7 @@ h1{
   padding: 20px;
   text-align: center;
   background: #f8f8f8;
-  color: #000000;
+  color: #24292e;
 }
 
 #card4 .face.face1 h2{
@@ -469,7 +475,7 @@ h1{
 #card4 .face.face2{
   display: grid;
   place-content: center;
-  background: #00e676 url("src/assets/images/Untitled-2try now - Copy.png");
+  background: #2b3137 url("src/assets/images/Untitled-2try now - Copy.png");
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
@@ -483,11 +489,11 @@ h1{
   top: 40px;
   left: 50%;
   transform: translateX(-50%);
-  background: transparent url("src/assets/images/try now 2 - Copy.png");
+  background: #24292e url("src/assets/images/Untitled-2try now - Copy.png");
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
-  border: 2px solid #00e676;
+  border: 2px solid #24292e;
 }
 
 #card4 .face.face2 h2{

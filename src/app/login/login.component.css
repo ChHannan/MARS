@@ -83,8 +83,7 @@
 
 #login{
   grid-area: login;
-  background-color: white;
-  border: lightgray solid 1px;
+  background-color: #24292e;
   border-top-left-radius: 2rem 2rem;
   border-bottom-left-radius: 2rem 2rem;
   border-top-right-radius: 2rem 2rem;
@@ -125,7 +124,7 @@ main{
 #logo{
   grid-area: logo;
   margin: 16%;
-  background: transparent url("src/assets/images/wjs - Copy.svg");
+  background: transparent url("src/assets/images/mars white - Copy.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -190,7 +189,7 @@ p{
 .btn1{
     display: grid;
     border-radius: 2rem;
-    background: #00e676;
+    background: #24292e;
     font-weight: 500;
     font-size: 16px;
     color: #ffffff;
@@ -201,7 +200,7 @@ p{
   .login-grid{
     display: grid;
     margin-top: 20% ;
-    grid-template-columns: 6% 88% 6%;
+    grid-template-columns: 10% 80% 10%;
     grid-template-rows: auto;
     grid-template-areas:
       ". . ."
@@ -212,7 +211,7 @@ p{
   main{
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 40% 74%;
+    grid-template-rows: 50% 90%;
     grid-template-areas:
       "logo"
       "login2"
@@ -221,23 +220,30 @@ p{
 
   }
 
+  #login{
+    grid-area: login;
+    background-color: #24292e;
+    border-top-left-radius: 2rem 2rem;
+    border-bottom-left-radius: 2rem 2rem;
+    border-top-right-radius: 2rem 2rem;
+    border-bottom-right-radius: 2rem 2rem;
+    background-size: cover;
+
+  }
+
   #logo{
     grid-area: logo;
-    margin: 4%;
-    background: transparent url("src/assets/images/wjs - Copy.svg");
+    margin: 8%;
+    background: #24292e url("src/assets/images/mars white - Copy.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    elevation: 0;
-    box-shadow: 0;
   }
 
 
   #login2{
     grid-area: login2;
     background-color: #ffffff;
-    opacity: 100%;
-    border: none;
     border-top-left-radius: 50% 10%;
     border-bottom-left-radius: 2rem 2rem;
     border-top-right-radius: 50% 10%;
