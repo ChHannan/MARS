@@ -1,21 +1,208 @@
-.login-card {
- place-content: center;
+/*body{*/
+/*  !*background-image: linear-gradient(to right, #69f0ae, #ffffff);*!*/
+/*  background: url('src/assets/images/stethoscope-scrubs.jpg');*/
+/*  background-size: cover;*/
+/*  !*background-color: #00e676;*!*/
+/*}*/
+/*#image{*/
+/*  background-image: url('src/assets/images/stethoscope-scrubs.jpg');*/
+/*  background-size: 100% 100%;*/
+/*}*/
+
+/*.login-card {*/
+/* place-content: center;*/
+/*  display: grid;*/
+/*  height: 90vh;*/
+/*}*/
+
+/*.login-card-content{*/
+/*  height: 20rem;*/
+/*  width: 20rem;*/
+/*}*/
+/*.mat-form-field{*/
+/*  display: block;*/
+/*}*/
+
+/*.mat-raised-button{*/
+/*  display: block;*/
+/*}*/
+
+/*h2.lol{*/
+/*  padding-bottom: 20px;*/
+/*  text-align: center;*/
+/*}*/
+
+/*.register-left{*/
+/*  text-align: center;*/
+/*  color: #000000;*/
+/*  padding: 30px;*/
+/*  margin-top: 150px;*/
+/*}*/
+
+/*.register-left p{*/
+/*  padding: 20px 20px 0;*/
+/*}*/
+
+/*.btn1{*/
+/*  border-radius: 2rem;*/
+/*  border: none;*/
+/*  background: #00e676;*/
+/*  font-weight: 600;*/
+/*  font-size: 24px;*/
+/*  color: #000000;*/
+/*  margin-top: 20px;*/
+/*  padding: 10px;*/
+/*}*/
+
+/*.register-right{*/
+/*  width: 50%;*/
+/*  margin-top: 15%;*/
+/*  border: none;*/
+/*  background: #69f0ae;*/
+/*  border-top-left-radius: 10% 50%;*/
+/*  border-bottom-left-radius: 10% 50%;*/
+/*  border-top-right-radius: 10% 10%;*/
+/*  border-bottom-right-radius: 10% 10%;*/
+/*  padding: 7%;*/
+/*}*/
+
+/*.register-form{*/
+/*  width: 50%;*/
+/*}*/
+
+
+.login-grid{
   display: grid;
-  height: 90vh;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 1.25fr 1.5fr;
+  grid-template-areas:
+    ". . ."
+    ". login ."
+    ". . .";
 }
 
-.login-card-content{
-  height: 20rem;
-  width: 20rem;
-}
-.mat-form-field{
-  display: block;
+#login{
+  grid-area: login;
+  background-color: white;
+  border: lightgray solid 1px;
+  border-top-left-radius: 2rem 2rem;
+  border-bottom-left-radius: 2rem 2rem;
+  border-top-right-radius: 2rem 2rem;
+  border-bottom-right-radius: 2rem 2rem;
+  background-size: cover;
+
 }
 
-.mat-raised-button{
-  display: block;
+section{
+  width: 100%;
+  height: 100%;
 }
 
-h4.lol{
-  align-self: center;
+#overlay{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  background-size: cover;
 }
+#overlay2{
+
+  width: 100%;
+  height: 100%;
+  background: rgba(105, 240, 174, 0);
+  background-size: cover;
+}
+
+main{
+  display: grid;
+  grid-template-columns: 62% 38%;
+  grid-template-rows: 100%;
+  grid-template-areas:
+    "logo login2";
+
+
+}
+
+#logo{
+  grid-area: logo;
+  margin: 12%;
+  background: transparent url("src/assets/images/mars 2 - Copy.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  elevation: 0;
+  box-shadow: 0;
+}
+#headingbox {
+}
+
+
+#parabox{
+  padding-left: 10%;
+  padding-top: 1%;
+}
+
+#big {
+  margin-left: 5%;
+  color: #000000;
+  text-align: start;
+  font-family: "Microsoft YaHei UI Light";
+  font-size: 32px;
+}
+
+#p{
+  font-family: "Microsoft YaHei Light";
+  color: #00e676;
+  font-size: 12px;
+
+}
+
+#login2{
+  grid-area: login2;
+  background-color: #ffffff;
+  opacity: 100%;
+  border: none;
+  border-top-left-radius: 10% 50%;
+  border-bottom-left-radius: 10% 50%;
+  border-top-right-radius: 2rem 2rem;
+  border-bottom-right-radius: 2rem 2rem;
+  padding-bottom: 30px;
+  box-shadow:  0px 0 4px 0px gray;
+}
+
+h3{
+  text-align: center;
+  margin-top: 8%;
+  color: #f8f8f8;
+  font-weight: bold;
+  font-family: "Microsoft YaHei";
+  font-size: 30px;
+}
+
+p{
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 4%;
+  color: #00e676;
+  font-family: "Microsoft YaHei UI Light";
+  font-size: 22px;
+}
+
+#login-form{
+  color: #000000;
+  display: grid;
+  justify-content: space-between;
+  margin-top: 7%;
+  place-content: center;
+}
+
+.btn1{
+    display: grid;
+    border-radius: 2rem;
+    background: #00e676;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 3px;
+}
+
+

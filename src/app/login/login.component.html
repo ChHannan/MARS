@@ -1,12 +1,57 @@
-<div class="login-card">
-  <mat-card class="login-card-content">
-    <img src="undraw_profile_pic_ic5t (1).svg">
-    <h4 class="lol">LOG-IN</h4>
-    <mat-form-field><label><input matInput placeholder="Username" [(ngModel)]="userService.userType"></label></mat-form-field>
-    <br>
-    <mat-form-field><label><input matInput placeholder="Password"></label></mat-form-field>
-    <br>
-    <br>
-    <a mat-raised-button color="primary" routerLink="../dashboard" (click)="userService.updateUser()">Login</a>
-  </mat-card>
-</div>
+<!--<body>-->
+<!--<div class="container">-->
+<!--<div class="row">-->
+<!--<div class="col-md-10 offset=md-1">-->
+<!--<div class="row">-->
+<!--  <div class="col-md-5 register-left">-->
+<!--    <h3>Mars logo</h3>-->
+<!--    <p> MARSSSS</p>-->
+<!--  </div>-->
+<!--  <div class="col-md-7 register-right">-->
+<!--    <h2>Login</h2>-->
+<!--    <div class="register-form">-->
+<!--      <div class="form-group">-->
+<!--          <mat-form-field><label><input matInput placeholder="Username" [(ngModel)]="userService.userType"></label></mat-form-field>-->
+<!--          <br>-->
+<!--          <mat-form-field><label><input matInput placeholder="Password"></label></mat-form-field>-->
+<!--          <br>-->
+<!--          <br>-->
+<!--          <a mat-raised-button class="btn1" color=white routerLink="../dashboard" (click)="userService.updateUser()">Login</a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</body>-->
+
+<body>
+  <section>
+    <div>
+      <div>
+        <div class="login-grid">
+          <main id="login">
+            <div id="logo">
+            </div>
+            <div id="login2">
+              <h3 style="color: #000000">Sign In</h3>
+              <div id="login-form">
+
+                <mat-form-field><mat-label>Username</mat-label><input matInput placeholder="Username" [(ngModel)]="userService.userType"></mat-form-field>
+                <mat-form-field><mat-label>Password</mat-label><input matInput placeholder="Password"></mat-form-field>
+                <br>
+                <a mat-raised-button class="btn1" color=white routerLink="../dashboard" (click)="userService.updateUser()">SIGN IN</a>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</body>
+
+
+
+
