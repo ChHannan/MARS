@@ -27,28 +27,33 @@
 <!--</body>-->
 
 <body>
-  <section>
+<section>
+  <div>
     <div>
-      <div>
-        <div class="login-grid">
-          <main id="login">
-            <div id="logo">
+      <div class="login-grid">
+        <main id="login">
+          <div id="logo">
+          </div>
+          <div id="login2">
+            <h3 style="color: #000000">Sign In</h3>
+            <div id="login-form">
+              <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Username" [(ngModel)]="userService.cnic"></mat-form-field>
+              <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" [(ngModel)]="userService.password"></mat-form-field>
+              <br>
+              <a mat-raised-button class="btn1" color=white
+                 (click)="userService.login()">SIGN IN</a>
             </div>
-            <div id="login2">
-              <h3 style="color: #000000">Sign In</h3>
-              <div id="login-form">
-                <mat-form-field><mat-label>Username</mat-label><input matInput placeholder="Username" [(ngModel)]="userService.userType"></mat-form-field>
-                <mat-form-field><mat-label>Password</mat-label><input matInput placeholder="Password"></mat-form-field>
-                <br>
-                <a mat-raised-button class="btn1" color=white routerLink="../dashboard" (click)="userService.updateUser()">SIGN IN</a>
-              </div>
-            </div>
-          </main>
-        </div>
+          </div>
+        </main>
       </div>
     </div>
+  </div>
 
-  </section>
+</section>
 </body>
 
 

@@ -1,12 +1,8 @@
-body{
-  margin: 0px;
-  padding: 0px;
-}
 .fill-space {
   flex: 1 1 auto
 }
 
-section{
+section {
   width: 100%;
   height: 100%;
   background: url('src/assets/images/stethoscope-scrubs.jpg');
@@ -14,37 +10,29 @@ section{
 
 }
 
-.landing-grid{
+.landing-grid {
   display: grid;
   grid-template-columns: 7.5% 50% 35% 7.5%;
   grid-template-rows: 1.5fr 4fr 1fr;
-  grid-template-areas:
-    ". . . ."
-  ". text blocks ."
-  ". . . .";
+  grid-template-areas: ". . . ." ". text blocks ." ". . . .";
 }
 
-#text{
+#text {
   grid-area: text;
 }
 
-#blocks{
+#blocks {
   grid-area: blocks;
 }
 
-.block-grid{
+.block-grid {
   display: grid;
   grid-template-columns: 2% 96% 2%;
   grid-template-rows: 100px 100px 100px 100px;
-  grid-template-areas:
-    ". block1 ."
-    ". block2 ."
-    ". block3 ."
-    ". block4 ."
-    ;
+  grid-template-areas: ". block1 ." ". block2 ." ". block3 ." ". block4 .";
 }
 
-#block1{
+#block1 {
   grid-area: block1;
   height: 96%;
   place-content: center;
@@ -53,7 +41,7 @@ section{
   padding: 0px;
 }
 
-#block2{
+#block2 {
   grid-area: block2;
   height: 96%;
   place-content: center;
@@ -62,7 +50,7 @@ section{
   padding: 0px;
 }
 
-#block3{
+#block3 {
   grid-area: block3;
   height: 96%;
   place-content: center;
@@ -71,47 +59,33 @@ section{
   padding: 0px;
 }
 
-#block4{
+#block4 {
   grid-area: block4;
   height: 96%;
   place-content: center;
   background-color: #00e676;
   opacity: 80%;
-  padding: 0px;
+  padding: 0;
 
 }
 
-.block-grid2{
+.block-grid2 {
   display: grid;
   grid-template-columns: 4% 16% auto 4%;
   grid-template-rows: auto;
-  grid-template-areas:
-    ". icon htext ."
-    ". icon hsubtext ."
-;
+  grid-template-areas: ". icon htext ." ". icon hsubtext .";
 }
 
-.icon{
-  grid-area: icon;
-  margin-top: 20%;
-  margin-bottom: 6%;
-  margin-right: 14%;
-  background-image: url("src/assets/images/Untitled-2try now - Copy.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-#htext{
+#htext {
   grid-area: htext;
   color: cornsilk;
 }
 
-#hsubtext{
+#hsubtext {
   grid-area: hsubtext;
 }
 
-#overlay{
+#overlay {
   width: 100%;
   height: 100%;
   background: #2b3137;
@@ -119,7 +93,7 @@ section{
   background-size: cover;
 }
 
-#overlay2{
+#overlay2 {
   width: 100%;
   height: 100%;
   background: rgba(105, 240, 174, 0.15);
@@ -135,31 +109,26 @@ section{
   color: cornsilk;
   font-family: "Microsoft YaHei UI";
   font-weight: bold;
-  margin: 2%;
-  margin-top: 4%;
+  margin: 4% 2% 2%;
 }
 
-#p{
+#p {
   font-family: "Microsoft YaHei Light";
   color: cornsilk;
-  margin: 2%;
-  margin-top: 0;
+  margin: 0 2% 2%;
 }
 
 
-#headingbox{
+#headingbox {
   padding-left: 5%;
 }
 
-#parabox{
+#parabox {
   padding-left: 5%;
   padding-top: 1%;
 }
 
-h2{
-}
-
-#btn1{
+#btn1 {
   display: grid;
   font-weight: bold;
   font-size: 16px;
@@ -170,343 +139,133 @@ h2{
   width: 6%;
 }
 
-.logo{
+.logo {
   display: grid;
   place-content: center;
   background-size: 100%;
   background: url("src/assets/images/mars white - Copy.png") no-repeat center;
   transition: 0.5s;
 }
-.new-grid{
+
+.new-grid {
   display: grid;
-  grid-template-columns: 10% 20% 20% 20% 20% 10%;
-  grid-template-rows: 0.5fr 1fr 2fr 4fr 2fr;
-  grid-template-areas:
-    ". . . . . ."
-    ". title title title title ."
-    ". . subtitle subtitle . ."
-    ". card1 card2 card3 card4 ."
-;
-
+  grid-template-columns: 5% 19.25% 5% 19.25% 5% 19.25% 5% 19.25% 5%;
+  grid-template-rows: 5% 10% 5% 15% 5% 45% 15%;
+  height: 100%;
 }
 
-#title{
-  grid-area: title;
+#title {
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column-end: span 7;
   text-align: center;
   font-family: "Microsoft YaHei Light";
 }
 
-#subtitle{
-  grid-area: subtitle;
+#subtitle {
+  grid-row-start: 4;
+  grid-column-start: 2;
+  grid-column-end: span 7;
   text-align: center;
   font-family: "Microsoft YaHei Light";
 }
 
-h1{
+h1 {
   color: cornsilk;
   font-size: 4rem;
   font-weight: bold;
 }
-#card1{
-  grid-area: card1;
-  position: relative;
-  height: 96%;
-  width: 96%;
+
+#feature-card-1 {
+  grid-row-start: 6;
+  grid-column-start: 2;
+}
+
+#feature-card-2 {
+  grid-row-start: 6;
+  grid-column-start: 4;
+}
+
+#feature-card-3 {
+  grid-row-start: 6;
+  grid-column-start: 6;
+}
+
+#feature-card-4 {
+  grid-row-start: 6;
+  grid-column-start: 8;
+}
+
+.feature-card {
   border-radius: 0.5rem;
   background-color: #2b3137;
   transition: 0.5s;
-}
-
-
-
-#card1:hover{
-  box-shadow: 0 30px 50px rgba(255,255,255,0.2);
-}
-
-#card1 .face{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-#card1 .face.face1{
-  box-sizing: border-box;
-  padding: 20px;
-  text-align: center;
-  background: #f8f8f8;
-  color: #24292e;
-}
-
-#card1 .face.face1 h2{
-  margin-top: 24% ;
-}
-
-#card1 .face.face2{
-  display: grid;
   place-content: center;
-  background: #2b3137 url("src/assets/images/Untitled-2try now - Copy.png");
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: 0.5s;
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 100%;
 }
 
-
-#card1:hover .face.face2{
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #24292e url("src/assets/images/Untitled-2try now - Copy.png");
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid #24292e;
+.feature-card:hover {
+  box-shadow: 0 30px 50px rgba(255, 255, 255, 0.2);
 }
 
-#card1 .face.face2 h2{
-  margin: 0;
-  padding: 0;
-  font-size: 10em;
-  color: #ffffff;
-  transition: 0.5s;
-}
-
-#card1:hover .face.face2 h2{
-  font-size: 2em;
-  color: #013d4a;
-}
-
-#card2{
-  grid-area: card2;
-  position: relative;
-  height: 96%;
-  width: 96%;
+.feature-content {
+  display: grid;
+  grid-template-rows: 5% 25% 10% 20% 10% 20% 10%;
+  grid-template-columns: 10% 80% 10%;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  z-index: 1;
   background-color: #f8f8f8;
-  transition: 0.5s;
 }
 
-#card2:hover{
-  box-shadow: 0 30px 50px rgba(255,255,255,0.2);
+.feature-heading {
+  justify-self: center;
+  grid-row-start: 4;
+  grid-column-start: 2;
 }
 
-#card2 .face{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+.feature-text {
+  justify-self: center;
+  grid-row-start: 6;
+  grid-column-start: 2;
 }
 
-#card2 .face.face1{
-
-  box-sizing: border-box;
-  padding: 20px;
-  text-align: center;
-  background: #f8f8f8;
-  color: #24292e;
-}
-
-#card2 .face.face1 h2{
-  margin-top: 24% ;
-}
-
-#card2 .face.face2{
+.feature-animation {
+  z-index: 2;
+  grid-row-start: 1;
+  grid-column-start: 1;
   display: grid;
-  place-content: center;
-  background: #2b3137 url("src/assets/images/Untitled-2try now - Copy.png");
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: 0.5s;
-}
-
-#card2:hover .face.face2{
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #24292e url("src/assets/images/Untitled-2try now - Copy.png");
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid #24292e;
-}
-
-#card2 .face.face2 h2{
-  margin: 0;
-  padding: 0;
-  font-size: 10em;
-  color: #ffffff;
-  transition: 0.5s;
-}
-
-#card2:hover .face.face2 h2{
-  font-size: 2em;
-  color: #013d4a;
-}
-
-#card3{
-  grid-area: card3;
-  position: relative;
-  height: 96%;
-  width: 96%;
-  border-radius: 0.5rem;
-  background-color: #f8f8f8;
-  transition: 0.5s;
-}
-
-#card3:hover{
-  box-shadow: 0 30px 50px rgba(255,255,255,0.2);
-}
-
-#card3 .face{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 100%;
+  background-color: #2b3137;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-#card3 .face.face1{
-  box-sizing: border-box;
-  padding: 20px;
-  text-align: center;
-  background: #f8f8f8;
-  color: #24292e;
-}
-
-#card3 .face.face1 h2{
-  margin-top: 24% ;
-}
-
-#card3 .face.face2{
-  display: grid;
-  place-content: center;
-  background: #2b3137 url("src/assets/images/Untitled-2try now - Copy.png");
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: 0.5s;
-}
-
-#card3:hover .face.face2{
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #24292e url("src/assets/images/Untitled-2try now - Copy.png");
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid #24292e;
-}
-
-#card3 .face.face2 h2{
-  margin: 0;
-  padding: 0;
-  font-size: 10em;
-  color: #ffffff;
-  transition: 0.5s;
-}
-
-#card3:hover .face.face2 h2{
-  font-size: 2em;
-  color: #013d4a;
-}
-
-#card4{
-  grid-area: card4;
-  position: relative;
-  height: 96%;
-  width: 96%;
-  border-radius: 0.5rem;
-  background-color: #f8f8f8;
-  transition: 0.5s;
-}
-#card4:hover{
-  box-shadow: 0 30px 50px rgba(255,255,255,0.2);
-}
-
-#card4 .face{
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-#card4 .face.face1{
-  box-sizing: border-box;
-  padding: 20px;
-  text-align: center;
-  background: #f8f8f8;
-  color: #24292e;
-}
-
-#card4 .face.face1 h2{
-  margin-top: 24% ;
-}
-
-#card4 .face.face2{
-  display: grid;
-  place-content: center;
-  background: #2b3137 url("src/assets/images/Untitled-2try now - Copy.png");
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
+  justify-self: center;
   transition: 0.5s;
+  margin-top: 0;
 }
 
-#card4:hover .face.face2{
-  height: 80px;
-  width: 80px;
+.feature-card:hover .feature-animation {
+  justify-self: center;
+  margin-top: 10px;
   border-radius: 50%;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #24292e url("src/assets/images/Untitled-2try now - Copy.png");
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid #24292e;
-}
-
-#card4 .face.face2 h2{
-  margin: 0;
-  padding: 0;
-  font-size: 10em;
-  color: #ffffff;
+  width: 80px;
+  height: 80px;
   transition: 0.5s;
 }
 
-#card4:hover .face.face2 h2{
-  font-size: 2em;
-  color: #013d4a;
+.img {
+  grid-row-start: 1;
+  grid-column-start: 2;
+  align-self: center;
+}
+
+.img img {
+  width: 100%;
+  height: auto;
 }
 
 .logo-icon {
@@ -517,23 +276,12 @@ h1{
   background-repeat: no-repeat;
 }
 
-
-@media screen and (max-width: 600px){
-  .new-grid{
+@media screen and (max-width: 600px) {
+  .new-grid {
     display: grid;
     grid-template-columns: 6% 88% 6%;
     grid-template-rows: 1fr 1fr 2fr 4fr 4fr 4fr 4fr 1fr;
-    grid-template-areas:
-      ". . . . . ."
-      ". title ."
-      ". subtitle ."
-      ". card1 ."
-      ". card2 ."
-      ". card3 ."
-      ". card4 ."
-
-
-  ;
+    grid-template-areas: ". . . . . ." ". title ." ". subtitle ." ". card1 ." ". card2 ." ". card3 ." ". card4 .";
 
   }
 
