@@ -35,6 +35,7 @@ export interface User {
 
   gender: string;
   group: string;
+  role: any;
 
   createdAt: Date;
   updatedAt: Date;
