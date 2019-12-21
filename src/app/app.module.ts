@@ -34,6 +34,7 @@ import {DialogEditMedHistComponent} from './patient/view-patient/dialog-edit-med
 import {DialogEditAllergiesComponent} from './patient/view-patient/dialog-edit-allergies/dialog-edit-allergies.component';
 import {DialogEditVisitsComponent} from './patient/view-patient/dialog-edit-visits/dialog-edit-visits.component';
 import {DialogEditPresComponent} from './patient/view-patient/dialog-edit-pres/dialog-edit-pres.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -80,6 +81,7 @@ import {DialogEditPresComponent} from './patient/view-patient/dialog-edit-pres/d
     MatStepperModule,
     MatListModule,
     MatRadioModule,
+    HttpClientModule,
     NgxMaterialTimepickerModule,
     OwlDateTimeModule,
     OwlNativeDateTimeModule
