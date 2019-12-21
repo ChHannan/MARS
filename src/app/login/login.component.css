@@ -124,7 +124,7 @@ main{
 #logo{
   grid-area: logo;
   margin: 16%;
-  background: transparent url("src/assets/images/mars white - Copy.png");
+  background: transparent url("src/assets/images/logo.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

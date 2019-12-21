@@ -213,7 +213,7 @@ h1 {
 
 .feature-content {
   display: grid;
-  grid-template-rows: 5% 25% 10% 20% 10% 20% 10%;
+  grid-template-rows: 5% 25% 10% 15% 5% 30% 10%;
   grid-template-columns: 10% 80% 10%;
   grid-row-start: 1;
   grid-column-start: 1;
@@ -225,6 +225,10 @@ h1 {
   justify-self: center;
   grid-row-start: 4;
   grid-column-start: 2;
+}
+
+.feature-heading h2 {
+  font-weight: bold;
 }
 
 .feature-text {
@@ -241,6 +245,7 @@ h1 {
   grid-template-columns: 10% 80% 10%;
   grid-template-rows: 100%;
   background-color: #2b3137;
+  background-size: 60%;
   height: 100%;
   width: 100%;
   justify-self: center;
@@ -257,6 +262,11 @@ h1 {
   transition: 0.5s;
 }
 
+.feature-card:hover .img img {
+  transform: scale(0.7);
+  transition: 0.5s;
+}
+
 .img {
   grid-row-start: 1;
   grid-column-start: 2;
@@ -266,10 +276,11 @@ h1 {
 .img img {
   width: 100%;
   height: auto;
+  transition: 0.5s;
 }
 
 .logo-icon {
-  background-image: url("src/assets/images/mars white - Copy.png");
+  background-image: url("src/assets/images/logo.png");
   background-size: contain;
   height: 72%;
   width: 100%;
