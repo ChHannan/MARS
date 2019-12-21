@@ -8,6 +8,9 @@ import {UserService} from '../services/user/user.service';
 })
 
 export class LoginComponent {
-  constructor(private userService: UserService) {}
+  userService: UserService;
+  constructor(userService: UserService) {
+    this.userService = userService;
+  }
 }
 
