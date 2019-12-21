@@ -59,7 +59,7 @@ export class UserService {
   password = '';
 
   constructor(private apiService: ApiService, private serializersService: SerializersService,
-              private router: Router, private userService: UserService) {
+              private router: Router) {
     this.updateUser();
   }
 

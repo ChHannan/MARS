@@ -8,38 +8,37 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  userService: UserService;
-  route: ActivatedRoute;
-  router: Router;
   title = 'MARS';
 
-  constructor(userService: UserService, route: ActivatedRoute, router: Router) {
-    this.userService = userService;
-    this.route = route;
-    this.router = router;
+  constructor(private userService: UserService, private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
-    this.route.params.subscribe((params) => {
-      if (this.route.snapshot.children.length === 0) {
-        if (this.userService.userType === 'admin') {
-          this.router.navigate(['dashboard', this.userService.currentDashBoardUserLink.links.find(
-            ele => ele.name === 'Patient'
-          ).link]).then();
-        } else if (this.userService.userType === 'doctor') {
-          this.router.navigate(['dashboard', this.userService.currentDashBoardUserLink.links.find(
-            ele => ele.name === 'Patient'
-          ).link]).then();
-        } else if (this.userService.userType === 'nurse') {
-          this.router.navigate(['dashboard', this.userService.currentDashBoardUserLink.links.find(
-            ele => ele.name === 'Patient'
-          ).link]).then();
-        } else if (this.userService.userType === 'patient') {
-          this.router.navigate(['dashboard', this.userService.currentDashBoardUserLink.links.find(
-            ele => ele.name === 'Prescription'
-          ).link]).then();
-        }
-      }
+    this.route.url.subscribe((url) => {
+      this.redirect();
     });
+  }
+
+  redirect() {
+    if (this.route.snapshot.children.length === 0) {
+      const user = JSON.parse(localStorage.getItem('selfUser'));
+      if (user.group === 'admin') {
+        this.router.navigate(['dashboard', this.userService.currentDashBoardUserLink.links.find(
+          ele => ele.name === 'Patient'
+        ).link]).then();
+      } else if (user.group === 'doctor') {
+        this.router.navigate(['dashboard', this.userService.currentDashBoardUserLink.links.find(
+          ele => ele.name === 'Patient'
+        ).link]).then();
+      } else if (user.group === 'nurse') {
+        this.router.navigate(['dashboard', this.userService.currentDashBoardUserLink.links.find(
+          ele => ele.name === 'Patient'
+        ).link]).then();
+      } else if (user.group === 'patient') {
+        this.router.navigate(['dashboard', this.userService.currentDashBoardUserLink.links.find(
+          ele => ele.name === 'Prescription'
+        ).link]).then();
+      }
+    }
   }
 }

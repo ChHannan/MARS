@@ -9,40 +9,42 @@
         <h6 id="name">Name</h6>
         <mat-form-field appearance="outline" id="firstName">
           <mat-label>First Name</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="user['first_name']">
         </mat-form-field>
         <mat-form-field appearance="outline" id="middleName">
           <mat-label>Middle Name</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="user.middle_name">
         </mat-form-field>
         <mat-form-field appearance="outline" id="lastName">
           <mat-label>Last Name</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="user.last_name">
         </mat-form-field>
         <h6 id="cnic">CNIC</h6>
         <mat-form-field appearance="outline" id="cnicField">
           <mat-label>CNIC</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="user.cnic">
         </mat-form-field>
         <h6 id="dob">Date of Birth</h6>
         <mat-form-field id="dobField" appearance="outline">
-          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="patient.date_of_birth">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
         </mat-form-field>
         <h6 id="weight">Weight</h6>
         <mat-form-field appearance="outline" id="weightField">
           <mat-label>Weight</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="patient.weight">
         </mat-form-field>
         <h6 id="height">Height</h6>
         <mat-form-field appearance="outline" id="heightField">
           <mat-label>Height</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="patient.height">
         </mat-form-field>
         <h6 id="gender">Gender</h6>
-        <mat-radio-button id="maleRadio" color="primary" value="1">Male</mat-radio-button>
-        <mat-radio-button id="femaleRadio" color="primary" value="2">Female</mat-radio-button>
+        <mat-radio-group [(ngModel)]="user.gender"></mat-radio-group>
+        <mat-radio-button id="maleRadio" color="primary" value="male">Male</mat-radio-button>
+        <mat-radio-button id="femaleRadio" color="primary" value="female">Female
+        </mat-radio-button>
       </div>
     </mat-step>
     <mat-step label="Contact Information">
@@ -50,32 +52,32 @@
         <h6 id="mobile">Mobile No.</h6>
         <mat-form-field appearance="outline" id="mobileField">
           <mat-label>Mobile</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="user.contact">
         </mat-form-field>
         <h6 id="emergencyContact">Emergency Contact</h6>
         <mat-form-field appearance="outline" id="emergencyContactField">
           <mat-label>Emergency Contact</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="user.emergency_contact">
         </mat-form-field>
         <h6 id="address">Address</h6>
         <mat-form-field appearance="outline" id="addressField">
           <mat-label>Address</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="user.address">
         </mat-form-field>
         <h6 id="email">Email</h6>
         <mat-form-field appearance="outline" id="emailField">
           <mat-label>Email</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="user.email">
         </mat-form-field>
         <h6 id="city">City</h6>
         <mat-form-field appearance="outline" id="cityField">
           <mat-label>City</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="user.city">
         </mat-form-field>
         <h6 id="country">Country</h6>
         <mat-form-field appearance="outline" id="countryField">
           <mat-label>Country</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="user.country">
         </mat-form-field>
       </div>
 
@@ -85,29 +87,29 @@
         <h6 id="guardianName">Name</h6>
         <mat-form-field appearance="outline" id="guardianNameField">
           <mat-label>Guardian Name</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="patient.guardian_name">
         </mat-form-field>
 
         <h6 id="guardianMobile">Mobile</h6>
         <mat-form-field appearance="outline" id="guardianMobileField">
           <mat-label>Mobile</mat-label>
-          <input matInput>
+          <input matInput  [(ngModel)]="patient.guardian_contact">
         </mat-form-field>
         <h6 id="guardianAddress">Address</h6>
         <mat-form-field appearance="outline" id="guardianAddressField">
           <mat-label>Address</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="patient.guardian_address">
         </mat-form-field>
         <h6 id="relation">Relationship with patient</h6>
         <mat-form-field appearance="outline" id="relationField">
           <mat-label>Relationship</mat-label>
-          <input matInput>
+          <input matInput [(ngModel)]="patient.relationship">
         </mat-form-field>
       </div>
       <br>
       <div class="btn-container">
         <div class="add-btn">
-          <button mat-raised-button color="primary">Add</button>
+          <button mat-raised-button color="primary" (click)="addPatient()">Add</button>
         </div>
       </div>
     </mat-step>

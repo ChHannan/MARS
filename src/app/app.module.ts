@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {MaterialModule} from './material/material.module';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
@@ -35,6 +35,7 @@ import {DialogEditAllergiesComponent} from './patient/view-patient/dialog-edit-a
 import {DialogEditVisitsComponent} from './patient/view-patient/dialog-edit-visits/dialog-edit-visits.component';
 import {DialogEditPresComponent} from './patient/view-patient/dialog-edit-pres/dialog-edit-pres.component';
 import {HttpClientModule} from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -80,11 +81,13 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     MatStepperModule,
     MatListModule,
+    MatSnackBarModule,
     MatRadioModule,
     HttpClientModule,
     NgxMaterialTimepickerModule,
     OwlDateTimeModule,
-    OwlNativeDateTimeModule
+    OwlNativeDateTimeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

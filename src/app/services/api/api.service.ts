@@ -42,4 +42,7 @@ export class ApiService {
   getPatients() {
     return this.http.get<interfaces.User[]>(this.USER_PATIENT_VIEW, this.httpOptions);
   }
+  postUser(data) {
+    return this.http.post(this.USER_VIEW, data);
+  }
 }

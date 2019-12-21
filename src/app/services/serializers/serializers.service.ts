@@ -10,7 +10,4 @@ export class SerializersService {
   setSelfUser(user: interfaces.User) {
     localStorage.setItem('selfUser', JSON.stringify(user));
   }
-  loadSelfUser() {
-    return localStorage.getItem('selfUser');
-  }
 }
