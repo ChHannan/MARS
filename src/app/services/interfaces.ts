@@ -8,7 +8,7 @@ export class Patient {
 
   weight: string;
   height: string;
-  dateOfBirth: Date;
+  date_of_birth: Date;
 
   guardianName: string;
   guardianContact: string;
@@ -25,9 +25,9 @@ export interface User {
   cnic: string;
   emergencyContact: string;
 
-  firstName: string;
-  middleName: string;
-  lastName: string;
+  first_name: string;
+  middle_name: string;
+  last_name: string;
 
   city: string;
   country: string;

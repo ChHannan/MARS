@@ -20,6 +20,7 @@ export class ApiService {
   TOKEN_VIEW = `${this.API}token/`;
   USER_VIEW = `${this.API}user/`;
   USER_SELF_VIEW = `${this.API}user/?type=self`;
+  USER_PATIENT_VIEW = `${this.API}user/?type=patient`;
   constructor(private http: HttpClient, private router: Router) {
     if ('token' in localStorage) {
       this.setToken(localStorage.getItem('token'));
@@ -37,5 +38,8 @@ export class ApiService {
   }
   getUser() {
     return this.http.get<interfaces.User[]>(this.USER_SELF_VIEW, this.httpOptions);
+  }
+  getPatients() {
+    return this.http.get<interfaces.User[]>(this.USER_PATIENT_VIEW, this.httpOptions);
   }
 }

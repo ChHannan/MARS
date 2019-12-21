@@ -11,7 +11,7 @@
   <div *ngIf="!searchMany" class="flex search-field searchSingle" @fadein>
     <mat-form-field>
       <mat-label>Search</mat-label>
-      <input matInput>
+      <input matInput (keyup)="applyFilter( 'all|' + $event.target.value)">
     </mat-form-field>
 
   </div>

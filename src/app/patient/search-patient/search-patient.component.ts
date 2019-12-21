@@ -4,6 +4,14 @@ import {MatTableDataSource} from '@angular/material/table';
 import {PatientsService} from '../services/patients.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {transition, trigger, style, animate} from '@angular/animations';
+import {ApiService} from '../../services/api/api.service';
+
+export interface PatientRow {
+  name: string;
+  cnic: string;
+  phone: string;
+  dob: string;
+}
 
 @Component({
   selector: 'app-search-patient',
@@ -12,7 +20,7 @@ import {transition, trigger, style, animate} from '@angular/animations';
   animations: [
     trigger('fadein', [
       transition('void => *', [
-        style({ opacity: 0 }),
+        style({opacity: 0}),
         animate(500, style({opacity: 1}))
       ])
     ])
@@ -20,43 +28,50 @@ import {transition, trigger, style, animate} from '@angular/animations';
 })
 export class SearchPatientComponent implements OnInit {
   searchMany = false;
-  patientsService: PatientsService;
-  router: Router;
-  route: ActivatedRoute;
   indices: number[];
   displayedColumns = ['name', 'cnic', 'phone', 'dob'];
   displayColumnName = ['name', 'cnic', 'phone number', 'date of birth'];
-  data = [
-    {name: 'Ali Asad', cnic: 'xxxx-xxxxx-xxx', phone: '0302-212314', dob: '10-06-2000'},
-    {name: 'Maaz', cnic: 'xxxx-xxxxx-xxx', phone: '0302-212314', dob: '10-06-2000'},
-    {name: 'Abdul Hannan', cnic: 'xxxx-xxxxx-xxx', phone: '0302-212314', dob: '10-06-2000'},
-    {name: 'Ramish Amir', cnic: 'xxxx-xxxxx-xxx', phone: '0302-212314', dob: '10-06-2000'},
-    {name: 'Ammar Junaid', cnic: 'xxxx-xxxxx-xxx', phone: '0302-212314', dob: '10-06-2000'},
-  ];
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  dataSource = new MatTableDataSource(this.data);
+  data: PatientRow[] = [];
+  dataSource: MatTableDataSource<any>;
+
   search() {
     this.searchMany = !this.searchMany;
   }
-  constructor(patientsService: PatientsService, router: Router, route: ActivatedRoute) {
-    this.patientsService = patientsService;
-    this.route = route;
-    this.router = router;
+
+  constructor(private patientsService: PatientsService, private router: Router, private route: ActivatedRoute,
+              private apiService: ApiService) {
   }
 
   ngOnInit() {
     this.indices = Array(4).fill(0).map((x, i) => i);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.filterPredicate = ((data, filter) => {
-      const filterData = filter.split('|');
-      filterData[1] = filterData[1].trim().toLowerCase();
-      const re = new RegExp(filterData[1], 'g');
-      return data[filterData[0]].trim().toLowerCase().match(re);
+    this.route.params.subscribe(params => {
+      this.apiService.getPatients().subscribe(res => {
+        res.forEach(row => {
+          this.data.push({
+            cnic: row.cnic,
+            dob: row.role.date_of_birth.toString(),
+            phone: row.contact,
+            name: `${row.first_name} ${row.middle_name} ${row.last_name}`
+          });
+        });
+        this.dataSource = new MatTableDataSource(this.data);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.filterPredicate = ((data, filter) => {
+          const filterData = filter.split('|');
+          filterData[1] = filterData[1].trim().toLowerCase();
+          const re = new RegExp(filterData[1], 'g');
+          if (filterData[0] === 'all') {
+            return  JSON.stringify(data).trim().toLowerCase().match(re);
+          }
+          return data[filterData[0]].trim().toLowerCase().match(re);
+        });
+      });
     });
   }
 
   applyFilter(filter: string) {
+    console.log(filter) ;
     this.dataSource.filter = filter;
   }
 
