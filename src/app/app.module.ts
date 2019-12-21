@@ -34,6 +34,7 @@ import {DialogEditMedHistComponent} from './patient/view-patient/dialog-edit-med
 import {DialogEditAllergiesComponent} from './patient/view-patient/dialog-edit-allergies/dialog-edit-allergies.component';
 import {DialogEditVisitsComponent} from './patient/view-patient/dialog-edit-visits/dialog-edit-visits.component';
 import {DialogEditPresComponent} from './patient/view-patient/dialog-edit-pres/dialog-edit-pres.component';
+import {MatProgressButtonsModule} from 'mat-progress-buttons';
 
 
 @NgModule({
@@ -82,7 +83,8 @@ import {DialogEditPresComponent} from './patient/view-patient/dialog-edit-pres/d
     MatRadioModule,
     NgxMaterialTimepickerModule,
     OwlDateTimeModule,
-    OwlNativeDateTimeModule
+    OwlNativeDateTimeModule,
+    MatProgressButtonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

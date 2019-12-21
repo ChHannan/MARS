@@ -1,13 +1,15 @@
 <div class="background">
   <div class="login-body">
     <div class="login-text"><h1>MARS</h1></div>
-    <mat-card class="mat-elevation-z2 login-card">
+    <mat-card class="mat-elevation-z2 login-card" @slideInOut @fadein>
       <div class="login-card-body">
         <h2>Welcome!</h2>
         <h6>Log in to continue</h6>
-        <mat-form-field><label><input matInput placeholder="Username" [(ngModel)]="userService.userType"></label></mat-form-field>
+        <mat-form-field><label><input matInput placeholder="Username" [(ngModel)]="userService.userType"></label>
+        </mat-form-field>
         <mat-form-field><label><input matInput placeholder="Password"></label></mat-form-field>
-        <button mat-raised-button id="login-button"><span style="color: white" (click)="userService.updateUser()">Log in</span></button>
+        <mat-spinner-button [options]="spinnerButtonOptions" id="login-button" (btnClick)="loadingSpinner()">
+        </mat-spinner-button>
       </div>
     </mat-card>
   </div>

@@ -1,6 +1,6 @@
 body {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 .fill-space {
@@ -43,7 +43,7 @@ section {
   place-content: center;
   background-color: #00e676;
   opacity: 80%;
-  padding: 0px;
+  padding: 0;
 }
 
 #block2 {
@@ -52,7 +52,7 @@ section {
   place-content: center;
   background-color: #00e676;
   opacity: 80%;
-  padding: 0px;
+  padding: 0;
 }
 
 #block3 {
@@ -61,7 +61,7 @@ section {
   place-content: center;
   background-color: #00e676;
   opacity: 80%;
-  padding: 0px;
+  padding: 0;
 }
 
 #block4 {
@@ -70,7 +70,7 @@ section {
   place-content: center;
   background-color: #00e676;
   opacity: 80%;
-  padding: 0px;
+  padding: 0;
 
 }
 
