@@ -14,6 +14,13 @@
   height: 90%;
 }
 
+#btn1 {
+  border:2px solid #f8f8f8;
+  border-radius: 2rem;
+  background-color: transparent;
+  font-size: 14px;
+}
+
 .logo-icon {
   background-image: url("src/assets/images/logo.png");
   background-size: contain;
