@@ -14,3 +14,10 @@
   height: 90%;
 }
 
+.logo-icon {
+  background-image: url("src/assets/images/logo.png");
+  background-size: contain;
+  height: 50%;
+  width: 10%;
+  background-repeat: no-repeat;
+}
