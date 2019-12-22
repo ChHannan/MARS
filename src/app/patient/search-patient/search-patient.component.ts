@@ -7,6 +7,7 @@ import {transition, trigger, style, animate} from '@angular/animations';
 import {ApiService} from '../../services/api/api.service';
 
 export interface PatientRow {
+  id: string;
   name: string;
   cnic: string;
   phone: string;
@@ -49,6 +50,7 @@ export class SearchPatientComponent implements OnInit {
       this.apiService.getPatients().subscribe(res => {
         res.forEach(row => {
           this.data.push({
+            id: row.id,
             cnic: row.cnic,
             dob: row.role.date_of_birth.toString(),
             phone: row.contact,
@@ -71,16 +73,15 @@ export class SearchPatientComponent implements OnInit {
   }
 
   applyFilter(filter: string) {
-    console.log(filter) ;
     this.dataSource.filter = filter;
   }
 
   openPatient(row) {
-    const indexExists = this.patientsService.patients.findIndex(element => element.cnic === row.cnic);
+    const indexExists = this.patientsService.patients.findIndex(element => element.id === row.id);
     if (indexExists === -1) {
       this.patientsService.add(row);
     } else {
-      this.router.navigate(['..', row.cnic], {relativeTo: this.route}).then();
+      this.router.navigate(['..', row.id], {relativeTo: this.route}).then();
     }
   }
 }

@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
     this.route.params.subscribe(params => {
         const token = localStorage.getItem('token');
         if (!(token === 'undefined' || token === null)) {
+          this.router.navigate(['dashboard', ]).then();
         }
       }
     );

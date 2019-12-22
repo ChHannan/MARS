@@ -26,14 +26,14 @@ export class PatientComponent implements OnInit {
   }
 
   close_patient(event, patient) {
-    const indexEle = this.patientsService.patients.findIndex(element => element.cnic === patient.cnic);
+    const indexEle = this.patientsService.patients.findIndex(element => element.id === patient.id);
     const currentPatientId = this.route.snapshot.children[0].params.patient_id;
-    if (patient.cnic === currentPatientId) {
+    if (patient.id === currentPatientId) {
       if (this.patientsService.patients.length > indexEle + 1) {
-        this.router.navigate([this.patientsService.patients[indexEle + 1].cnic], {relativeTo: this.route})
+        this.router.navigate([this.patientsService.patients[indexEle + 1].id], {relativeTo: this.route})
           .then();
       } else if (this.patientsService.patients.length !== 1) {
-        this.router.navigate([this.patientsService.patients[indexEle - 1].cnic],
+        this.router.navigate([this.patientsService.patients[indexEle - 1].id],
           {relativeTo: this.route}).then();
       } else {
         this.router.navigate(['search'], {relativeTo: this.route}).then();

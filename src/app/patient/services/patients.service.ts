@@ -12,8 +12,4 @@ export class PatientsService {
     this.patients.push(row);
     localStorage.setItem('patients', JSON.stringify(this.patients));
   }
-
-  load() {
-
-  }
 }
