@@ -129,7 +129,7 @@
       <br>
       <div class="btn-container">
         <div class="add-btn">
-          <button mat-raised-button color="primary">Add</button>
+          <button mat-raised-button color="primary" (click)="addEmployee()">Add</button>
         </div>
       </div>
     </mat-step>
@@ -169,7 +169,7 @@
       <br>
       <div class="btn-container">
         <div class="add-btn">
-          <button mat-raised-button color="primary">Add</button>
+          <button mat-raised-button color="primary" (click)="addEmployee()">Add</button>
         </div>
       </div>
     </mat-step>
@@ -179,26 +179,27 @@
       <div class="admin-employment-grid">
         <h6 id="adminJoiningDate">Date Joined</h6>
         <mat-form-field appearance="outline" id="adminJoiningDateField">
-          <input matInput [matDatepicker]="joiningDatePicker2" placeholder="Choose a date">
+          <input matInput [matDatepicker]="joiningDatePicker2" placeholder="Choose a date"
+                 [(ngModel)]="admin.date_joined">
           <mat-datepicker-toggle matSuffix [for]="joiningDatePicker2"></mat-datepicker-toggle>
           <mat-datepicker #joiningDatePicker2></mat-datepicker>
         </mat-form-field>
         <h6 id="adminShiftStart">Shift Timings</h6>
         <mat-form-field appearance="outline" id="adminShiftStartField">
           <mat-label>Shift Start Time</mat-label>
-          <input matInput [ngxTimepicker]="a1Picker">
+          <input matInput [ngxTimepicker]="a1Picker" [(ngModel)]="admin.start_timings">
           <ngx-material-timepicker #a1Picker></ngx-material-timepicker>
         </mat-form-field>
         <mat-form-field appearance="outline" id="adminShiftEndField">
           <mat-label>Shift End Time</mat-label>
-          <input matInput [ngxTimepicker]="a2Picker">
+          <input matInput [ngxTimepicker]="a2Picker" [(ngModel)]="admin.end_timings">
           <ngx-material-timepicker #a2Picker></ngx-material-timepicker>
         </mat-form-field>
       </div>
       <br>
       <div class="btn-container">
         <div class="add-btn">
-          <button mat-raised-button color="primary">Add</button>
+          <button mat-raised-button color="primary" (click)="addEmployee()">Add</button>
         </div>
       </div>
     </mat-step>
