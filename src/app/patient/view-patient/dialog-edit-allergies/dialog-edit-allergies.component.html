@@ -7,18 +7,18 @@
   <div class="row">
     <mat-form-field appearance="outline" id="allergyNameField">
       <mat-label>Name</mat-label>
-      <input matInput>
+      <input matInput [(ngModel)]="allergy.name">
     </mat-form-field>
   </div>
 
   <div class="row">
     <mat-form-field appearance="outline" id="allergyDescriptionField">
       <mat-label>Description</mat-label>
-      <input matInput>
+      <input matInput [(ngModel)]="allergy.description">
     </mat-form-field>
   </div>
   <mat-dialog-actions>
-    <button mat-raised-button color="primary" id="addButton">Add</button>
+    <button mat-raised-button color="primary" id="addButton" (click)="updateAllergy()">Update</button>
   </mat-dialog-actions>
   <br>
 

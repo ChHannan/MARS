@@ -85,4 +85,16 @@ export class ApiService {
   postVisit(data) {
     return this.http.post(this.VISIT_VIEW, data, this.httpOptions);
   }
+
+  patchMedicalHistory(data) {
+    return this.http.patch(`${this.MEDICAL_HISTORY_VIEW}${data.id}/`, data, this.httpOptions);
+  }
+
+  patchPrescription(data) {
+    return this.http.patch(`${this.PRESCRIPTION_VIEW}${data.id}/`, data, this.httpOptions);
+  }
+
+  patchAllergy(data) {
+    return this.http.patch(`${this.ALLERGY_VIEW}${data.id}/`, data, this.httpOptions);
+  }
 }

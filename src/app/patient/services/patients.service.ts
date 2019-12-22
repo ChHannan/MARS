@@ -8,6 +8,7 @@ export class PatientsService {
   current = {
     id: '',
   };
+  dialogData = {patient_id: ''};
   patients = [];
   constructor() {}
 
