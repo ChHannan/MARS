@@ -1,22 +1,18 @@
-<section>
-      <div class="login-grid">
-        <main id="login">
-          <div id="logo">
-          </div>
-          <div id="login2">
-            <h3 style="color: #000000">Sign In</h3>
-            <div id="login-form">
-              <mat-form-field>
-                <mat-label>Username</mat-label>
-                <input matInput placeholder="Username" [(ngModel)]="cnic"></mat-form-field>
-              <mat-form-field>
-                <mat-label>Password</mat-label>
-                <input matInput placeholder="Password" [(ngModel)]="password"></mat-form-field>
-              <br>
-              <a mat-raised-button class="btn1" color=white
-                 (click)="login()">SIGN IN</a>
-            </div>
-          </div>
-        </main>
-      </div>
-</section>
+<div class="login-grid">
+  <main id="login">
+    <div id="logo">
+    </div>
+    <div id="login2">
+      <h2>Welcome!</h2>
+      <h5>Sign In to continue</h5>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" [(ngModel)]="cnic"></mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" [(ngModel)]="password"></mat-form-field>
+      <a mat-raised-button class="btn1" color=white
+         (click)="login()"><p style="color: white;margin: 0">SIGN IN</p></a>
+    </div>
+  </main>
+</div>

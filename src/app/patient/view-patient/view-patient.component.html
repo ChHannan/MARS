@@ -36,7 +36,7 @@
 
             <ng-container matColumnDef="time">
               <th mat-header-cell *matHeaderCellDef> Time</th>
-              <td mat-cell *matCellDef="let element"> {{element.happened_at}} </td>
+              <td mat-cell *matCellDef="let element"> {{element.happened_at | date:'short'}} </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumnsMedicalHistory"></tr>
@@ -136,7 +136,7 @@
         </mat-card-header>
         <hr>
         <span *ngFor="let visit of visits">
-          <p>Visited on {{visit.visited_at}} for {{visit.purpose}}.</p>
+          <p>Visited on {{visit.visited_at | date}} for {{visit.purpose}}.</p>
         </span>
         </mat-card>
     </div>

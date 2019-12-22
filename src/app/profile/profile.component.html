@@ -3,7 +3,7 @@
   <h6 id="name">{{user.first_name}}</h6>
   <p id="occ">{{user.group.toUpperCase()}}</p>
   <div id="join">
-    <p>Last edited: {{user.updated_at}}</p>
+    <p>Last edited: {{user.updated_at | date:'short'}}</p>
   </div>
   <mat-icon id="icon">email</mat-icon>
   <p id="mail">{{user.email}}</p>
