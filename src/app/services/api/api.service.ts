@@ -75,13 +75,14 @@ export class ApiService {
   }
 
   postPrescription(data) {
-    return this.http.post(this.MEDICAL_HISTORY_VIEW, data, this.httpOptions);
+    return this.http.post(this.PRESCRIPTION_VIEW, data, this.httpOptions);
   }
 
-  postMedicalHistory(data) {
-    return this.http.post(this.MEDICAL_HISTORY_VIEW, data, this.httpOptions);
+  postAllergy(data) {
+    return this.http.post(this.ALLERGY_VIEW, data, this.httpOptions);
   }
-  postMedicalHistory(data) {
-    return this.http.post(this.MEDICAL_HISTORY_VIEW, data, this.httpOptions);
+
+  postVisit(data) {
+    return this.http.post(this.VISIT_VIEW, data, this.httpOptions);
   }
 }

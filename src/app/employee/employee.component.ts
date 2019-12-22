@@ -30,7 +30,10 @@ export class EmployeeComponent implements OnInit {
   admin = {};
   user = {
     group: 'admin',
-    gender: 'male'
+    gender: 'male',
+    admin: {},
+    nurse: {},
+    doctor: {}
   };
   employees: Employee[] = [
     {value: 'admin', viewValue: 'Admin'},
@@ -61,7 +64,10 @@ export class EmployeeComponent implements OnInit {
       this.admin = {};
       this.user = {
         group: 'admin',
-        gender: 'male'
+        gender: 'male',
+        admin: {},
+        nurse: {},
+        doctor: {}
       };
     }, error => this.snackBar.open('Something went wrong! :(', '', {duration: 1500}));
   }
