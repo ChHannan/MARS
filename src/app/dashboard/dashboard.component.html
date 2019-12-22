@@ -5,14 +5,14 @@
   <span class="fill-space"></span>
   <h2 routerLink="">{{title}}</h2>
   <span class="fill-space"></span>
-  <a mat-button>Log out</a>
+  <a mat-button (click)="logout()">Log out</a>
 </mat-toolbar>
 
 
 <mat-sidenav-container class="dash-board-container">
   <mat-sidenav #snav mode="side">
     <mat-grid-list cols="1" rowHeight="50px" class="side-nav">
-      <mat-grid-tile *ngFor="let link of this.userService.currentDashBoardUserLink.links">
+      <mat-grid-tile *ngFor="let link of currentDashBoardUserLink.links">
         <a mat-button [routerLink]="link.link">{{link.name}}</a>
       </mat-grid-tile>
     </mat-grid-list>

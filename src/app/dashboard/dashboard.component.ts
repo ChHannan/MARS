@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from '../services/user/user.service';
+import {DashboardUserLink, UserService} from '../services/user/user.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {ApiService} from '../services/api/api.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,12 +11,61 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class DashboardComponent implements OnInit {
   title = 'MARS';
 
-  constructor(private userService: UserService, private route: ActivatedRoute, private router: Router) {
+
+  dashBoardUserLinks: DashboardUserLink[] = [
+    {
+      userType: 'admin',
+      links: [
+        {name: 'Patient', link: 'patient'},
+        {name: 'Employee', link: 'employee'},
+        {name: 'Profile', link: 'profile'},
+      ],
+    },
+    {
+      userType: 'doctor',
+      links: [
+        {name: 'Patient', link: 'patient'},
+        {name: 'Profile', link: 'profile'}
+      ]
+    },
+    {
+      userType: 'nurse',
+      links: [
+        {name: 'Patient', link: 'patient'},
+        {name: 'Profile', link: 'profile'}
+      ]
+    },
+    {
+      userType: 'patient',
+      links: [
+        {name: 'Prescription', link: 'prescription'},
+        {name: 'Medical History', link: 'medical-history'},
+        {name: 'Allergy', link: 'allergy'},
+        {name: 'Visits', link: 'visits'},
+        {name: 'Profile', link: 'profile'}
+      ]
+    }
+  ];
+  currentDashBoardUserLink: DashboardUserLink = {
+    userType: '',
+    links: []
+  };
+
+  constructor(private apiService: ApiService, private userService: UserService, private route: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit() {
     this.route.url.subscribe((url) => {
-      this.redirect();
+      const token = localStorage.getItem('token');
+      if (!(token === 'undefined' || token === null)) {
+        this.apiService.setToken(token);
+        const selfUser = JSON.parse(localStorage.getItem('selfUser'));
+        this.currentDashBoardUserLink = this.dashBoardUserLinks.find(ele => ele.userType = selfUser.group);
+        this.redirect();
+      } else {
+        this.router.navigate(['login', ]).then();
+      }
     });
   }
 
@@ -23,22 +73,27 @@ export class DashboardComponent implements OnInit {
     if (this.route.snapshot.children.length === 0) {
       const user = JSON.parse(localStorage.getItem('selfUser'));
       if (user.group === 'admin') {
-        this.router.navigate(['dashboard', this.userService.currentDashBoardUserLink.links.find(
+        this.router.navigate(['dashboard', this.currentDashBoardUserLink.links.find(
           ele => ele.name === 'Patient'
         ).link]).then();
       } else if (user.group === 'doctor') {
-        this.router.navigate(['dashboard', this.userService.currentDashBoardUserLink.links.find(
+        this.router.navigate(['dashboard', this.currentDashBoardUserLink.links.find(
           ele => ele.name === 'Patient'
         ).link]).then();
       } else if (user.group === 'nurse') {
-        this.router.navigate(['dashboard', this.userService.currentDashBoardUserLink.links.find(
+        this.router.navigate(['dashboard', this.currentDashBoardUserLink.links.find(
           ele => ele.name === 'Patient'
         ).link]).then();
       } else if (user.group === 'patient') {
-        this.router.navigate(['dashboard', this.userService.currentDashBoardUserLink.links.find(
+        this.router.navigate(['dashboard', this.currentDashBoardUserLink.links.find(
           ele => ele.name === 'Prescription'
         ).link]).then();
       }
     }
+  }
+
+  logout() {
+    localStorage.clear();
+    this.router.navigateByUrl('/').then();
   }
 }

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from '../services/user/user.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
@@ -7,13 +7,22 @@ import {ActivatedRoute, Router} from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+  cnic = '';
+  password = '';
   constructor(private userService: UserService, private router: Router, private route: ActivatedRoute) {
+  }
+
+  ngOnInit(): void {
     this.route.params.subscribe(params => {
-        if (localStorage.getItem('selfUser') !== undefined) {
-          this.router.navigate(['dashboard', ]).then();
+        const token = localStorage.getItem('token');
+        if (!(token === 'undefined' || token === null)) {
         }
       }
     );
+  }
+
+  login() {
+    this.userService.login(this.cnic, this.password);
   }
 }

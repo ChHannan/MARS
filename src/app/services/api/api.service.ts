@@ -13,7 +13,7 @@ export class ApiService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
-      Authorization: ''
+      'Authorization': ''
     })
   };
   API = 'http://localhost:8000/api/';
@@ -22,16 +22,11 @@ export class ApiService {
   USER_SELF_VIEW = `${this.API}user/?type=self`;
   USER_PATIENT_VIEW = `${this.API}user/?type=patient`;
   constructor(private http: HttpClient, private router: Router) {
-    if ('token' in localStorage) {
-      this.setToken(localStorage.getItem('token'));
-    } else {
-      this.router.navigateByUrl('http://localhost:8000/login').then();
-    }
   }
   setToken(token: string) {
     this.TOKEN = token;
     localStorage.setItem('token', token);
-    this.httpOptions.headers.set('Authorization', token);
+    this.httpOptions.headers  = this.httpOptions.headers.set('Authorization', `Token ${token}`);
   }
   getToken(cnic: string, password: string) {
     return this.http.post<interfaces.Token>(this.TOKEN_VIEW, {cnic, password}, this.httpOptions);

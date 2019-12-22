@@ -45,7 +45,7 @@ export class SearchPatientComponent implements OnInit {
 
   ngOnInit() {
     this.indices = Array(4).fill(0).map((x, i) => i);
-    this.route.params.subscribe(params => {
+    this.route.url.subscribe(url => {
       this.apiService.getPatients().subscribe(res => {
         res.forEach(row => {
           this.data.push({
@@ -76,11 +76,11 @@ export class SearchPatientComponent implements OnInit {
   }
 
   openPatient(row) {
-    const indexExists = this.patientsService.patients.findIndex(element => element.name === row.name);
+    const indexExists = this.patientsService.patients.findIndex(element => element.cnic === row.cnic);
     if (indexExists === -1) {
-      this.patientsService.patients.push(row);
+      this.patientsService.add(row);
     } else {
-      this.router.navigate(['..', row.name], {relativeTo: this.route}).then();
+      this.router.navigate(['..', row.cnic], {relativeTo: this.route}).then();
     }
   }
 }

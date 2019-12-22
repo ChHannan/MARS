@@ -47,10 +47,9 @@
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openPatient(row)"
-          [routerLink]="'../' + row.name"
+          [routerLink]="'../' + row.cnic"
           class="patient-data-row"></tr>
     </table>
-
     <mat-paginator [pageSizeOptions]="[10, 50, 100]" showFirstLastButtons></mat-paginator>
   </div>
 </div>

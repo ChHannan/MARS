@@ -75,8 +75,8 @@ export class ViewPatientComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.params.subscribe((params) => {
-      this.patient = this.patientsService.patients.find(element => element.name === params.patient_id);
+    this.route.params.subscribe(params => {
+      this.patient = this.patientsService.patients.find(element => element.cnic === params.patient_id);
       if (this.patient === undefined) {
         this.router.navigate([
           'dashboard', 'patient', 'search'
