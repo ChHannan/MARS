@@ -92,9 +92,9 @@ export interface MedicalHistory {
   patient: User;
 
   created_at: Date;
-  updatedAt: Date;
-  createdBy: User;
-  updatedBy: User;
+  updated_at: Date;
+  created_by: User;
+  updated_by: User;
 }
 
 
@@ -106,10 +106,10 @@ export interface Allergy {
 
   patient: User;
 
-  createdAt: Date;
-  updatedAt: Date;
-  createdBy: User;
-  updatedBy: User;
+  created_at: Date;
+  updated_at: Date;
+  created_by: User;
+  updated_by: User;
 }
 
 
@@ -123,10 +123,10 @@ export interface Prescription {
 
   patient: User;
 
-  createdAt: Date;
-  updatedAt: Date;
-  createdBy: User;
-  updatedBy: User;
+  created_at: Date;
+  updated_at: Date;
+  created_by: User;
+  updated_by: User;
 }
 
 
@@ -136,8 +136,8 @@ export interface Visit {
   purpose: string;
   visited_at: Date;
 
-  createdAt: Date;
-  updatedAt: Date;
-  createdBy: User;
-  updatedBy: User;
+  created_at: Date;
+  updated_at: Date;
+  created_by: User;
+  updated_by: User;
 }

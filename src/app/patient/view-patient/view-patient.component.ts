@@ -72,11 +72,16 @@ export class ViewPatientComponent implements OnInit {
 
   constructor(private patientsService: PatientsService, private router: Router, private route: ActivatedRoute,
               private dialog: MatDialog, private apiService: ApiService) {
+    this.dialog.afterAllClosed.subscribe(res => {
+      this.ngOnInit();
+    });
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
+      this.patientsService.load();
       this.patient = this.patientsService.patients.find(element => element.id === params.patient_id);
+      this.patientsService.current = this.patient;
       if (this.patient === undefined) {
         this.router.navigate([
           'dashboard', 'patient', 'search'
