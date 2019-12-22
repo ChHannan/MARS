@@ -46,22 +46,22 @@ export class ApiService {
     return this.http.get<interfaces.User[]>(this.USER_PATIENT_VIEW, this.httpOptions);
   }
 
-  getMedicalHistory(patientId: string) {
+  getMedicalHistory(patientId= '') {
     return this.http.get<interfaces.MedicalHistory[]>(`${this.MEDICAL_HISTORY_VIEW}?patient=${patientId}`,
       this.httpOptions);
   }
 
-  getAllergy(patientId: string) {
+  getAllergy(patientId= '') {
     return this.http.get<interfaces.Allergy[]>(`${this.ALLERGY_VIEW}?patient=${patientId}`,
       this.httpOptions);
   }
 
-  getVisit(patientId: string) {
+  getVisit(patientId= '') {
     return this.http.get<interfaces.Visit[]>(`${this.VISIT_VIEW}?patient=${patientId}`,
       this.httpOptions);
   }
 
-  getPrescription(patientId: string) {
+  getPrescription(patientId= '') {
     return this.http.get<interfaces.Prescription[]>(`${this.PRESCRIPTION_VIEW}?patient=${patientId}`,
       this.httpOptions);
   }

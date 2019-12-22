@@ -61,7 +61,7 @@ export class DashboardComponent implements OnInit {
       if (!(token === 'undefined' || token === null)) {
         this.apiService.setToken(token);
         const selfUser = JSON.parse(localStorage.getItem('selfUser'));
-        this.currentDashBoardUserLink = this.dashBoardUserLinks.find(ele => ele.userType = selfUser.group);
+        this.currentDashBoardUserLink = this.dashBoardUserLinks.find(ele => ele.userType === selfUser.group);
         this.redirect();
       } else {
         this.router.navigate(['login', ]).then();

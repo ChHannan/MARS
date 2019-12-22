@@ -51,7 +51,7 @@ export interface MedicalHistory {
 
   type: string;
   description: string;
-  happenedAt: Date;
+  happened_at: Date;
 
   patient: User;
 

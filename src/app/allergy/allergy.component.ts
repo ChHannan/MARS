@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
+import * as interfaces from '../services/interfaces';
+import {ApiService} from "../services/api/api.service";
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -9,17 +12,21 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class AllergyComponent implements OnInit {
 
-  allergies = [
-    {serialNo: 1, name: 'Acne', description: 'Allergic to medicines containing benzoyl peroxide or salicylic acid'},
-    {serialNo: 2, name: 'Food Allergy', description: 'Allergic to medicines containing benzoyl peroxide or salicylic acid'},
-    {serialNo: 3, name: 'Insect Sting', description: 'Allergic to medicines containing benzoyl peroxide or salicylic acid'}
-  ];
+  allergies: interfaces.Allergy[];
   allergiesDataSource = new MatTableDataSource(this.allergies);
   displayedColumnsAllergy: string[] = ['serialNo', 'name', 'description'];
 
-  constructor() { }
+
+  constructor(private apiService: ApiService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.url.subscribe(url => {
+      this.apiService.getAllergy().subscribe(res => {
+        this.allergies = res;
+        this.allergiesDataSource = new MatTableDataSource(this.allergies);
+      });
+    });
   }
+
 
 }
