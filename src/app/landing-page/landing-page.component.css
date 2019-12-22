@@ -129,14 +129,8 @@ section {
 }
 
 #btn1 {
-  display: grid;
-  font-weight: bold;
+
   font-size: 16px;
-  border: 2px solid #f8f8f8;
-  border-radius: 2rem;
-  color: #f8f8f8;
-  padding: 2px;
-  width: 6%;
 }
 
 .logo {
@@ -161,6 +155,8 @@ section {
   text-align: center;
   font-family: "Microsoft YaHei Light";
 }
+
+
 
 #subtitle {
   grid-row-start: 4;
@@ -282,7 +278,7 @@ h1 {
 .logo-icon {
   background-image: url("src/assets/images/logo.png");
   background-size: contain;
-  height: 72%;
+  height: 50%;
   width: 100%;
   background-repeat: no-repeat;
 }

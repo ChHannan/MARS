@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" role="heading" class="app-header">
-  <button mat-icon-button (click)="snav.toggle()">
+  <button mat-icon-button (click)="snav.toggle()" style="outline: 0">
     <mat-icon>menu</mat-icon>
   </button>
   <span class="fill-space"></span>
@@ -11,11 +11,16 @@
 
 <mat-sidenav-container class="dash-board-container">
   <mat-sidenav #snav mode="side">
-    <mat-grid-list cols="1" rowHeight="50px" class="side-nav">
-      <mat-grid-tile *ngFor="let link of currentDashBoardUserLink.links">
-        <a mat-button [routerLink]="link.link">{{link.name}}</a>
-      </mat-grid-tile>
-    </mat-grid-list>
+    <div style="display: flex;flex-direction: column;justify-content: space-between; height: 100%">
+      <mat-grid-list cols="1" rowHeight="50px" class="side-nav">
+        <mat-grid-tile *ngFor="let link of currentDashBoardUserLink.links">
+          <a mat-button [routerLink]="link.link">{{link.name}}</a>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-grid-list [cols]="1" rowHeight="50px" class="side-nav">
+        <mat-grid-tile><a mat-button href="https://github.com/ChHannan/MARS">Github</a></mat-grid-tile>
+      </mat-grid-list>
+    </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <router-outlet></router-outlet>

@@ -24,11 +24,12 @@
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",
     "bootstrap": "^4.3.1",
     "hammerjs": "^2.0.8",
+    "mat-progress-buttons": "^8.0.7",
+    "ng-pick-datetime": "latest",
+    "ngx-material-timepicker": "latest",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1",
-    "ngx-material-timepicker": "latest",
-    "ng-pick-datetime": "latest"
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.17",
