@@ -76,6 +76,9 @@ export interface User {
   updated_by: User;
 
   patient: Patient;
+  nurse: Nurse;
+  doctor: Doctor;
+  admin: Admin;
 }
 
 
