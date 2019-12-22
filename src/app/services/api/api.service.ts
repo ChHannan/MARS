@@ -67,7 +67,7 @@ export class ApiService {
   }
 
   postUser(data) {
-    return this.http.post(this.USER_VIEW, data);
+    return this.http.post(this.USER_VIEW, data, this.httpOptions);
   }
 
   postMedicalHistory(data) {

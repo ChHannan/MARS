@@ -4,14 +4,21 @@
   <hr>
 
   <div class="row">
-    <mat-form-field appearance="outline" id="visitsField">
-      <mat-label>Visits</mat-label>
-      <input matInput>
+    <mat-form-field appearance="outline" class="visitsField">
+      <mat-label>Purpose</mat-label>
+      <input matInput [(ngModel)]="visit.purpose">
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field appearance="outline" class="visitsField">
+      <mat-label>Visited At</mat-label>
+      <input matInput [(ngModel)]="visit.visited_at">
     </mat-form-field>
   </div>
 
   <mat-dialog-actions>
-    <button mat-raised-button color="primary" id="addButton">Add</button>
+    <button mat-raised-button color="primary" id="addButton" (click)="addVisit()">Add</button>
   </mat-dialog-actions>
   <br>
 

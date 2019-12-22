@@ -5,11 +5,18 @@ import { Injectable } from '@angular/core';
 })
 export class PatientsService {
 
+  current = {
+    id: '',
+  };
   patients = [];
   constructor() {}
 
   add(row) {
     this.patients.push(row);
     localStorage.setItem('patients', JSON.stringify(this.patients));
+  }
+
+  load() {
+    this.patients = JSON.parse(localStorage.getItem('patients'));
   }
 }

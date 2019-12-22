@@ -7,7 +7,7 @@
   <div class="row">
     <mat-form-field appearance="outline" id="medicineField">
       <mat-label>Medicine</mat-label>
-      <input matInput>
+      <input matInput [(ngModel)]="prescription.medicine">
     </mat-form-field>
   </div>
 
@@ -15,19 +15,19 @@
   <div class="row">
     <mat-form-field appearance="outline" id="doseField">
       <mat-label>Dose</mat-label>
-      <input matInput>
+      <input matInput [(ngModel)]="prescription.dose">
     </mat-form-field>
   </div>
 
   <div class="row">
     <mat-form-field appearance="outline" id="frequencyField">
       <mat-label>Frequency</mat-label>
-      <input matInput>
+      <input matInput [(ngModel)]="prescription.frequency">
     </mat-form-field>
   </div>
 
   <mat-dialog-actions>
-    <button mat-raised-button color="primary" id="addButton">Add</button>
+    <button mat-raised-button color="primary" id="addButton" (click)="addPrescription()">Add</button>
   </mat-dialog-actions>
   <br>
 
