@@ -3,7 +3,7 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span class="fill-space"></span>
-  <div class="logo-icon">
+  <div routerLink="/" class="logo-icon">
   </div>
   <span class="fill-space"></span>
   <a mat-button (click)="logout()">Log out</a>
@@ -15,6 +15,7 @@
     <div style="display: flex;flex-direction: column;justify-content: space-between; height: 100%">
       <mat-grid-list cols="1" rowHeight="50px" class="side-nav">
         <mat-grid-tile *ngFor="let link of currentDashBoardUserLink.links">
+          <mat-icon></mat-icon>
           <a mat-button [routerLink]="link.link">{{link.name}}</a>
         </mat-grid-tile>
       </mat-grid-list>
