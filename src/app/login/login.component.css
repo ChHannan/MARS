@@ -2,8 +2,8 @@
 .login-grid {
   display: grid;
   height: 100%;
-  grid-template-columns: 20% 60% 20%;
-  grid-template-rows: 25% 50% 25%;
+  grid-template-columns: 16% 68% 16%;
+  grid-template-rows: 21% 58% 21%;
   grid-template-areas: ". . ." ". login ." ". . .";
 }
 
