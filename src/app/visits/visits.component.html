@@ -3,6 +3,9 @@
     <mat-card-title>Visits</mat-card-title>
   </mat-card-header>
   <hr>
-  <p>Allergic to medicines containing benzoyl peroxide or salicylic acid</p>
-  <p>Allergic to medicines containing benzoyl peroxide or salicylic acid</p>
+  <ul>
+  <li *ngFor="let visit of visits">
+    <p>Visited on {{visit.visited_at}} for {{visit.purpose}}.</p>
+  </li>
+  </ul>
 </mat-card>

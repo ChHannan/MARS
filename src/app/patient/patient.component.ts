@@ -9,32 +9,31 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class PatientComponent implements OnInit {
 
-
-  patientsService: PatientsService;
-  router: Router;
-  route: ActivatedRoute;
   routeLinks = [{label: 'Search Patients', route: 'search', icon: 'search'}, {
     label: 'Add Patients', route: 'add', icon: 'person_add'
   }];
 
-  constructor(patientsService: PatientsService, router: Router, route: ActivatedRoute) {
-    this.patientsService = patientsService;
-    this.router = router;
-    this.route = route;
+  constructor(private patientsService: PatientsService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.route.url.subscribe(url => {
+      const patients = JSON.parse(localStorage.getItem('patients'));
+      if (!(patients === 'undefined' || patients === null)) {
+        this.patientsService.patients = patients;
+      }
+    });
   }
 
   close_patient(event, patient) {
-    const indexEle = this.patientsService.patients.findIndex(element => element.name === patient.name);
+    const indexEle = this.patientsService.patients.findIndex(element => element.id === patient.id);
     const currentPatientId = this.route.snapshot.children[0].params.patient_id;
-    if (patient.name === currentPatientId) {
+    if (patient.id === currentPatientId) {
       if (this.patientsService.patients.length > indexEle + 1) {
-        this.router.navigate([this.patientsService.patients[indexEle + 1].name], {relativeTo: this.route})
+        this.router.navigate([this.patientsService.patients[indexEle + 1].id], {relativeTo: this.route})
           .then();
       } else if (this.patientsService.patients.length !== 1) {
-        this.router.navigate([this.patientsService.patients[indexEle - 1].name],
+        this.router.navigate([this.patientsService.patients[indexEle - 1].id],
           {relativeTo: this.route}).then();
       } else {
         this.router.navigate(['search'], {relativeTo: this.route}).then();

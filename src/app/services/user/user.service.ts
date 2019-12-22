@@ -2,12 +2,11 @@ import {Injectable} from '@angular/core';
 import {ApiService} from '../api/api.service';
 import {SerializersService} from '../serializers/serializers.service';
 import {Router} from '@angular/router';
-import {User} from "../interfaces";
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 export interface DashboardLink {
   name: string;
   link: string;
-  icon: string;
 }
 
 export interface DashboardUserLink {
@@ -20,75 +19,43 @@ export interface DashboardUserLink {
 })
 export class UserService {
 
-  dashBoardUserLinks: DashboardUserLink[] = [
-    {
-      userType: 'admin',
-      links: [
-        {name: 'Patient', link: 'patient', icon: 'person'},
-        {name: 'Employee', link: 'employee' , icon: 'work'},
-        {name: 'Profile', link: 'profile' , icon: 'person'},
-      ],
-    },
-    {
-      userType: 'doctor',
-      links: [
-        {name: 'Patient', link: 'patient', icon: ''},
-        {name: 'Profile', link: 'profile', icon: ''}
-      ]
-    },
-    {
-      userType: 'nurse',
-      links: [
-        {name: 'Patient', link: 'patient', icon: ''},
-        {name: 'Profile', link: 'profile', icon: ''}
-      ]
-    },
-    {
-      userType: 'patient',
-      links: [
-        {name: 'Prescription', link: 'prescription', icon: ''},
-        {name: 'Medical History', link: 'medical-history', icon: ''},
-        {name: 'Allergy', link: 'allergy', icon: ''},
-        {name: 'Visits', link: 'visits', icon: ''},
-        {name: 'Profile', link: 'profile', icon: ''}
-      ]
-    }
-  ];
-  currentDashBoardUserLink: DashboardUserLink;
-  userType = '';
-  cnic = '';
-  password = '';
-
   constructor(private apiService: ApiService, private serializersService: SerializersService,
-              private router: Router, private userService: UserService) {
-    this.updateUser();
+              private router: Router, private snackBar: MatSnackBar) {
   }
 
   updateUser() {
-    this.userType = JSON.parse(localStorage.getItem('selfUser')).group;
-    this.currentDashBoardUserLink = this.dashBoardUserLinks.find(
-      ele => ele.userType === this.userType
-    );
+    const selfUser = JSON.parse(localStorage.getItem('selfUser'));
+    if (selfUser === undefined || selfUser === 'undefined') {
+      this.apiService.getUser().subscribe(res => {
+        this.serializersService.setSelfUser(res[0]);
+      }, error => console.log(error));
+    }
   }
 
-  login() {
-    this.apiService.getToken(this.cnic, this.password).subscribe(res => {
-        this.apiService.setToken(res.token);
-        this.apiService.getUser().subscribe(userRes => {
-            this.serializersService.setSelfUser(userRes[0]);
+  login(cnic, password) {
+    if (cnic === '') {
+      this.snackBar.open('Username is missing!', '', {duration: 1500});
+    } else if (password === '') {
+      this.snackBar.open('Password is missing!', '', {duration: 1500});
+    } else {
+      this.apiService.getToken(cnic, password).subscribe(res => {
+          this.apiService.setToken(res.token);
+          this.apiService.getUser().subscribe(userRes => {
+              this.serializersService.setSelfUser(userRes[0]);
 
-            // Update user
-            this.updateUser();
-            this.router.navigate(['dashboard',]).then();
-          },
-          error => {
-            // Error logic here
-            console.log(error);
-          });
-      },
-      error => {
-        // Error logic here
-        console.log(error);
-      });
+              // Update user
+              this.updateUser();
+              this.router.navigate(['dashboard']).then();
+            },
+            error => {
+              // Error logic here
+              console.log(error);
+            });
+        },
+        error => {
+          // Error logic here
+          this.snackBar.open('Authentication Failed! Please check your credentials.', '', {duration: 1500});
+        });
+    }
   }
 }

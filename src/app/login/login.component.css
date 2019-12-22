@@ -71,17 +71,15 @@
 /*}*/
 
 
-.login-grid{
+.login-grid {
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 1fr 1.25fr 1.5fr;
-  grid-template-areas:
-    ". . ."
-    ". login ."
-    ". . .";
+  height: 100%;
+  grid-template-columns: 15% 70% 15%;
+  grid-template-rows: 20% 60% 20%;
+  grid-template-areas: ". . ." ". login ." ". . .";
 }
 
-#login{
+#login {
   grid-area: login;
   background-color: #24292e;
   border-top-left-radius: 2rem 2rem;
@@ -92,36 +90,33 @@
 
 }
 
-section{
+section {
   width: 100%;
   height: 100%;
 }
 
-#overlay{
+#overlay {
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   background-size: cover;
 }
-#overlay2{
 
+#overlay2 {
   width: 100%;
   height: 100%;
   background: rgba(105, 240, 174, 0);
   background-size: cover;
 }
 
-main{
+main {
   display: grid;
   grid-template-columns: 62% 38%;
   grid-template-rows: 100%;
-  grid-template-areas:
-    "logo login2";
-
-
+  grid-template-areas: "logo login2";
 }
 
-#logo{
+#logo {
   grid-area: logo;
   margin: 16%;
   background: transparent url("src/assets/images/logo.png");
@@ -140,14 +135,14 @@ main{
   font-size: 32px;
 }
 
-#p{
+#p {
   font-family: "Microsoft YaHei Light";
   color: #00e676;
   font-size: 12px;
 
 }
 
-#login2{
+#login2 {
   grid-area: login2;
   background-color: #ffffff;
   opacity: 100%;
@@ -157,10 +152,10 @@ main{
   border-top-right-radius: 2rem 2rem;
   border-bottom-right-radius: 2rem 2rem;
   padding-bottom: 30px;
-  box-shadow:  0px 0 4px 0px gray;
+  box-shadow: 0px 0 4px 0px gray;
 }
 
-h3{
+h3 {
   text-align: center;
   margin-top: 8%;
   color: #f8f8f8;
@@ -169,7 +164,7 @@ h3{
   font-size: 30px;
 }
 
-p{
+p {
   text-align: center;
   margin-top: 2%;
   margin-bottom: 4%;
@@ -178,7 +173,7 @@ p{
   font-size: 22px;
 }
 
-#login-form{
+#login-form {
   color: #000000;
   display: grid;
   justify-content: space-between;
@@ -186,41 +181,35 @@ p{
   place-content: center;
 }
 
-.btn1{
-    display: grid;
-    border-radius: 2rem;
-    background: #24292e;
-    font-weight: 500;
-    font-size: 16px;
-    color: #ffffff;
-    padding: 3px;
+.btn1 {
+  display: grid;
+  border-radius: 2rem;
+  background: #24292e;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 3px;
 }
 
-@media screen and (max-width: 600px){
-  .login-grid{
+@media screen and (max-width: 600px) {
+  .login-grid {
     display: grid;
-    margin-top: 20% ;
+    margin-top: 20%;
     grid-template-columns: 10% 80% 10%;
     grid-template-rows: auto;
-    grid-template-areas:
-      ". . ."
-      ". login ."
-      ". . .";
+    grid-template-areas: ". . ." ". login ." ". . .";
   }
 
-  main{
+  main {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 50% 90%;
-    grid-template-areas:
-      "logo"
-      "login2"
-  ;
+    grid-template-areas: "logo" "login2";
 
 
   }
 
-  #login{
+  #login {
     grid-area: login;
     background-color: #24292e;
     border-top-left-radius: 2rem 2rem;
@@ -231,7 +220,7 @@ p{
 
   }
 
-  #logo{
+  #logo {
     grid-area: logo;
     margin: 8%;
     background: #24292e url("src/assets/images/mars white - Copy.png");
@@ -241,7 +230,7 @@ p{
   }
 
 
-  #login2{
+  #login2 {
     grid-area: login2;
     background-color: #ffffff;
     border-top-left-radius: 50% 10%;
@@ -249,7 +238,7 @@ p{
     border-top-right-radius: 50% 10%;
     border-bottom-right-radius: 2rem 2rem;
     padding-bottom: 30px;
-    box-shadow:  0px 0 4px 0px gray;
+    box-shadow: 0px 0 4px 0px gray;
   }
 
 }

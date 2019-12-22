@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
+import * as interfaces from '../services/interfaces';
+import {ActivatedRoute} from '@angular/router';
+import {ApiService} from '../services/api/api.service';
 
 
 @Component({
@@ -9,19 +12,19 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class PrescriptionComponent implements OnInit {
 
-  prescription = [
-    {serialNo: 1, medicine: 'Panadol', dose: '100mg', frequency: 'Every Morning'},
-    {serialNo: 2, medicine: 'Rozerem', dose: '100mg', frequency: 'At bed'},
-    {serialNo: 3, medicine: 'Restoril', dose: '100mg', frequency: '2x a day'},
-    {serialNo: 4, medicine: 'Halcion', dose: '100mg', frequency: '3x a day'},
-    {serialNo: 5, medicine: 'Sonata', dose: '100mg', frequency: 'Every Morning'},
-  ];
+  prescription: interfaces.Prescription[] = [];
   displayedColumnsPrescriptions: string[] = ['serialNo', 'medicine', 'dose', 'frequency'];
-  presciptionDataSource = new MatTableDataSource(this.prescription);
+  prescriptionDataSource = new MatTableDataSource(this.prescription);
 
-  constructor() { }
+  constructor(private apiService: ApiService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.url.subscribe(url => {
+      this.apiService.getPrescription().subscribe(res => {
+        this.prescription = res;
+        this.prescriptionDataSource = new MatTableDataSource(this.prescription);
+      });
+    });
   }
 
 }

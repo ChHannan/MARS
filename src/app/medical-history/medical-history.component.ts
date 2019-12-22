@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-// import {PatientsService} from '../services/patients.service';
 import {MatTableDataSource} from '@angular/material/table';
+import {ApiService} from '../services/api/api.service';
+import * as interfaces from '../services/interfaces';
 
 @Component({
   selector: 'app-medical-history',
@@ -9,18 +10,19 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./medical-history.component.css']
 })
 export class MedicalHistoryComponent implements OnInit {
-  medicalHistory = [
-    {type: 'Disease', description: 'Cancer Disease', time: '1 year ago'},
-    {type: 'Disease', description: 'Heart', time: '1 year ago'},
-    {type: 'Surgery', description: 'Heart Surgery', time: '6 months ago'},
-    {type: 'Disease', description: 'Liver Disease', time: '1 year ago'},
-    ]
+  medicalHistory: interfaces.MedicalHistory[];
   medicalHistoryDataSource = new MatTableDataSource((this.medicalHistory));
   displayedColumnsMedicalHistory: string[] = ['type', 'description', 'time'];
 
-  constructor() { }
+  constructor(private apiService: ApiService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.url.subscribe(url => {
+      this.apiService.getMedicalHistory().subscribe(res => {
+        this.medicalHistory = res;
+        this.medicalHistoryDataSource = new MatTableDataSource(this.medicalHistory);
+      });
+    });
   }
 
 }

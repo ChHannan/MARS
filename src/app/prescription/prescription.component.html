@@ -4,11 +4,11 @@
       <mat-card-title>Prescriptions</mat-card-title>
     </mat-card-header>
     <hr>
-    <table mat-table [dataSource]="presciptionDataSource" class="mat-elevation-z1">
+    <table mat-table [dataSource]="prescriptionDataSource" class="mat-elevation-z1">
 
       <ng-container matColumnDef="serialNo">
         <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.serialNo}} </td>
+        <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}}</td>
       </ng-container>
 
       <ng-container matColumnDef="medicine">

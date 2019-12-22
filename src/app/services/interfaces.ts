@@ -51,11 +51,11 @@ export interface MedicalHistory {
 
   type: string;
   description: string;
-  happenedAt: Date;
+  happened_at: Date;
 
   patient: User;
 
-  createdAt: Date;
+  created_at: Date;
   updatedAt: Date;
   createdBy: User;
   updatedBy: User;
@@ -98,7 +98,7 @@ export interface Visit {
   id: string;
 
   purpose: string;
-  visitedAt: Date;
+  visited_at: Date;
 
   createdAt: Date;
   updatedAt: Date;

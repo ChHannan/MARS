@@ -10,7 +10,7 @@
 
   <div class="patient-nav" *ngFor="let patient of patientsService.patients">
     <a mat-tab-link
-       [routerLink]="patient.name"
+       [routerLink]="patient.id"
        routerLinkActive #rla_patient="routerLinkActive"
        [active]="rla_patient.isActive">
       {{patient.name}}

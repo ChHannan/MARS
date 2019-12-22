@@ -1,15 +1,16 @@
  <div class="profile-grid">
     <img id="img" mat-card-image src="https://urlofseo.com/images/leemarshallavatar200.png" alt="Photo of a Shiba Inu">
-    <h6 id="name">Watson Cratos, MD</h6>
-    <p id="occ">Senior Cardiologist</p>
+    <h6 id="name">{{user.first_name}}</h6>
+    <p id="occ">{{user.group.toUpperCase()}}</p>
     <div id="join">
       <p>Last edited: 12-05-2010</p>
     </div>
     <mat-icon id="icon">email</mat-icon>
-    <p id="mail">bestdoctor@gmail.com</p>
+    <p id="mail">{{user.email}}</p>
     <mat-icon id="icon2">phone</mat-icon>
-    <p id="phone">1-7298-7929-26</p>
+    <p id="phone">{{user.contact}}</p>
   </div>
+ <hr>
 <mat-tab-group>
   <mat-tab label="PROFILE">
     <div class="profile-grid2">
@@ -17,13 +18,13 @@
         <h5 class="big-heading" >PERSONAL INFORMATION</h5>
         <hr style="margin: 20px">
         <h6 class="heading">CNIC No.</h6>
-        <h5 class="info" >42101-41313-9</h5>
+        <h5 class="info" >{{user.cnic}}</h5>
         <h6 class="heading">Date of Birth</h6>
         <h5 class="info" >01-04-2045</h5>
         <h6 class="heading">Age</h6>
         <h5 class="info">37 y/o</h5>
         <h6 class="heading">Gender</h6>
-        <h5 class="info">Male</h5>
+        <h5 class="info">{{user.gender}}</h5>
       </div>
       <div id="group2">
         <h5 class="big-heading" >MEASUREMENTS</h5>
@@ -41,7 +42,7 @@
         <h5 class="big-heading" >CONTACT INFORMATION</h5>
         <hr style="margin: 20px">
         <h6 class="heading">Mobile No.</h6>
-        <h5 class="info" >0331-3100-884</h5>
+        <h5 class="info" >{{user.contact}}</h5>
         <h6 class="heading">Emergency Contact</h6>
         <h5 class="info">0334-4242-532</h5>
         <h6 class="heading">Home Phone</h6>
