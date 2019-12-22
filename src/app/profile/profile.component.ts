@@ -23,6 +23,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.route.url.subscribe(url => {
       this.user = JSON.parse(localStorage.getItem('selfUser'));
+      console.log(this.user);
     });
   }
 }

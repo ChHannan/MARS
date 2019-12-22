@@ -63,18 +63,20 @@
       <div id="group1">
         <h5 class="big-heading">DEPARTMENT INFORMATION</h5>
         <hr style="margin: 20px">
-        <h6 class="heading">Department</h6>
-        <h5 class="info">Cardiology</h5>
+        <span *ngIf="user.group === 'nurse' || user.group === 'doctor'">
+        <h6 class="heading">Qualification</h6>
+        <h5 class="info">{{user.role.qualification}}</h5>
+        </span>
         <h6 class="heading">Date Joined</h6>
-        <h5 class="info">01-04-2033</h5>
+        <h5 class="info">{{user.role.date_joined | date} g}</h5>
       </div>
       <div id="group2">
         <h5 class="big-heading">ADDITIONAL INFORMATION</h5>
         <hr style="margin: 20px">
-        <h6 class="heading">Nurse Assigned</h6>
-        <h5 class="info">Anita Ruiz</h5>
-        <h6 class="heading">Years of Experience</h6>
-        <h5 class="info">11 years</h5>
+        <h6 class="heading">Shift Start Time</h6>
+        <h5 class="info">{{user.role.start_timings | date: 'short'}}</h5>
+        <h6 class="heading">Shift End Time</h6>
+        <h5 class="info">{{user.role.end_timings | date: 'short'}}</h5>
       </div>
     </div>
   </mat-tab>
@@ -84,17 +86,17 @@
         <h5 class="big-heading">GUARDIAN INFORMATION</h5>
         <hr style="margin: 20px">
         <h6 class="heading">Name</h6>
-        <h5 class="info">Ronald </h5>
-        <h6 class="heading">Date Joined</h6>
-        <h5 class="info">01-04-2033</h5>
+        <h5 class="info">{{user.role.guardian_name}}</h5>
+        <h6 class="heading">Relationship</h6>
+        <h5 class="info">{{user.role.guardian_relationship}}</h5>
       </div>
       <div id="group2">
         <h5 class="big-heading">GUARDIAN CONTACT</h5>
         <hr style="margin: 20px">
         <h6 class="heading">Contact No.</h6>
-        <h5 class="info">0341-1442-867</h5>
+        <h5 class="info">{{user.role.guardian_contact}}</h5>
         <h6 class="heading">Address</h6>
-        <h5 class="info">3456 Santiago Bernaleo, Madrid, Spain</h5>
+        <h5 class="info">{{user.role.guardian_address}}</h5>
       </div>
     </div>
   </mat-tab>
