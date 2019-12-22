@@ -2,8 +2,8 @@
 .login-grid {
   display: grid;
   height: 100%;
-  grid-template-columns: 15% 70% 15%;
-  grid-template-rows: 20% 60% 20%;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 25% 50% 25%;
   grid-template-areas: ". . ." ". login ." ". . .";
 }
 
@@ -17,6 +17,7 @@
   background-size: cover;
 
 }
+
 
 
 main {
@@ -47,16 +48,18 @@ main {
   border-top-right-radius: 2rem 2rem;
   border-bottom-right-radius: 2rem 2rem;
   box-shadow: 0px 0 4px 0px gray;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  display: grid;
+  place-content: center;
   height: 100%;
 }
 
 .btn1 {
   background: #24292e;
   border-radius: 2rem;
+  margin-top: 20%;
+  padding: 2%;
+  font-size: large;
+  font-weight: bold;
   width: 184px;
 }
 
@@ -91,7 +94,7 @@ main {
   #logo {
     grid-area: logo;
     margin: 8%;
-    background: #24292e url("src/assets/images/mars white - Copy.png");
+    background: #24292e url("src/assets/images/logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
