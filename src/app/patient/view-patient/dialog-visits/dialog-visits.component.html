@@ -13,7 +13,9 @@
   <div class="row">
     <mat-form-field appearance="outline" class="visitsField">
       <mat-label>Visited At</mat-label>
-      <input matInput [(ngModel)]="visit.visited_at">
+      <input matInput [matDatepicker]="joiningDatePicker1" [(ngModel)]="visit.visited_at">
+      <mat-datepicker-toggle matSuffix [for]="joiningDatePicker1"></mat-datepicker-toggle>
+      <mat-datepicker #joiningDatePicker1></mat-datepicker>
     </mat-form-field>
   </div>
 

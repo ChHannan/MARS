@@ -20,8 +20,10 @@
 
   <div class="row">
     <mat-form-field appearance="outline" id="timeField">
-      <mat-label>Time</mat-label>
-      <input matInput [(ngModel)]="medicalHistory.happened_at">
+      <mat-label>Happened At</mat-label>
+      <input matInput [matDatepicker]="joiningDatePicker1" [(ngModel)]="medicalHistory.happened_at">
+      <mat-datepicker-toggle matSuffix [for]="joiningDatePicker1"></mat-datepicker-toggle>
+      <mat-datepicker #joiningDatePicker1></mat-datepicker>
     </mat-form-field>
   </div>
 
