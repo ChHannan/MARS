@@ -9,7 +9,7 @@
         <h6 id="name">Name</h6>
         <mat-form-field appearance="outline" id="firstName">
           <mat-label>First Name</mat-label>
-          <input matInput [(ngModel)]="user['first_name']">
+          <input matInput [(ngModel)]="user.first_name">
         </mat-form-field>
         <mat-form-field appearance="outline" id="middleName">
           <mat-label>Middle Name</mat-label>
@@ -41,10 +41,14 @@
           <input matInput [(ngModel)]="patient.height">
         </mat-form-field>
         <h6 id="gender">Gender</h6>
-        <mat-radio-group [(ngModel)]="user.gender"></mat-radio-group>
-        <mat-radio-button id="maleRadio" color="primary" value="male">Male</mat-radio-button>
-        <mat-radio-button id="femaleRadio" color="primary" value="female">Female
-        </mat-radio-button>
+        <mat-form-field style="height: 60px" appearance="outline" id="maleRadio">
+          <mat-label style="font-size: 15px">Gender</mat-label>
+          <mat-select [(value)]="user.gender">
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+            <mat-option value="other">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
     </mat-step>
     <mat-step label="Contact Information">

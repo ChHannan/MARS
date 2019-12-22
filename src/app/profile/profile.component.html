@@ -1,100 +1,98 @@
- <div class="profile-grid">
-    <img id="img" mat-card-image src="https://urlofseo.com/images/leemarshallavatar200.png" alt="Photo of a Shiba Inu">
-    <h6 id="name">{{user.first_name}}</h6>
-    <p id="occ">{{user.group.toUpperCase()}}</p>
-    <div id="join">
-      <p>Last edited: 12-05-2010</p>
-    </div>
-    <mat-icon id="icon">email</mat-icon>
-    <p id="mail">{{user.email}}</p>
-    <mat-icon id="icon2">phone</mat-icon>
-    <p id="phone">{{user.contact}}</p>
+<div class="profile-grid">
+  <img id="img" mat-card-image src="https://urlofseo.com/images/leemarshallavatar200.png" alt="Photo of a Shiba Inu">
+  <h6 id="name">{{user.first_name}}</h6>
+  <p id="occ">{{user.group.toUpperCase()}}</p>
+  <div id="join">
+    <p>Last edited: {{user.updated_at}}</p>
   </div>
- <hr>
+  <mat-icon id="icon">email</mat-icon>
+  <p id="mail">{{user.email}}</p>
+  <mat-icon id="icon2">phone</mat-icon>
+  <p id="phone">{{user.contact}}</p>
+</div>
+<hr>
 <mat-tab-group>
   <mat-tab label="PROFILE">
     <div class="profile-grid2">
       <div id="group1">
-        <h5 class="big-heading" >PERSONAL INFORMATION</h5>
+        <h5 class="big-heading">PERSONAL INFORMATION</h5>
         <hr style="margin: 20px">
         <h6 class="heading">CNIC No.</h6>
-        <h5 class="info" >{{user.cnic}}</h5>
+        <h5 class="info">{{user.cnic}}</h5>
+        <span *ngIf="user.group === 'patient'">
         <h6 class="heading">Date of Birth</h6>
-        <h5 class="info" >01-04-2045</h5>
-        <h6 class="heading">Age</h6>
-        <h5 class="info">37 y/o</h5>
+        <h5 class="info">01-04-2045</h5>
+        </span>
         <h6 class="heading">Gender</h6>
-        <h5 class="info">{{user.gender}}</h5>
+        <h5 class="info">{{user.gender.toUpperCase()}}</h5>
       </div>
-      <div id="group2">
-        <h5 class="big-heading" >MEASUREMENTS</h5>
+      <div id="group2" *ngIf="user.group === 'patient'">
+        <h5 class="big-heading">MEASUREMENTS</h5>
         <hr style="margin: 20px">
         <h6 class="heading">Height</h6>
-        <h5 class="info" >1.82 m</h5>
+        <h5 class="info">{{user.role.height}} m</h5>
         <h6 class="heading">Weight</h6>
-        <h5 class="info">79 kg</h5>
+        <h5 class="info">{{user.role.weight}} kg</h5>
       </div>
     </div>
   </mat-tab>
   <mat-tab label="CONTACT">
     <div class="profile-grid2">
       <div id="group1">
-        <h5 class="big-heading" >CONTACT INFORMATION</h5>
+        <h5 class="big-heading">CONTACT INFORMATION</h5>
         <hr style="margin: 20px">
         <h6 class="heading">Mobile No.</h6>
-        <h5 class="info" >{{user.contact}}</h5>
+        <h5 class="info">{{user.contact}}</h5>
         <h6 class="heading">Emergency Contact</h6>
-        <h5 class="info">0334-4242-532</h5>
-        <h6 class="heading">Home Phone</h6>
-        <h5 class="info">051-42422-1311</h5>
+        <h5 class="info">{{user.emergency_contact}}</h5>
       </div>
       <div id="group2">
-        <h5 class="big-heading" >ADDRESS</h5>
+        <h5 class="big-heading">ADDRESS</h5>
         <hr style="margin: 20px">
         <h6 class="heading">Street/Area</h6>
-        <h5 class="info">1183 Camp Nou</h5>
+        <h5 class="info">{{user.address}}</h5>
         <h6 class="heading">City</h6>
-        <h5 class="info">Barcelona</h5>
+        <h5 class="info">{{user.city}}</h5>
         <h6 class="heading">Country</h6>
-        <h5 class="info">Spain</h5>
+        <h5 class="info">{{user.country}}</h5>
       </div>
     </div>
   </mat-tab>
-  <mat-tab label="EMPLOYMENT">
+  <mat-tab label="EMPLOYMENT" *ngIf="user.group !== 'patient'">
     <div class="profile-grid2">
       <div id="group1">
-        <h5 class="big-heading" >DEPARTMENT INFORMATION</h5>
+        <h5 class="big-heading">DEPARTMENT INFORMATION</h5>
         <hr style="margin: 20px">
         <h6 class="heading">Department</h6>
-        <h5 class="info" >Cardiology</h5>
+        <h5 class="info">Cardiology</h5>
         <h6 class="heading">Date Joined</h6>
-        <h5 class="info" >01-04-2033</h5>
+        <h5 class="info">01-04-2033</h5>
       </div>
       <div id="group2">
-        <h5 class="big-heading" >ADDITIONAL INFORMATION</h5>
+        <h5 class="big-heading">ADDITIONAL INFORMATION</h5>
         <hr style="margin: 20px">
         <h6 class="heading">Nurse Assigned</h6>
-        <h5 class="info" >Anita Ruiz</h5>
+        <h5 class="info">Anita Ruiz</h5>
         <h6 class="heading">Years of Experience</h6>
         <h5 class="info">11 years</h5>
       </div>
     </div>
   </mat-tab>
-  <mat-tab label="GUARDIAN">
+  <mat-tab label="GUARDIAN" *ngIf="user.group === 'patient'">
     <div class="profile-grid2">
       <div id="group1">
-        <h5 class="big-heading" >GUARDIAN INFORMATION</h5>
+        <h5 class="big-heading">GUARDIAN INFORMATION</h5>
         <hr style="margin: 20px">
         <h6 class="heading">Name</h6>
-        <h5 class="info" >Ronald </h5>
+        <h5 class="info">Ronald </h5>
         <h6 class="heading">Date Joined</h6>
-        <h5 class="info" >01-04-2033</h5>
+        <h5 class="info">01-04-2033</h5>
       </div>
       <div id="group2">
-        <h5 class="big-heading" >GUARDIAN CONTACT</h5>
+        <h5 class="big-heading">GUARDIAN CONTACT</h5>
         <hr style="margin: 20px">
         <h6 class="heading">Contact No.</h6>
-        <h5 class="info" >0341-1442-867</h5>
+        <h5 class="info">0341-1442-867</h5>
         <h6 class="heading">Address</h6>
         <h5 class="info">3456 Santiago Bernaleo, Madrid, Spain</h5>
       </div>

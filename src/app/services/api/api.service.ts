@@ -46,27 +46,43 @@ export class ApiService {
     return this.http.get<interfaces.User[]>(this.USER_PATIENT_VIEW, this.httpOptions);
   }
 
-  getMedicalHistory(patientId= '') {
+  getMedicalHistory(patientId = '') {
     return this.http.get<interfaces.MedicalHistory[]>(`${this.MEDICAL_HISTORY_VIEW}?patient=${patientId}`,
       this.httpOptions);
   }
 
-  getAllergy(patientId= '') {
+  getAllergy(patientId = '') {
     return this.http.get<interfaces.Allergy[]>(`${this.ALLERGY_VIEW}?patient=${patientId}`,
       this.httpOptions);
   }
 
-  getVisit(patientId= '') {
+  getVisit(patientId = '') {
     return this.http.get<interfaces.Visit[]>(`${this.VISIT_VIEW}?patient=${patientId}`,
       this.httpOptions);
   }
 
-  getPrescription(patientId= '') {
+  getPrescription(patientId = '') {
     return this.http.get<interfaces.Prescription[]>(`${this.PRESCRIPTION_VIEW}?patient=${patientId}`,
       this.httpOptions);
   }
 
   postUser(data) {
     return this.http.post(this.USER_VIEW, data);
+  }
+
+  postMedicalHistory(data) {
+    return this.http.post(this.MEDICAL_HISTORY_VIEW, data, this.httpOptions);
+  }
+
+  postPrescription(data) {
+    return this.http.post(this.PRESCRIPTION_VIEW, data, this.httpOptions);
+  }
+
+  postAllergy(data) {
+    return this.http.post(this.ALLERGY_VIEW, data, this.httpOptions);
+  }
+
+  postVisit(data) {
+    return this.http.post(this.VISIT_VIEW, data, this.httpOptions);
   }
 }

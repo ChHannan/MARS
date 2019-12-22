@@ -3,17 +3,50 @@ export interface Token {
 }
 
 
-export class Patient {
+export interface Admin {
+  id: string;
+
+  date_joined: Date;
+  start_timings: Date;
+  end_timings: Date;
+}
+
+
+export interface Nurse {
+  id: string;
+
+  qualification: string;
+  institution: string;
+  date_joined: Date;
+  start_timings: Date;
+  end_timings: Date;
+}
+
+
+export interface Doctor {
+  id: string;
+
+  speciality: string;
+  qualification: string;
+  medical_college: string;
+  date_joined: Date;
+  start_timings: Date;
+  end_timings: Date;
+  nurse_assigned: Nurse;
+}
+
+
+export interface Patient {
   id: string;
 
   weight: string;
   height: string;
   date_of_birth: Date;
 
-  guardianName: string;
-  guardianContact: string;
-  guardianRelationShip: string;
-  guardianAddress: string;
+  guardian_name: string;
+  guardian_contact: string;
+  guardian_relationShip: string;
+  guardian_address: string;
 }
 
 
@@ -23,7 +56,7 @@ export interface User {
   email: string;
   contact: string;
   cnic: string;
-  emergencyContact: string;
+  emergency_contact: string;
 
   first_name: string;
   middle_name: string;
@@ -37,12 +70,15 @@ export interface User {
   group: string;
   role: any;
 
-  createdAt: Date;
-  updatedAt: Date;
-  createdBy: User;
-  updatedBy: User;
+  created_at: Date;
+  updated_at: Date;
+  created_by: User;
+  updated_by: User;
 
   patient: Patient;
+  nurse: Nurse;
+  doctor: Doctor;
+  admin: Admin;
 }
 
 
