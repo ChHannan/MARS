@@ -13,12 +13,21 @@ import {DialogEditAllergiesComponent} from './dialog-edit-allergies/dialog-edit-
 import {DialogEditVisitsComponent} from './dialog-edit-visits/dialog-edit-visits.component';
 import {ApiService} from '../../services/api/api.service';
 import * as interfaces from '../../services/interfaces';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 
 @Component({
   selector: 'app-view-patient',
   templateUrl: './view-patient.component.html',
-  styleUrls: ['./view-patient.component.css']
+  styleUrls: ['./view-patient.component.css'],
+  animations: [
+    trigger('fadein', [
+      transition('void => *', [
+        style({opacity: 0}),
+        animate(1500, style({opacity: 1}))
+      ])
+    ])
+  ]
 })
 
 export class ViewPatientComponent implements OnInit {
@@ -42,7 +51,8 @@ export class ViewPatientComponent implements OnInit {
     this.dialog.open(DialogMedicalHistoryComponent);
   }
 
-  editMedicalHistory() {
+  editMedicalHistory(row) {
+    this.patientsService.dialogData = row;
     this.dialog.open(DialogEditMedHistComponent);
   }
 
@@ -50,7 +60,8 @@ export class ViewPatientComponent implements OnInit {
     this.dialog.open(DialogPrescriptionComponent);
   }
 
-  editPrescription() {
+  editPrescription(row) {
+    this.patientsService.dialogData = row;
     this.dialog.open(DialogEditPresComponent);
   }
 
@@ -58,7 +69,8 @@ export class ViewPatientComponent implements OnInit {
     this.dialog.open(DialogAllergyComponent);
   }
 
-  editAllergies() {
+  editAllergies(row) {
+    this.patientsService.dialogData = row;
     this.dialog.open(DialogEditAllergiesComponent);
   }
 

@@ -7,26 +7,28 @@
   <div class="row">
     <mat-form-field appearance="outline" id="typeField">
       <mat-label>Type</mat-label>
-      <input matInput>
+      <input matInput [(ngModel)]="medicalHistory.type">
     </mat-form-field>
   </div>
 
   <div class="row">
     <mat-form-field appearance="outline" id="descriptionField">
       <mat-label>Description</mat-label>
-      <input matInput>
+      <input matInput [(ngModel)]="medicalHistory.description">
     </mat-form-field>
   </div>
 
   <div class="row">
     <mat-form-field appearance="outline" id="timeField">
-      <mat-label>Time</mat-label>
-      <input matInput>
+      <mat-label>Happened At</mat-label>
+      <input matInput [matDatepicker]="joiningDatePicker1" [(ngModel)]="medicalHistory.happened_at">
+      <mat-datepicker-toggle matSuffix [for]="joiningDatePicker1"></mat-datepicker-toggle>
+      <mat-datepicker #joiningDatePicker1></mat-datepicker>
     </mat-form-field>
   </div>
 
   <mat-dialog-actions>
-    <button mat-raised-button color="primary" id="addButton">Add</button>
+    <button mat-raised-button color="primary" id="addButton" (click)="updateMedicalHistory()">Update</button>
   </mat-dialog-actions>
   <br>
 </div>

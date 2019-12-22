@@ -7,7 +7,7 @@
 </div>
 <hr>
 
-<div class="container">
+<div class="container" @fadein>
   <div class="row">
     <div class="col-sm-8">
 
@@ -41,7 +41,7 @@
 
             <tr mat-header-row *matHeaderRowDef="displayedColumnsMedicalHistory"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumnsMedicalHistory;"
-                (click)="editMedicalHistory()" class="med-hist-row"></tr>
+                (click)="editMedicalHistory(row)" class="med-hist-row"></tr>
           </table>
         </mat-card>
       </div>
@@ -81,7 +81,7 @@
 
             <tr mat-header-row *matHeaderRowDef="displayedColumnsPrescriptions"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumnsPrescriptions;"
-                (click)="editPrescription()" class="pres-row"></tr>
+                (click)="editPrescription(row)" class="pres-row"></tr>
           </table>
         </mat-card>
       </div>
@@ -117,7 +117,7 @@
 
             <tr mat-header-row *matHeaderRowDef="displayedColumnsAllergy"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumnsAllergy;"
-                (click)="editAllergies()" class="allergies-row"></tr>
+                (click)="editAllergies(row)" class="allergies-row"></tr>
           </table>
         </mat-card>
       </div>
