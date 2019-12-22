@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
-import * as interfaces from '../services/interfaces';
-import {ApiService} from "../services/api/api.service";
-import {MatSnackBar} from "@angular/material/snack-bar";
+import {ApiService} from '../services/api/api.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 export interface Employee {

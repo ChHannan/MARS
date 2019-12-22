@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from '../../../services/api/api.service';
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-dialog-medical-history',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogMedicalHistoryComponent implements OnInit {
 
-  constructor() { }
+  medicalHistory = {};
+  constructor(private apiService: ApiService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
 
+  addMedicalHistory() {
+    this.apiService.postMedicalHistory(this.medicalHistory).subscribe(res => {
+      this.snackBar.open('Medical History', '', {duration: 1500});
+    });
+  }
 }
