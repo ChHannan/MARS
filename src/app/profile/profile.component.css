@@ -16,8 +16,8 @@
 #img {
   grid-area: img;
   display: flex;
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: auto;
   margin-left: 14%;
   margin-top: 6% ;
   border: 1px solid mediumblue;
@@ -36,8 +36,8 @@
 
 #name {
   grid-area: name;
-  align-items: center;
   color: black;
+  margin-top: 30px;
   font-width: bold;
   font-size: 40px;
 }

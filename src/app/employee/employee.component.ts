@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
+import * as interfaces from '../services/interfaces';
+
 
 export interface Employee {
   value: string;
@@ -13,7 +15,7 @@ export interface Employee {
   animations: [
     trigger('fadein', [
       transition('void => *', [
-        style({ opacity: 0 }),
+        style({opacity: 0}),
         animate(500, style({opacity: 1}))
       ])
     ])
@@ -21,7 +23,13 @@ export interface Employee {
 })
 export class EmployeeComponent implements OnInit {
 
-  employeeType = 'admin';
+  doctor = {};
+  nurse = {};
+  admin = {};
+  user = {
+    group: 'admin',
+    gender: 'male'
+  };
   employees: Employee[] = [
     {value: 'admin', viewValue: 'Admin'},
     {value: 'doctor', viewValue: 'Doctor'},
@@ -29,10 +37,10 @@ export class EmployeeComponent implements OnInit {
   ];
   startDate = new Date(1990, 0, 1);
   currentDate = new Date();
+
   constructor() {
   }
 
   ngOnInit() {
   }
-
 }
